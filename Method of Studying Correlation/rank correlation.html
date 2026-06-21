@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="/statistics/styles/style_formate.css">
+    <title>Business Statistics | Types of Correlation | Non-linear Correlation</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Spearman's Rank Correlation (Rank Correlation Method)</h1>
+        <hr>
+        <p><b>Spearman's Rank Correlation</b> correlation मापने की एक <b>mathematical method</b> है, जिसमें actual
+            values की जगह observations की <b>Ranks</b> (क्रम) का उपयोग किया जाता है।</p>
+        <p>जब data ranks, positions, preferences या order के रूप में दिया गया हो, तब इस method का प्रयोग किया जाता है।
+        </p>
+        <p><b>Spearman's Rank Correlation is a method of measuring correlation based on the ranks of observations rather
+                than their actual values.</b></p>
+        <hr>
+        <h2>When is it Used?</h2>
+        <p>जब:</p>
+        <p>✔ Actual values उपलब्ध न हों।</p>
+        <p>✔ Data ranks के रूप में दिया गया हो।</p>
+        <p>✔ Qualitative characteristics की comparison करनी हो।</p>
+        <p>✔ Small number of observations हों।</p>
+        <hr>
+        <h3>Examples</h3>
+        <ul>
+            <li>Students की Rank in Mathematics and Statistics</li>
+            <li>Beauty Contest Ranking</li>
+            <li>Interview Ranking</li>
+            <li>Preference Ranking</li>
+        </ul>
+        <hr>
+        <h2>Symbol</h2>
+        <pre>ρ (rho)</pre>
+        <p>या</p>
+        <pre>Rs</pre>
+        <hr>
+        <h3>Formula</h3>
+        <p>जब ranks में tie (same rank) न हो:</p>
+        <div class="formula">\[\rho = 1 = \frac{6 \sum d^2}{n (n^2-1)}\]</div>
+        <h3>Where</h3>
+        <ul>
+            <li>\( \rho \) = Rank Correlation Coefficient</li>
+            <li>d = Difference between ranks</li>
+            <li>\(d^2\) = Square of rank differences</li>
+            <li>n = Number of observations</li>
+        </ul>
+        <hr>
+        <h2>Interpretation of \( \rho \)</h2>
+        <div class="table-div">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Value of \( \rho \)</th>
+                        <th>Interpretation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>+1</td>
+                        <td>Perfect Positive Correlation</td>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td>No Correlation</td>
+                    </tr>
+                    <tr>
+                        <td>-1</td>
+                        <td>Perfect Negative Correlation</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <hr>
+        <h2>Perfect Positive Correlation (\( \rho \) = +1)</h2>
+        <p>जब दोनों variables की ranks बिल्कुल समान हों।</p>
+        <h3>Example</h3>
+        <div class="table-div">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>A Rank</th>
+                        <th>B Rank</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>4</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <hr>
+        <h3>Perfect Negative Correlation (\( \rho \) = -1)</h3>
+        <p>जब ranks बिल्कुल opposite हों।</p>
+        <h3>Example</h3>
+        <div class="table-div">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>A Rank</th>
+                        <th>B Rank</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>1</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <hr>
+        <h3>Zero Correlation (\( \rho \) = 0)</h3>
+        <p>जब ranks में कोई निश्चित relationship न हो।</p>
+        <hr>
+        <h3>Where ranks are given</h3>
+        <div class="table-div">
+            <table class="table">
+                <thead>
+                    <th>Statistics</th>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>7</td>
+                    <td>8</td>
+                    <td>9</td>
+                    <td>10</td>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>Mathematics</th>
+                        <td>2</td>
+                        <td>4</td>
+                        <td>1</td>
+                        <td>5</td>
+                        <td>3</td>
+                        <td>9</td>
+                        <td>7</td>
+                        <td>10</td>
+                        <td>6</td>
+                        <td>8</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <h3>Solution:</h3>
+        <div class="table-div">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Statistics Rank (X)</th>
+                        <th>Mathematics Rank(Y)</th>
+                        <th>d = x - y</th>
+                        <th>\(d^2\)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>-1</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>4</td>
+                        <td>-2</td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>+2</td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>-1</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>3</td>
+                        <td>+2</td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>9</td>
+                        <td>-3</td>
+                        <td>9</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>7</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>10</td>
+                        <td>-2</td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>6</td>
+                        <td>+3</td>
+                        <td>9</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>8</td>
+                        <td>+2</td>
+                        <td>4</td>
+                    </tr>
+                </tbody>
+                <thead>
+                    <tr>
+                        <th>N = 10</th>
+                        <th></th>
+                        <th></th>
+                        <th>\(\sum d^2 = 40\)</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <div class="formula">\[ \rho = 1 - \frac{6 \sum d^2}{n (n^2-1)}\]</div>
+        <div class="formula">\[ \rho = 1 - \frac{6 \times 40}{10 (10^2 - 1)}\]</div>
+        <div class="formula">\[ \rho = 1 - \frac{240}{10 (100 - 1)}\]</div>
+        <div class="formula">\[ \rho = 1 - \frac{240}{990}\]</div>
+        <div class="formula">\[ \rho = 1 - 0.24 = + 0.76\]</div>
+        <h4>--> high Positive Correlation</h4>
+        <hr>
+        <h3>Where ranks are not given</h3>
+        <div class="table-div">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Mathematics</th>
+                        <td>85</td>
+                        <td>60</td>
+                        <td>73</td>
+                        <td>40</td>
+                        <td>90</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>Statistics</th>
+                        <td>93</td>
+                        <td>75</td>
+                        <td>65</td>
+                        <td>50</td>
+                        <td>80</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <h3>Solution</h3>
+        <div class="table-div">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Mathematics (X)</th>
+                        <th>Rank (X)</th>
+                        <th>Statistics (Y)</th>
+                        <th>Rank (Y)</th>
+                        <th>d = x - y</th>
+                        <th>\(d^2\)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>85</td>
+                        <td>2</td>
+                        <td>93</td>
+                        <td>1</td>
+                        <td>+1</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>60</td>
+                        <td>4</td>
+                        <td>75</td>
+                        <td>3</td>
+                        <td>+1</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>73</td>
+                        <td>5</td>
+                        <td>65</td>
+                        <td>4</td>
+                        <td>-1</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>40</td>
+                        <td>5</td>
+                        <td>50</td>
+                        <td>5</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>90</td>
+                        <td>1</td>
+                        <td>80</td>
+                        <td>2</td>
+                        <td>-1</td>
+                        <td>1</td>
+                    </tr>
+                </tbody>
+                <thead>
+                    <tr>
+                        <td>n = 5</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>\( \sum d^2 = 4\)</td>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <div class="formula">\[ \rho = 1 - \frac{6 \sum d^2}{n (n^2-1)}\]</div>
+        <div class="formula">\[ \rho = 1 - \frac{6 \times 4}{5(5^2 - 1)}\]</div>
+        <div class="formula">\[ \rho = 1 - \frac{24}{5 \times 24}\]</div>
+        <div class="formula">\[ \rho = 1 - \frac{1}{5} = 1 - 0.2 = + 0.8\]</div>
+        <h4>--> High Positive Correlation</h4>
+        <hr>
+        <h2>Equal Or Repeated Ranks:</h2>
+        <p>When two or more items have equal values, it is difficult to give ranks to them.</p>
+        <h3>Tie Correction Formula</h3>
+        <p>जब equal ranks हों, तो Spearman's formula में Tie Correction जोड़ना पड़ता है।</p>
+        <div class="formula">\[ \rho = 1 - \frac{6 \left[ \sum d^2 + \sum \frac{m^3 - m}{12} \right]}{n(n^2-1)}\]</div>
+        <h3>Where</h3>
+        <ul>
+            <li>d = Rank Difference</li>
+            <li>n = Number of observations</li>
+            <li>m = Equal observations की संख्या</li>
+        </ul>
+        <h3>Tie Correction Term</h3>
+        <div class="formula">\[\frac{m^3 - m}{12}\]</div>
+        <hr>
+        <h3>Equal Or Repeated Ranks:</h3>
+        <div class="table div">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>X</th>
+                        <td>48</td>
+                        <td>33</td>
+                        <td>40</td>
+                        <td>9</td>
+                        <td>16</td>
+                        <td>16</td>
+                        <td>65</td>
+                        <td>24</td>
+                        <td>16</td>
+                        <td>57</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>Y</th>
+                        <td>13</td>
+                        <td>13</td>
+                        <td>24</td>
+                        <td>6</td>
+                        <td>15</td>
+                        <td>4</td>
+                        <td>20</td>
+                        <td>9</td>
+                        <td>6</td>
+                        <td>19</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <h3>Solution</h3>
+        <div class="table div">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>X</th>
+                        <th>Rank x</th>
+                        <th>Y</th>
+                        <th>Rank y</th>
+                        <th>d = R(x) - R(y)</th>
+                        <th>\(d^2\)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>48</td>
+                        <td>8</td>
+                        <td>13</td>
+                        <td>5.5</td>
+                        <td>2.5</td>
+                        <td>6.25</td>
+                    </tr>
+                    <tr>
+                        <td>33</td>
+                        <td>6</td>
+                        <td>13</td>
+                        <td>5.5</td>
+                        <td>0.5</td>
+                        <td>0.25</td>
+                    </tr>
+                    <tr>
+                        <td>40</td>
+                        <td>7</td>
+                        <td>24</td>
+                        <td>10</td>
+                        <td>-3.0</td>
+                        <td>9.00</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>1</td>
+                        <td>6</td>
+                        <td>2.5</td>
+                        <td>-1.5</td>
+                        <td>2.25</td>
+                    </tr>
+                    <tr>
+                        <td>16</td>
+                        <td>3</td>
+                        <td>15</td>
+                        <td>7</td>
+                        <td>4.00</td>
+                        <td>16.00</td>
+                    </tr>
+                    <tr>
+                        <td>16</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>1</td>
+                        <td>2.00</td>
+                        <td>4.00</td>
+                    </tr>
+                    <tr>
+                        <td>65</td>
+                        <td>10</td>
+                        <td>20</td>
+                        <td>9</td>
+                        <td>1.00</td>
+                        <td>1.00</td>
+                    </tr>
+                    <tr>
+                        <td>24</td>
+                        <td>5</td>
+                        <td>9</td>
+                        <td>4</td>
+                        <td>1.0</td>
+                        <td>1.0</td>
+                    </tr>
+                    <tr>
+                        <td>16</td>
+                        <td>3</td>
+                        <td>6</td>
+                        <td>2.5</td>
+                        <td>0.5</td>
+                        <td>0.25</td>
+                    </tr>
+                    <tr>
+                        <td>57</td>
+                        <td>9</td>
+                        <td>19</td>
+                        <td>8</td>
+                        <td>1.0</td>
+                        <td>1.00</td>
+                    </tr>
+                </tbody>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th>\(\sum d^2 = 41\)</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <div class="formula">\[ \rho = 1 - \frac{6 \left[ \sum d^2 + \sum \frac{m^3 - m}{12} \right]}{n(n^2-1)}\]</div>
+        <div class="formula">\[ \rho = 1 - \frac{6 \left[ 4\ 1 + \frac{3^3 - 3}{12} + \frac{2^3 - 2}{12} + \frac{2^2 -
+            2}{12} \right]}{10(10^2 - 1)}\]</div>
+        <div class="formula">\[ \rho = 1 - \frac{6 \left[ 41 + \frac{24}{12} + \frac{6}{12} +
+            \frac{6}{12}\right]}{10(100 - 1)}\]</div>
+        <div class="formula">\[ \rho = 1 - \frac{6 \left[ 41 + 2 + \frac{1}{2} + \frac{1}{2} \right]}{10(99)}\]</div>
+        <div class="formula">\[ \rho = 1- \frac{6[44]}{990} \]</div>
+        <div class="formula">\[ \rho = 1- \frac{264}{990} = 1 - 0.267 = + 0.733 \]</div>
+        <h3>--> High Positive correlation</h3>
+        <hr>
+        <h2>Characteristics</h2>
+        <hr>
+        <h4>1. Rank-Based Method</h4>
+        <p>Actual values की जगह ranks का उपयोग।</p>
+        <h4>2. Simple Calculation</h4>
+        <p>Karl Pearson की तुलना में आसान।</p>
+        <h4>3. Suitable for Ordinal Data</h4>
+        <p>Ranking data के लिए सर्वोत्तम।</p>
+        <h4>4. Measures Direction and Degree</h4>
+        <p>Correlation की direction और strength दोनों बताता है।</p>
+        <hr>
+        <h3>Merits (Advantages)</h3>
+        <hr>
+        <h4>1. Easy to Calculate</h4>
+        <p>Calculation सरल होती है।</p>
+        <h4>2. Useful for Qualitative Data</h4>
+        <p>जहाँ actual measurements उपलब्ध नहीं होते।</p>
+        <h4>3. Less Affected by Extreme Values</h4>
+        <p>Outliers का प्रभाव कम पड़ता है।</p>
+        <h4>4. Suitable for Small Samples</h4>
+        <p>छोटे data set में उपयोगी।</p>
+        <hr>
+        <h2>Demerits (Limitations)</h2>
+        <h4>1. Less Accurate than Pearson's r</h4>
+        <p>Karl Pearson की तुलना में कम precise।</p>
+        <h4>2. Information Loss</h4>
+        <p>Actual values की जानकारी उपयोग नहीं होती।</p>
+        <h4>3. Large Data में Time Consuming</h4>
+        <p>Ranks assign करना कठिन हो सकता है।</p>
+        <hr>
+        <h3>One-Line Defination</h3>
+        <p><b>Spearman's Rank Correlation ranks के आधार पर दो variables के बीच correlation की direction और degree को
+                मापता है।</b></p>
+        <hr>
+
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+
+</html>

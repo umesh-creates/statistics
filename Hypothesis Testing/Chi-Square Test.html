@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="/statistics/styles/style_formate.css">
+    <title>Business Statistics | Testing of Hypothesis | Chi-Square Test</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Chi-Square Test \((\chi^2)\)</h1>
+        <p>यह बहुत important है क्योंकि:</p>
+        <ul>
+            <li>Z-Test → Means के लिए</li>
+            <li>t-Test → Means के लिए</li>
+            <li><b>Chi-Square Test → Categories / Counts / Frequencies के लिए</b></li>
+        </ul>
+        <hr>
+        <h2>सबसे पहले समझो: Chi-Square कब use होता है?</h2>
+        <p>अब तक हम पूछते थे:</p>
+        <p class="para">Average marks कितने हैं?</p>
+        <p class="para">Average salary कितनी है?</p>
+        <p>यानी Mean पर काम कर रहे थे।</p>
+        <hr>
+        <h3>Chi-Square में हम पूछते हैं:</h3>
+        <p class="para">कितने लोग Male हैं और कितने Female?</p>
+        <p class="para">कितनों ने Product A चुना और कितनों ने Product B?</p>
+        <p class="para">Gender और Product Choice related हैं या नहीं?</p>
+        <p>यानी <b>counts (गिनती)</b> पर काम करते हैं।</p>
+        <hr>
+        <h3>Example</h3>
+        <p>100 लोगों से पूछा:</p>
+        <div class="table-div">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>People</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>A</td>
+                        <td>40</td>
+                    </tr>
+                    <tr>
+                        <td>B</td>
+                        <td>35</td>
+                    </tr>
+                    <tr>
+                        <td>C</td>
+                        <td>25</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p>अब सवाल:</p>
+        <p class="para">क्या यह distribution expected distribution से match करता है?</p>
+        <p>यहीं Chi-Square आता है।</p>
+        <hr>
+        <h3>Chi-Square Formula</h3>
+        <p>पूरे chapter की foundation:</p>
+        <p>जहाँ:</p>
+        <ul>
+            <li>O = Observed Frequency</li>
+            <li>E = Expected Frequency</li>
+        </ul>
+        <hr>
+        <h3>Meaning</h3>
+        <p>Observed = जो वास्तव में मिला</p>
+        <p>Expected = जो \(H_0\) के अनुसार मिलना चाहिए था</p>
+        <hr>
+        <h3>Example</h3>
+        <p>मान लो coin fair है।</p>
+        <p>100 toss किए।</p>
+        <p>Expected:</p>
+        <div class="table-div">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Outcome</th>
+                        <th>Expected</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Head</td>
+                        <td>50</td>
+                    </tr>
+                    <tr>
+                        <td>Tail</td>
+                        <td>50</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p>लेकिन मिला:</p>
+        <div class="table-div">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Outcome</th>
+                        <th>Observed</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Head</td>
+                        <td>60</td>
+                    </tr>
+                    <tr>
+                        <td>Tail</td>
+                        <td>40</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p>अब हम पूछते हैं:</p>
+        <p class="para">क्या 60-40 सिर्फ chance की वजह से है?</p>
+        <p>या </p>
+        <p class="para">Coin biased हो सकता है?</p>
+        <p>यही Chi-Square का काम है।</p>
+        <hr>
+        <h2>Chi-Square Chapter Roadmap</h2>
+        <h4>1. Goodness of Fit Test ⭐</h4>
+        <p>सबसे आसान और foundation topic।</p>
+        <p>सवाल:</p>
+        <p class="para">Observed frequencies expected frequencies से match करती हैं या नहीं?</p>
+        <p>Example:</p>
+        <ul>
+            <li>Coin fairness</li>
+            <li>Dice fairness</li>
+            <li>Market share distribution</li>
+        </ul>
+        <hr>
+        <h4>2. Test of Independence ⭐⭐⭐</h4>
+        <p>सबसे important Chi-Square test।</p>
+        <p>सवाल:</p>
+        <p class="para">क्या दो categorical variables related हैं?</p>
+        <p>Example:</p>
+        <div class="table-div">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Gender</th>
+                        <th>Product A</th>
+                        <th>Product B</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Male</td>
+                        <td>?</td>
+                        <td>?</td>
+                    </tr>
+                    <tr>
+                        <td>Female</td>
+                        <td>?</td>
+                        <td>?</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p>Question:</p>
+        <p class="para">Gender और Product Choice independent हैं या related?</p>
+        <hr>
+        <h4>3. Test of Homogeneity</h4>
+        <p>सवाल:</p>
+        <p class="para">Different groups का distribution same है या नहीं?</p>
+        <p>यह Test of Independence से बहुत मिलता-जुलता है।</p>
+        <p>इसलिए हम इसे basic level पर ही करेंगे।</p>
+        <hr>
+        <h3>important Note :</h3>
+        <h5>✅ पहले Goodness of Fit Test (Two-Tailed concept जैसा कोई tail नहीं होता) का एक complete numerical example
+            करेंगे।</h5>
+        <hr>
+        <h2>1. Goodness of Fit Test — Complete Numerical Example</h2>
+        <hr>
+        <h4>Situation</h4>
+        <p>एक dice manufacturer दावा करता है:</p>
+        <p class="para">Dice fair है।</p>
+        <p>यदि dice fair है, तो 6 faces के आने की probability बराबर होनी चाहिए।</p>
+        <div class="formula">\[P(1) = P(2) = P(3) = P(4) = P(5) = P(6) = \frac{1}{6}\]</div>
+        <hr>
+        <h3>Step 1: Collect Data</h3>
+        <p>Dice को 60 बार roll किया गया।</p>
+        <p>Observed Frequencies:</p>
+        <div class="table-div">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Face</th>
+                        <th>Observed (O)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>8</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>9</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>12</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>14</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>12</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p>Total:</p>
+        <div class="formula">\[5+8+9+12+14+12=60\]</div>
+        <hr>
+        <h3>Step 2: Hypotheses</h3>
+        <h4>Null Hypothesis</h4>
+        <div class="formula">\[H_0 : Dice\ is\ fair\]</div>
+        <p>या </p>
+        <div class="formula">\[P(1) = P(2) = P(3) = P(4) = P(5) = P(6) = \frac{1}{6}\]</div>
+        <hr>
+        <h4>Alternative Hypothesis</h4>
+        <div class="formula">\[H_1 : Dice\ is\ not\ fair\]</div>
+        <hr>
+        <h3>Step 3: Expected Frequencies</h3>
+        <p>यहीं सबसे important concept है।</p>
+        <h4>Question</h4>
+        <p>अगर dice fair है तो 60 rolls में 1 कितनी बार आना चाहिए?</p>
+        <p>Probability:</p>
+        <div class="formula">\[\frac{1}{6}\]</div>
+        <p>Total Rolls:</p>
+        <div class="formula">\[60\]</div>
+        <p>Expected Frequency:</p>
+        <div class="formula">\[E = n \times p\]</div>
+        <div class="formula">\[E = 60 \times \frac{1}{6}\]</div>
+        <div class="formula">\[E = 10\]</div>
+        <hr>
+        <p>इसी तरह सभी faces के लिए:</p>
+        <div class="table-div">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Face</th>
+                        <th>Expected (E)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>10</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <h3>Full Table</h3>
+        <div class="table-div">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Face</th>
+                        <th>O</th>
+                        <th>E</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>5</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>8</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>9</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>12</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>14</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>12</td>
+                        <td>10</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <h3>Step 4: Chi-Square Formula</h3>
+        <p>अब हर row के लिए calculate करेंगे।</p>
+        <div class="table-div">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Face</th>
+                        <th>O</th>
+                        <th>E</th>
+                        <th>O−E</th>
+                        <th>(O−E)²</th>
+                        <th>(O−E)²/E</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td>-5</td>
+                        <td>25</td>
+                        <td>2.5</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>8</td>
+                        <td>10</td>
+                        <td>-2</td>
+                        <td>4</td>
+                        <td>0.4</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>9</td>
+                        <td>10</td>
+                        <td>-1</td>
+                        <td>1</td>
+                        <td>0.1</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>12</td>
+                        <td>10</td>
+                        <td>2</td>
+                        <td>4</td>
+                        <td>0.4</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>14</td>
+                        <td>10</td>
+                        <td>4</td>
+                        <td>16</td>
+                        <td>1.6</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>12</td>
+                        <td>10</td>
+                        <td>2</td>
+                        <td>4</td>
+                        <td>0.4</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p>अब last column जोड़ो:</p>
+        <div class="formula">\[2.5+0.4+0.1+0.4+1.6+0.4\]</div>
+        <div class="formula">\[\chi^2 = 5.4\]</div>
+        <p>✅ Chi-Square Statistic = 5.4</p>
+        <hr>
+        <h4>Formula :</h4>
+        <div class="formula">\[\chi^2 = \sum \frac{(O-E)^2}{E}\]</div>
+        <hr>
+        <h3>Step 6: Degrees of Freedom</h3>
+        <p>Goodness of Fit Test में:</p>
+        <div class="formula">\[df = k - 1\]</div>
+        <p>जहाँ:</p>
+        <div class="formula">\[k=Number\ of\ Categories\]</div>
+        <p>यहाँ:</p>
+        <div class="formula">\[k = 6\]</div>
+        <p>तो:</p>
+        <div class="formula">\[df = k - 1\]</div>
+        <div class="formula">\[df = 6 - 1\]</div>
+        <div class="formula">\[\boxed{df = 5}\]</div>
+        <p>✅ df = 5</p>
+        <hr>
+        <h3>Step 7: Critical Value</h3>
+        <p>Depends on:</p>
+        <ul>
+            <li>\(\alpha\)</li>
+            <li>df</li>
+        </ul>
+        <p>यहाँ:</p>
+        <div class="formula">\[\alpha = 0.05\]</div>
+        <div class="formula">\[df = 5\]</div>
+        <p>Critical Value:</p>
+        <div class="formula">\[Critical\ Value = 11.07\]</div>
+        <hr>
+        <h3>Step 8: Decision</h3>
+        <p>Compare:</p>
+        <div class="formula">\[\chi^2 = 5.4\]</div>
+        <div class="formula">\[Critical = 11.07\]</div>
+        <div class="formula">\[5.4 < 11.07\]</div>
+                <p>✅ \(H_0\) Not Rejected</p>
+                <hr>
+                <h3>Step 9: p-value Decision</h3>
+                <p>Depends on:</p>
+                <ul>
+                    <li>\(\chi^2\)</li>
+                    <li>df</li>
+                </ul>
+                <p>इसलिए </p>
+                <div class="formula">\[P-Value = 0.999971\]</div>
+                <p>और</p>
+                <div class="formula">\[0.999971 > 0.05\]</div>
+                <p>✅ \(H_0\) Not Rejected</p>
+                <hr>
+                <h3>Final Conclusion</h3>
+                <p>There is insufficient evidence to conclude that the dice is biased.</p>
+                <p>या</p>
+                <p class="para">उपलब्ध data यह साबित नहीं करता कि dice unfair है।</p>
+                <p>या</p>
+                <p class="para">Dice को fair मानने वाले claim को reject करने के लिए पर्याप्त evidence नहीं है।</p>
+                <hr>
+                <h2>Goodness of Fit Test — Company Survey Example</h2>
+                <h4>Situation</h4>
+                <p>एक e-commerce company दावा करती है कि उसके customers चार product categories में इस proportion से
+                    खरीदारी करते हैं:</p>
+                <div class="table-div">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Category</th>
+                                <th>Expected Share</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Electronics</td>
+                                <td>40%</td>
+                            </tr>
+                            <tr>
+                                <td>Clothing</td>
+                                <td>30%</td>
+                            </tr>
+                            <tr>
+                                <td>Home Decor</td>
+                                <td>20%</td>
+                            </tr>
+                            <tr>
+                                <td>Books</td>
+                                <td>10%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p>Company ने 200 recent orders का sample लिया।</p>
+                <h3>Step 1: Hypotheses</h3>
+                <div class="formula">\[H_0 :\]</div>
+                <p>Customer purchases expected distribution follow करते हैं।</p>
+                <hr>
+                <div class="formula">\[H_1 :\]</div>
+                <p>Customer purchases expected distribution follow नहीं करते।</p>
+                <hr>
+                <h3>Step 2: Observed Data</h3>
+                <div class="table-div">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Category</th>
+                                <th>Observed (O)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Electronics</td>
+                                <td>90</td>
+                            </tr>
+                            <tr>
+                                <td>Clothing</td>
+                                <td>50</td>
+                            </tr>
+                            <tr>
+                                <td>Home Decor</td>
+                                <td>40</td>
+                            </tr>
+                            <tr>
+                                <td>Books</td>
+                                <td>20</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p>Total:</p>
+                <div class="formula">\[200\]</div>
+                <hr>
+                <h3>Step 3: Expected Frequencies</h3>
+                <p>Formula :</p>
+                <div class="formula">\[E = n \times p\]</div>
+                <hr>
+                <h4>Electronics</h4>
+                <div class="formula">\[E = 200 \times 0.40\]</div>
+                <div class="formula">\[E = 80\]</div>
+                <hr>
+                <h4>Clothing</h4>
+                <div class="formula">\[E = 200 \times 0.30\]</div>
+                <div class="formula">\[E = 60\]</div>
+                <hr>
+                <h4>Home Decor</h4>
+                <div class="formula">\[E = 200 \times 0.20\]</div>
+                <div class="formula">\[E = 40\]</div>
+                <hr>
+                <h4>Books</h4>
+                <div class="formula">\[E = 200 \times 0.10\]</div>
+                <div class="formula">E = 20</div>
+                <hr>
+                <h3>Expected Table</h3>
+                <div class="table-div">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Category</th>
+                                <th>O</th>
+                                <th>E</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Electronics</td>
+                                <td>90</td>
+                                <td>80</td>
+                            </tr>
+                            <tr>
+                                <td>Clothing</td>
+                                <td>50</td>
+                                <td>60</td>
+                            </tr>
+                            <tr>
+                                <td>Home Decor</td>
+                                <td>40</td>
+                                <td>40</td>
+                            </tr>
+                            <tr>
+                                <td>Books</td>
+                                <td>20</td>
+                                <td>20</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <h3>Step 4: Chi-Square Calculation</h3>
+                <div class="formula">\[\chi^2 = \sum \frac{(O-E)^2}{E}\]</div>
+                <div class="table-div">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Category</th>
+                                <th>O</th>
+                                <th>E</th>
+                                <th>O−E</th>
+                                <th>(O−E)²/E</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Electronics</td>
+                                <td>90</td>
+                                <td>80</td>
+                                <td>10</td>
+                                <td>1.25</td>
+                            </tr>
+                            <tr>
+                                <td>Clothing</td>
+                                <td>50</td>
+                                <td>60</td>
+                                <td>-10</td>
+                                <td>1.67</td>
+                            </tr>
+                            <tr>
+                                <td>Home Decor</td>
+                                <td>40</td>
+                                <td>40</td>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>Books</td>
+                                <td>20</td>
+                                <td>20</td>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="formula">\[\chi^2 = 1.25+1.67\]</div>
+                <div class="formula">\[\chi^2 = 2.92\]</div>
+                <hr>
+                <h3>Step 5: Degrees of Freedom</h3>
+                <p>Categories:</p>
+                <div class="formula">\[k = 4\]</div>
+                <div class="formula">\[df = k - 1\]</div>
+                <div class="formula">\[df = 4 - 1\]</div>
+                <div class="formula">\[df = 3\]</div>
+                <hr>
+                <h3>Step 6: Critical Value</h3>
+                <div class="formula">\[\alpha = 0.05\]</div>
+                <div class="formula">\[df = 3\]</div>
+                <p>Critical Value:</p>
+                <div class="formula">\[7.815\]</div>
+                <hr>
+                <h3>Step 7: Decision</h3>
+                <div class="formula">\[2.92 < 7.815\]</div>
+                        <p>✅ \(H_0\) Not Rejected</p>
+                        <hr>
+                        <h3>Step 8: p-value Decision</h3>
+                        <div class="formula">\[\chi^2 = 2.92\]</div>
+                        <div class="formula">\[df = 3\]</div>
+                        <p>P-Value :</p>
+                        <div class="formula">\[0.40\]</div>
+                        <p>Compare:</p>
+                        <div class="formula">\[\alpha = 0.05\]</div>
+                        <div class="formula">\[0.40 > 0.05\]</div>
+                        <p>✅ \(H_0\) Not Rejected</p>
+                        <hr>
+                        <h3>Final Conclusion</h3>
+                        <p>There is insufficient evidence to conclude that customer purchases differ from the company's
+                            claimed distribution.</p>
+                        <p>या </p>
+                        <p class="para">Sample data company के claimed customer purchase distribution के खिलाफ पर्याप्त
+                            evidence नहीं देता।</p>
+                        <hr>
+                        <h2>Test of Independence — Complete Numerical Example</h2>
+                        <h4>Situation</h4>
+                        <p>एक company जानना चाहती है:</p>
+                        <p class="para">क्या Gender और Product Choice के बीच कोई relationship है?</p>
+                        <p>100 customers का survey किया गया।</p>
+                        <hr>
+                        <h3>Step 1: Observed Data</h3>
+                        <div class="table-div">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Gender</th>
+                                        <th>Product A</th>
+                                        <th>Product B</th>
+                                        <th>Row Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Male</td>
+                                        <td>30</td>
+                                        <td>20</td>
+                                        <th>50</th>
+                                    </tr>
+                                    <tr>
+                                        <td>Female</td>
+                                        <td>10</td>
+                                        <td>40</td>
+                                        <th>50</th>
+                                    </tr>
+                                    <tr>
+                                        <th>Column Total</th>
+                                        <th>40</th>
+                                        <th>60</th>
+                                        <th>100</th>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p>यह table <b>Observed Frequencies (O)</b> की table है।</p>
+                        <hr>
+                        <h3>Step 2: Hypotheses</h3>
+                        <h4>Null Hypothesis</h4>
+                        <div class="formula">\[H_0 :\]</div>
+                        <p>Gender and Product Choice are independent.</p>
+                        <hr>
+                        <h4>Alternative Hypothesis</h4>
+                        <div class="formula">\[H_1\]</div>
+                        <p>Gender and Product Choice are not independent.</p>
+                        <hr>
+                        <h3>Step 3: Expected Frequencies</h3>
+                        <p>यहाँ सबसे important नया concept आता है।</p>
+                        <p>Formula:</p>
+                        <div class="formula">\[E = \frac{(Row\ Total) (Column\ Total)}{Grand\ Total}\]</div>
+                        <hr>
+                        <h3>Cell 1: Male & Product A</h3>
+                        <p>Observed:</p>
+                        <div class="formula">\[O = 30\]</div>
+                        <p>Expected:</p>
+                        <div class="formula">\[E = \frac{50 \times 40}{100}\]</div>
+                        <div class="formula">\[E = 20\]</div>
+                        <hr>
+                        <h3>Cell 2: Male & Product B</h3>
+                        <div class="formula">\[E = \frac{50 \times 60}{100}\]</div>
+                        <div class="formula">\[E = 30\]</div>
+                        <hr>
+                        <h3>Cell 3: Female & Product A</h3>
+                        <div class="formula">\[E = \frac{50 \times 40}{100}\]</div>
+                        <div class="formula">\[E = 20\]</div>
+                        <hr>
+                        <h3>Cell 4: Female & Product B</h3>
+                        <div class="formula">\[E = \frac{50 \times 60}{100}\]</div>
+                        <div class="formula">\[E = 30\]</div>
+                        <hr>
+                        <h3>Expected Frequency Table</h3>
+                        <div class="table-div">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Gender</th>
+                                        <th>Product A</th>
+                                        <th>Product B</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Male</td>
+                                        <td>20</td>
+                                        <td>30</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Female</td>
+                                        <td>20</td>
+                                        <td>30</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <h3>Step 4: Why Did We Get These Expected Values?</h3>
+                        <p>यह सबसे important understanding है।</p>
+                        <p>अगर Gender और Product Choice वास्तव में independent हैं:</p>
+                        <p>तो Product A के 40 customers हैं।</p>
+                        <p>100 customers में से:</p>
+                        <div class="formula">\[40\%\]</div>
+                        <p>ने Product A चुना।</p>
+                        <hr>
+                        <p>Male customers:</p>
+                        <div class="formula">\[50\]</div>
+                        <p>हैं।</p>
+                        <p>यदि independence सही है:</p>
+                        <p>तो Male group में भी लगभग</p>
+                        <div class="formula">\[40\%\]</div>
+                        <p>को Product A चुनना चाहिए।</p>
+                        <div class="formula">\[50 \times 0.40 = 20\]</div>
+                        <p>इसलिए Expected Frequency = 20 आती है।</p>
+                        <hr>
+                        <h3>Step 5: Chi-Square Calculation Table</h3>
+                        <p>Formula:</p>
+                        <div class="table-div">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Cell</th>
+                                        <th>O</th>
+                                        <th>E</th>
+                                        <th>O−E</th>
+                                        <th>(O−E)²/E</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Male-A</td>
+                                        <td>30</td>
+                                        <td>20</td>
+                                        <td>10</td>
+                                        <td>5</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Male-B</td>
+                                        <td>20</td>
+                                        <td>30</td>
+                                        <td>-10</td>
+                                        <td>3.33</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Female-A</td>
+                                        <td>10</td>
+                                        <td>20</td>
+                                        <td>-10</td>
+                                        <td>5</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Female-B</td>
+                                        <td>40</td>
+                                        <td>30</td>
+                                        <td>10</td>
+                                        <td>3.33</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p>Add last column:</p>
+                        <div class="formula">\[5+3.33+5+3.33\]</div>
+                        <div class="formula">\[\chi^2 = 16.66\]</div>
+                        <p>✅ Chi-Square Statistic = 16.66</p>
+                        <hr>
+                        <h3>Step 6: Degrees of Freedom</h3>
+                        <p>Test of Independence में:</p>
+                        <div class="formula">\[df = (r - 1) (c - 1)\]</div>
+                        <p>जहाँ:</p>
+                        <ul>
+                            <li>r = row</li>
+                            <li>c = column</li>
+                        </ul>
+                        <hr>
+                        <p>यहाँ </p>
+                        <div class="formula">\[r = 2\]</div>
+                        <div class="formula">\[c = 2\]</div>
+                        <div class="formula">\[df = (2 - 1)(2 - 1)\]</div>
+                        <div class="formula">\[df = 1\]</div>
+                        <hr>
+                        <h3>Step 7: Critical Value Decision</h3>
+                        <p>Depends on:</p>
+                        <ul>
+                            <li>\(\alpha\)</li>
+                            <li>df</li>
+                        </ul>
+                        <div class="formula">\[\alpha = 0.05\]</div>
+                        <div class="formula">\[df = 1\]</div>
+                        <p>Critical Value:</p>
+                        <div class="formula">\[3.841\]</div>
+                        <hr>
+                        <p>Compare:</p>
+                        <div class="formula">\[16.66 > 3.841\]</div>
+                        <p>✅ Reject \(H_0\)</p>
+                        <hr>
+                        <h3>Step 8: p-value Decision</h3>
+                        <p>Depends on:</p>
+                        <ul>
+                            <li>\(\chi^2\)</li>
+                            <li>df</li>
+                        </ul>
+                        <hr>
+                        <div class="formula">\[\chi^2 = 16.66\]</div>
+                        <div class="formula">\[df = 1\]</div>
+                        <p>p-value:</p>
+                        <div class="formula">\[P-Value = 0.000045\]</div>
+                        <hr>
+                        <p>Compare :</p>
+                        <div class="formula">\[0.000045 < 0.05\]</div>
+                                <p>✅ Reject \(H_0\)</p>
+                                <hr>
+                                <h3>Final Conclusion</h3>
+                                <p>There is sufficient evidence to conclude that Gender and Product Choice are
+                                    associated.</p>
+                                <p>या </p>
+                                <p class="para">Gender और Product Choice independent नहीं हैं।</p>
+                                <p>या </p>
+                                <p class="para">Customer gender product choice को influence करता प्रतीत होता है।</p>
+                                <hr>
+                                <h2>Test of Homogeneity — Complete Numerical Example</h2>
+                                <h4>Situation</h4>
+                                <p>एक company जानना चाहती है:</p>
+                                <p class="para">क्या Nagpur, Pune और Mumbai में product preference का distribution समान
+                                    है?</p>
+                                <p>300 customers का survey किया गया।</p>
+                                <hr>
+                                <h3>Step 1: Observed Data</h3>
+                                <div class="table-div">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>City</th>
+                                                <th>Product A</th>
+                                                <th>Product B</th>
+                                                <th>Row Total</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Nagpur</td>
+                                                <td>40</td>
+                                                <td>60</td>
+                                                <th>100</th>
+                                            </tr>
+                                            <tr>
+                                                <td>Pune</td>
+                                                <td>50</td>
+                                                <td>50</td>
+                                                <th>100</th>
+                                            </tr>
+                                            <tr>
+                                                <td>Mumbai</td>
+                                                <td>70</td>
+                                                <td>30</td>
+                                                <th>100</th>
+                                            </tr>
+                                            <tr>
+                                                <th>Column Total</th>
+                                                <th>160</th>
+                                                <th>140</th>
+                                                <th>300</th>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <h3>Step 2: Hypotheses</h3>
+                                <h4>Null Hypothesis</h4>
+                                <div class="formula">\[H_0 :\]</div>
+                                <p>सभी cities में product preference का distribution समान है।</p>
+                                <hr>
+                                <h4>Alternative Hypothesis</h4>
+                                <div class="formula">\[H_1 :\]</div>
+                                <p>सभी cities में product preference का distribution समान नहीं है।</p>
+                                <hr>
+                                <h3>Step 3: Expected Frequencies</h3>
+                                <p>Formula:</p>
+                                <div class="formula">\[E = \frac{(Row\ Total)(Column\ Total)}{Grand\ Total}\]</div>
+                                <hr>
+                                <h3>Nagpur - Product A</h3>
+                                <div class="formula">\[E = \frac{100 \times 160}{300}\]</div>
+                                <div class="formula">\[\boxed{E = 53.33}\]</div>
+                                <hr>
+                                <h3>Nagpur - Product B</h3>
+                                <div class="formula">\[E = \frac{100 \times 140}{300}\]</div>
+                                <div class="formula">\[\boxed{E = 46.67}\]</div>
+                                <hr>
+                                <p>क्योंकि Pune और Mumbai की row totals भी 100 हैं, इसलिए Expected Frequencies भी वही
+                                    आएँगी।</p>
+                                <hr>
+                                <h3>Expected Table</h3>
+                                <div class="table-div">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>City</th>
+                                                <th>Product A</th>
+                                                <th>Product B</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Nagpur</td>
+                                                <td>53.33</td>
+                                                <td>46.67</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Pune</td>
+                                                <td>53.33</td>
+                                                <td>46.67</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Mumbai</td>
+                                                <td>53.33</td>
+                                                <td>46.67</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <h3>Step 4: Chi-Square Calculation</h3>
+                                <p>Formula:</p>
+                                <div class="table-div">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>Cell</th>
+                                                <th>O</th>
+                                                <th>E</th>
+                                                <th>(O−E)²/E</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Nagpur-A</td>
+                                                <td>40</td>
+                                                <td>53.33</td>
+                                                <td>3.33</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Nagpur-B</td>
+                                                <td>60</td>
+                                                <td>46.67</td>
+                                                <td>3.81</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Pune-A</td>
+                                                <td>50</td>
+                                                <td>53.33</td>
+                                                <td>0.21</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Pune-B</td>
+                                                <td>50</td>
+                                                <td>46.67</td>
+                                                <td>0.24</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Mumbai-A</td>
+                                                <td>70</td>
+                                                <td>53.33</td>
+                                                <td>5.21</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Mumbai-B</td>
+                                                <td>30</td>
+                                                <td>46.67</td>
+                                                <td>5.95</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <p>अब सब जोड़ते हैं:</p>
+                                <div class="formula">\[\chi^2 = 3.33+3.81+0.21+0.24+5.21+5.95\]</div>
+                                <div class="formula">\[\chi^2 = 18.75\]</div>
+                                <hr>
+                                <p>✅ Chi-Square Statistic = 18.75</p>
+                                <hr>
+                                <h3>Step 5: Degrees of Freedom</h3>
+                                <p>Formula:</p>
+                                <div class="formula">\[df=(r−1)(c−1)\]</div>
+                                <p>यहाँ:</p>
+                                <div class="formula">\[r = 3\]</div>
+                                <div class="formula">\[c = 2\]</div>
+                                <div class="formula">\[df = (3 - 1) (2 - 1)\]</div>
+                                <div class="formula">\[\boxed{df = 2}\]</div>
+                                <p>✅ df = 2</p>
+                                <hr>
+                                <h3>Step 6: Critical Value Decision</h3>
+                                <div class="formula">\[\alpha = 0.05\]</div>
+                                <div class="formula">\[df = 2\]</div>
+                                <p>Critical Value:</p>
+                                <div class="formula">\[5.991\]</div>
+                                <hr>
+                                <p>Compare:</p>
+                                <div class="formula">\[18.75>5.991\]</div>
+                                <p>✅ Reject \(H_0\)</p>
+                                <hr>
+                                <h3>Step 7: p-value Decision</h3>
+                                <p>Depends on:</p>
+                                <ul>
+                                    <li>\(\chi^2 = 18.75\)</li>
+                                    <li>df = 2</li>
+                                </ul>
+                                <p>p-value:</p>
+                                <div class="formula">\[0.0000928\]</div>
+                                <p>Compare:</p>
+                                <div class="formula">\[0.0000928 < 0.05\]</div>
+                                        <p>✅ Reject \(H_0\)</p>
+                                        <hr>
+                                        <h3>Final Conclusion</h3>
+                                        <p class="para">There is sufficient evidence to conclude that product preference
+                                            distributions are not the same across Nagpur, Pune, and Mumbai.</p>
+                                        <p class="para">तीनों cities में customers की product preferences समान नहीं हैं।
+                                        </p>
+                                        <hr>
+                                        <div class="table-div">
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Test</th>
+                                                        <th>Question</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Independence</td>
+                                                        <td>क्या दो variables related हैं?</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Homogeneity</td>
+                                                        <td>क्या कई groups का distribution same है?</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+
+</html>

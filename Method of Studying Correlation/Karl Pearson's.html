@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="/statistics/styles/style_formate.css">
+    <title>Business Statistics | Methods of Studying Correlation | Karl Pearson's Coefficient</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Karl Pearson's Coefficient of Correlation (Pearson's r)</h1>
+        <hr>
+        <p><b>Karl Pearson's Coefficient of Correlation</b> correlation को मापने की सबसे प्रसिद्ध और वैज्ञानिक
+            <b>mathematical method</b> है। यह दो variables के बीच <b>direction</b> तथा <b>degree</b> (strength) को
+            संख्यात्मक रूप में व्यक्त करता है।
+        </p>
+        <p>इस coefficient को r द्वारा प्रदर्शित किया जाता है।</p>
+        <p><b>Karl Pearson's Coefficient of Correlation is a statistical measure that shows the degree and direction of
+                linear relationship between two variables.</b></p>
+        <hr>
+        <h3>Symbol</h3>
+        <pre>r</pre>
+        <p>जहाँ,</p>
+        <p><b>r = Correlation Coefficient</b></p>
+        <hr>
+        <h3>Formula</h3>
+        <div class="formula">\[r = \frac{\sum (X - \bar{X})(Y - \bar{Y})}{\sqrt{\sum (X - \bar{X})^2 \sum (Y -
+            \bar{Y})^2}}\]</div>
+        <h4>Where</h4>
+        <ul>
+            <li>X = First Variable</li>
+            <li>Y = Second Variable</li>
+            <li>X̄ = Mean of X</li>
+            <li>Ȳ = Mean of Y</li>
+        </ul>
+        <hr>
+        <h3>Range of r</h3>
+        <p>Correlation coefficient की value हमेशा:</p>
+        <pre>-1 ≤ r ≤ +1</pre>
+        <p>के बीच होती है।</p>
+        <hr>
+        <h2>Interpretation of r</h2>
+        <div class="table-div">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Value of r</th>
+                        <th>Interpretation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>+1</td>
+                        <td>Perfect Positive Correlation</td>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td>No Correlation</td>
+                    </tr>
+                    <tr>
+                        <td>-1</td>
+                        <td>Perfect Negative Correlation</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <hr>
+        <h3>Degree of Correlation</h3>
+        <div class="table-div">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Coefficient (r)</th>
+                        <th>Degree</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>±1.00</td>
+                        <td>Perfect Correlation</td>
+                    </tr>
+                    <tr>
+                        <td>±0.75 to ±0.99</td>
+                        <td>High Correlation</td>
+                    </tr>
+                    <tr>
+                        <td>±0.25 to ±0.74</td>
+                        <td>Moderate Correlation</td>
+                    </tr>
+                    <tr>
+                        <td>±0.01 to ±0.24</td>
+                        <td>Low Correlation</td>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td>No Correlation</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <hr>
+        <h2>Example</h2>
+        <div class="table-div">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>X</th>
+                        <td>100</td>
+                        <td>101</td>
+                        <td>102</td>
+                        <td>102</td>
+                        <td>100</td>
+                        <td>99</td>
+                        <td>97</td>
+                        <td>98</td>
+                        <td>96</td>
+                        <td>95</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>Y</th>
+                        <td>98</td>
+                        <td>99</td>
+                        <td>99</td>
+                        <td>97</td>
+                        <td>95</td>
+                        <td>92</td>
+                        <td>95</td>
+                        <td>94</td>
+                        <td>90</td>
+                        <td>91</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <h3>Solution</h3>
+        <div class="table-div">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>X</th>
+                        <th>X - \(\bar{X}\)</th>
+                        <th>\(X^2\)</th>
+                        <th>Y</th>
+                        <th>Y - \(\bar{Y}\)</th>
+                        <th>\(Y^2\)</th>
+                        <th>X -\(\bar{X}\) \(\times\) Y - \(\bar{Y}\)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>100</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>98</td>
+                        <td>3</td>
+                        <td>9</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>101</td>
+                        <td>2</td>
+                        <td>4</td>
+                        <td>99</td>
+                        <td>4</td>
+                        <td>16</td>
+                        <td>8</td>
+                    </tr>
+                    <tr>
+                        <td>102</td>
+                        <td>3</td>
+                        <td>9</td>
+                        <td>99</td>
+                        <td>4</td>
+                        <td>16</td>
+                        <td>12</td>
+                    </tr>
+                    <tr>
+                        <td>102</td>
+                        <td>3</td>
+                        <td>9</td>
+                        <td>97</td>
+                        <td>2</td>
+                        <td>4</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td>100</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>95</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>99</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>92</td>
+                        <td>-3</td>
+                        <td>9</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>97</td>
+                        <td>-2</td>
+                        <td>4</td>
+                        <td>95</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>98</td>
+                        <td>-1</td>
+                        <td>1</td>
+                        <td>94</td>
+                        <td>-1</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>96</td>
+                        <td>-3</td>
+                        <td>9</td>
+                        <td>90</td>
+                        <td>-5</td>
+                        <td>25</td>
+                        <td>15</td>
+                    </tr>
+                    <tr>95</tr>
+                    <tr>-4</tr>
+                    <tr>16</tr>
+                    <tr>91</tr>
+                    <tr>-4</tr>
+                    <tr>16</tr>
+                    <tr>16</tr>
+                </tbody>
+                <thead>
+                    <tr>
+                        <th>990</th>
+                        <th></th>
+                        <th>54</th>
+                        <th>950</th>
+                        <th></th>
+                        <th>96</th>
+                        <th>61</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <div class="formula">\(\bar{X} = \frac{990}{10} = 99\)</div>
+        <div class="formula">\(\bar{Y} = \frac{950}{10} = 95\)</div>
+        <div class="formula">\[r = \frac{\sum (X - \bar{X})(Y - \bar{Y})}{\sqrt{\sum (X - \bar{X})^2 \sum (Y -
+            \bar{Y})^2}}\]</div>
+        <div class="formula">\[r = \frac{61}{54 \times 96} = \frac{61}{5184} = \frac{61}{72} = + 0.85\]</div>
+        <h4>--> High Positive Correlation</h4>
+        <hr>
+        <h2>Characteristics of Karl Pearson's Method</h2>
+        <hr>
+        <h3>1. Mathematical Method</h3>
+        <p>यह graphical नहीं बल्कि numerical method है।</p>
+        <h3>2. Measures Both Direction and Degree</h3>
+        <ul>
+            <li>Positive/Negative direction बताता है।</li>
+            <li>Relationship की strength भी बताता है।</li>
+        </ul>
+        <h3>3. Most Accurate Method</h3>
+        <p>Correlation मापने की सबसे widely used method है।</p>
+        <hr>
+        <h2>Assumptions</h2>
+        <hr>
+        <h4>Linear Relationship</h4>
+        <p>Variables के बीच relationship लगभग linear होना चाहिए।</p>
+        <h4>Quantitative Data</h4>
+        <p>Data numerical form में होना चाहिए।</p>
+        <hr>
+        <h2>Merits (Advantages)</h2>
+        <h4>1. Most Scientific Method</h4>
+        <p>Correlation का सबसे विश्वसनीय measure।</p>
+        <h4>2. Exact Numerical Value</h4>
+        <p>Correlation की सटीक value देता है।</p>
+        <h4>3. Uses All Data</h4>
+        <p>सभी observations का उपयोग करता है।</p>
+        <h4>4. Widely Accepted</h4>
+        <p>Research, Economics, Statistics, Data Analysis आदि में सबसे अधिक उपयोग।</p>
+        <hr>
+        <h2>Demerits (Limitations)</h2>
+        <h4>1. Lengthy Calculations</h4>
+        <p>हाथ से calculation करने में समय लगता है।</p>
+        <h4>2. Sensitive to Extreme Values</h4>
+        <p>Extreme values (Outliers) result को प्रभावित कर सकते हैं।</p>
+        <h4>3. Measures Only Linear Correlation</h4>
+        <p>Non-linear relationship को सही तरह नहीं मापता।</p>
+        <hr>
+        <h2>One-Line Revision</h2>
+        <p><b>Karl Pearson's Coefficient of Correlation (r) दो variables के बीच linear relationship की direction और
+                degree को संख्यात्मक रूप में मापता है।</b></p>
+
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+
+</html>

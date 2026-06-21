@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="/statistics/styles/style_formate.css">
+    <title>Business Statistics | Testing of Hypothesis | Errors</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Testing of Hypothesis</h1>
+        <hr>
+        <h2>Errors</h2>
+        <hr>
+        <h3>Type I Error (\(\alpha\) Error)</h3>
+        <hr>
+        <p><b>Type I Error =</b> जब \(H_0\) <b>सच हो</b>, फिर भी हम उसे <b>Reject</b> कर दें।</p>
+        <p>👉 यानी <b>सही चीज़ को गलत मान लेना।</b></p>
+        <h4>Example</h4>
+        <p>एक व्यक्ति वास्तव में <b>निर्दोष (Innocent)</b> है।</p>
+        <p>फिर भी court उसे <b>दोषी (Guilty)</b> घोषित कर देती है।</p>
+        <ul>
+            <li>Reality: निर्दोष</li>
+            <li>Decision: दोषी</li>
+        </ul>
+        <p>👉 यह <b>Type I Error</b> है।</p>
+        <h5>Hypothesis Testing Language</h5>
+        <ul>
+            <li>\(H_0\) सच है</li>
+            <li>हमने \(H_0\) Reject कर दिया</li>
+        </ul>
+        <p><b>👉 Type I Error (\(\alpha\) Error)</b></p>
+        <h3>Trick</h3>
+        <p><b>Type I Error = True H₀ को गलती से reject कर दिया । ✅</b></p>
+        <p>यही <b>error \(\alpha\) (Level of Significance)</b> द्वारा measure की जाती है। <br>
+            इसलिए इसे \(\alpha\) Error भी कहते हैं। 🎯</p>
+        <hr>
+        <h3>Type II Error (\(\alpha\) Error)</h3>
+        <p><b>Type II Error</b> = जब \(H_0\) <b>झूठा हो</b>, फिर भी हम उसे <b>Reject न करें।</b></p>
+        <p>👉 यानी <b>गलत चीज़ को सही मान लेना।</b></p>
+        <h4>Example</h4>
+        <p>एक व्यक्ति वास्तव में <b>दोषी (Guilty)</b> है।</p>
+        <p>फिर भी court उसे <b>निर्दोष (Innocent)</b> छोड़ देती है।</p>
+        <ul>
+            <li>Reality: दोषी</li>
+            <li>Decision: निर्दोष</li>
+        </ul>
+        <p>👉 यह <b>Type II Error</b> है।</p>
+        <h5>Hypothesis Testing Language</h5>
+        <ul>
+            <li>\(H_0\) झूठा है</li>
+            <li>हमने \(H_0\) Reject नहीं किया</li>
+        </ul>
+        <p><b>👉 Type II Error (β Error)</b></p>
+        <h4>Trick</h4>
+        <p><b>Type II Error = False H₀ ko galti se Accept (Reject na karna) kar lena. ✅</b></p>
+        <hr>
+        <h4>याद रखने की Table</h4>
+        <div class="table-div">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Reality</th>
+                        <th>Decision</th>
+                        <th>Error</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>\(H_0\) sach</td>
+                        <td>\(H_0\) Reject</td>
+                        <td>Type I Error (\(\alpha\))</td>
+                    </tr>
+                    <tr>
+                        <td>\(H_0\) jhootha</td>
+                        <td>\(H_0\) Reject nahi</td>
+                        <td>Type II Error (\(\beta\))</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <hr>
+        <h3>Power of Test</h3>
+        <p><b>Power of Test </b>= किसी test की यह क्षमता कि वह <b>झूठे \(H_0\) को सही तरीके से Reject कर सके।</b></p>
+        <p>👉 यानी जब \(H_0\) वास्तव में गलत हो, तो उसे पकड़ लेने की probability।</p>
+        <h4>Formula</h4>
+        <p><b>\(Power\ of\ Test = 1 − \beta\)</b></p>
+        <h4>Example</h4>
+        <p>मान लो:</p>
+        <ul>
+            <li>\(\beta = 0.20 \ (20 \%)\)</li>
+        </ul>
+        <p>तो</p>
+        <p><b>Power = 1 − 0.20 = 0.80 = 80%</b></p>
+        <p>👉 मतलब test के पास 80% chance है कि वह गलत \(H_0\) को पकड़कर Reject कर देगा।</p>
+        <hr>
+        <h4>Trick</h4>
+        <ul>
+            <li><b>\(\beta\) = गलत \(H_0\) को न पकड़ पाने की probability</b></li>
+            <li><b>Power = गलत \(H_0\) को पकड़ लेने की probability ✅</b></li>
+        </ul>
+        <p>याद रखो:</p>
+        <p><b>High Power = Better Test 🎯</b></p>
+        <p>क्योंकि ऐसा test गलत \(H_0\) को अधिक बार सही तरीके से Reject करता है।</p>
+        <hr>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+
+</html>

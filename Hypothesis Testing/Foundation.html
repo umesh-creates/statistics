@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="/statistics/styles/style_formate.css">
+    <title>Business Statistics | Testing of Hypothesis | Foundation</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Testing of Hypothesis</h1>
+        <hr>
+        <h2>Foundation</h2>
+        <hr>
+        <h3>Population vs Sample</h3>
+        <ul>
+            <li><b>Population</b> = पूरा group जिसके बारे में study करनी है। (जैसे: school के सभी 1000 students)</li>
+            <li><b>Sample</b> = Population का छोटा हिस्सा जिस पर study की जाती है। (जैसे: उन्हीं 1000 में से 100
+                students)</li>
+        </ul>
+        <hr>
+        <h3>Parameter vs Statistic</h3>
+        <ul>
+            <li><b>Parameter</b> = Population का numerical measure। (जैसे: सभी students का actual average marks)</li>
+            <li><b>Statistic</b> = Sample का numerical measure। (जैसे: चुने गए 100 students का average marks)</li>
+        </ul>
+        <p><b>👉 Parameter → Population से आता है</b></p>
+        <p><b>👉 Statistic → Sample से आता है</b></p>
+        <hr>
+        <h3>Sampling Error</h3>
+        <p><b>Sampling Error</b> = Parameter और Statistic के बीच का difference।</p>
+        <h4>Example</h4>
+        <ul>
+            <li>Population average marks = <b>70</b> (Parameter)</li>
+            <li>Sample average marks = <b>68</b> (Statistic)</li>
+        </ul>
+        <p><b>Sampling Error = 70 − 68 = 2</b></p>
+        <p>👉 क्योंकि हमने पूरा Population नहीं लिया, केवल Sample लिया, इसलिए थोड़ा difference आ गया। यही <b>Sampling
+                Error</b> कहलाता है। ✅</p>
+        <hr>
+        <h3>Null Hypothesis (H₀)</h3>
+        <p><b>Null Hypothesis (H₀)</b> = वह statement जिसे हम शुरू में <b>सही मानकर चलते हैं।</b></p>
+        <p>👉 इसमें आमतौर पर <b>"No Effect", "No Difference" या "No Change"</b> माना जाता है।</p>
+        <h4>Example</h4>
+        <p>एक teacher कहता है:</p>
+        <p>Average marks = 70</p>
+        <p>So</p>
+        <p><b>\(H_0 : \mu = 70\)</b></p>
+        <p>अर्थात Population का average marks 70 है।</p>
+        <p>Hypothesis Testing में हमारा काम यह check करना होता है कि Sample data के आधार पर \(H_0\) को reject करना चाहिए
+            या
+            नहीं। ✅</p>
+        <hr>
+        <h3>Alternative Hypothesis (H₁ or Hₐ)</h3>
+        <p><b>Alternative Hypothesis \((H_1)\)</b> = वह statement जो <b>Null Hypothesis \((H_0)\)</b> के <b>opposite</b>
+            होती है।</p>
+        <p>👉 यह बताती है कि <b>Effect, Difference या Change मौजूद है।</b></p>
+        <p>If</p>
+        <p>\(H_0 : \mu = 70\)</p>
+        <p>तो Alternative Hypothesis हो सकती है:</p>
+        <ul>
+            <li>\(H_1 : \mu \neq 70\) (Two-tailed)</li>
+            <li>\(H_1 : \mu > 70\) (Right-tailed)</li>
+            <li>\(H_1 : \mu < 70\) (Left-tailed)</li>
+        </ul>
+        <p>अर्थात Population का average marks 70 नहीं है।</p>
+        <p><b>👉 \(H_0\) = No Difference <br>
+                👉 \(H_1\) = Difference Exists ✅</b></p>
+        <hr>
+        <h3>Level of Significance \((\alpha)\)</h3>
+        <p><b>Level of Significance \(\alpha\) = \(H_0\) को गलती से reject करने की maximum acceptable probability।</b>
+        </p>
+        <p>सरल शब्दों में:</p>
+        <p>👉 यह बताता है कि <b>हम कितनी गलती का risk लेने को तैयार हैं।</b></p>
+        <h4>Example</h4>
+        <p>IF</p>
+        <p><b>\(\alpha\) = 0.05 (5%)</b></p>
+        <p>तो इसका मतलब है:</p>
+        <p>हम 5% chance तक \(H_0\) को गलत तरीके (गलती से) से reject करने का risk स्वीकार करते हैं।</p>
+        <h4>Common Values</h4>
+        <ul>
+            <li>\(\alpha\) <b>= 0.05 (5%)</b> ✅ सबसे common</li>
+            <li>\(\alpha\) <b>= 0.01 (1%)</b></li>
+            <li>\(\alpha\) <b>= 0.10 (10%)</b></li>
+        </ul>
+        <p>👉 \(\alpha\) जितना छोटा होगा, \(H_0\) को reject करना उतना कठिन होगा।</p>
+        <hr>
+        <h3>Confidence Level</h3>
+        <p><b>Confidence Level =</b> सही decision लेने का confidence।</p>
+        <p>यह <b>Level of Significance \((\alpha)\)</b> का opposite होता है।</p>
+        <p><b>IF</b></p>
+        <p><b>\(\alpha\) = 0.05% (5%)</b></p>
+        <p><b>Then</b></p>
+        <p><b>Confidence Level = 1 − 0.05 = 0.95 = 95%</b></p>
+        <p>👉 इसका मतलब है कि हमें अपने result पर <b>95% confidence है।</b></p>
+        <h4>Trick</h4>
+        <ul>
+            <li><b>\(\alpha\) = Error ka Risk</b></li>
+            <li><b>Confidence Level = Sahi Hone ka Confidence ✅</b></li>
+        </ul>
+        <hr>
+        <h3>p-value</h3>
+        <p><b>p-value</b> = यह बताती है कि अगर <b>\(H_0 \ \) सच है</b>, तो हमें मिला हुआ result <b>कितना rare
+                (असामान्य)</b> है।</p>
+        <h4>Simple Rule</h4>
+        <ul>
+            <li><b>p-value \(\leq \alpha → H_0 \ \) Reject ✅</b></li>
+            <li><b>p-value \(> \alpha → H_0\) Reject नहीं ❌</b></li>
+        </ul>
+        <h4>Example</h4>
+        <p>मान लो:</p>
+        <ul>
+            <li>\(\alpha\) = 0.05</li>
+            <li>p-value = 0.03</li>
+        </ul>
+        <p><b>क्योंकि</b> 0.03 < 0.05</p>
+                <p>👉 Result बहुत rare है, इसलिए <b>\(H_0\) Reject</b> कर देंगे।</p>
+                <h4>Trick</h4>
+                <p><b>छोटी p-value = \(H_0\) के खिलाफ strong evidence ✅</b></p>
+                <p>याद रखो:</p>
+                <p><b>p-value जितनी छोटी होगी, \(H_0\) को reject करने की संभावना उतनी अधिक होगी।</b></p>
+                <hr>
+                <h3>Critical Value</h3>
+                <p><b>Critical Value</b> = वह boundary (सीमा) value जिसके आधार पर हम decide करते हैं कि \(H_0\)
+                    <b>reject करना है या नहीं।</b>
+                </p>
+                <p>👉 यह \(\alpha\) <b>(Level of Significance)</b> से निकाली जाती है।</p>
+                <h4>Example</h4>
+                <p>मान लो:</p>
+                <ul>
+                    <li>\(\alpha\) = 0.05</li>
+                    <li>Two-tailed Z-test</li>
+                </ul>
+                <p>तो Critical Values होंगी:</p>
+                <p><b>\(\pm\)1.96</b></p>
+                <ul>
+                    <li>Test Statistic <b>−1.96 से कम या +1.96 से अधिक → H₀ Reject ✅</b></li>
+                    <li>Test Statistic <b>−1.96 और +1.96 के बीच → H₀ Reject नहीं ❌</b></li>
+                </ul>
+                <h4>Trick</h4>
+                <p><b>👉 Critical Value = Decision Boundary (फैसला करने की सीमा). ✅</b></p>
+                <hr>
+                <h3>Rejection Region (Critical Region)</h3>
+                <p><b>Rejection Region</b> = वह area जहाँ Test Statistic पहुँच जाए, तो \(H_0\) <b>Reject</b> कर दिया
+                    जाता है।</p>
+                <p>👉 यह area <b>Critical Value के बाहर</b> होता है।</p>
+                <h4>Example</h4>
+                <p>यदि Critical Values:</p>
+                <p><b>\(\pm 1.96\)</b></p>
+                <p>हैं, तो</p>
+                <ul>
+                    <li><b>−1.96 से कम</b> → Rejection Region</li>
+                    <li><b>+1.96 से अधिक</b> → Rejection Region</li>
+                </ul>
+                <h4>Trick</h4>
+                <p><b>👉 Rejection Region = H₀ को Reject करने वाला क्षेत्र ✅</b></p>
+                <p>याद रखो:</p>
+                <p><b>Critical Value = Boundary (सीमा)
+                        <br><br>
+                        Rejection Region = Boundary के बाहर का area 🎯</b></p>
+                <hr>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+
+</html>

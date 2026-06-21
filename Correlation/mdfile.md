@@ -1,0 +1,49 @@
+Types of Correlation
+
+├── Based on Number of Variables
+│   ├── Simple
+│   ├── Multiple
+│   └── Partial
+│
+├── Based on Direction
+│   ├── Positive
+│   ├── Negative
+│   └── Zero
+│
+├── Based on Form
+│   ├── Linear
+│   └── Non-Linear (Curvilinear)
+│
+└── Based on Degree
+    ├── Perfect Positive
+    ├── High Positive
+    ├── Moderate Positive
+    ├── Low Positive
+    ├── Zero
+    ├── Low Negative
+    ├── Moderate Negative
+    ├── High Negative
+    └── Perfect Negative
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <link rel="stylesheet" href="\styles\style_formate.css">
+    <title>Business Statistics | Testing of Hypothesis | Errors</title>
+</head>
+<body>
+    <div class="container">
+
+
+
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+</html>

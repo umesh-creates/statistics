@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="/statistics/styles/style_formate.css">
+    <title>Business Statistics | Method of Least Squares</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Method of Least Squares</h1>
+        <hr>
+        <p><b>Method of Least Squares</b> एक mathematical method है जिसका उपयोग ऐसी <b>best fitting line (Trend Line /
+                Regression Line)</b> प्राप्त करने के लिए किया जाता है जो दिए गए data को सबसे अच्छी तरह represent करे।
+        </p>
+        <p>इस method में ऐसी line चुनी जाती है कि actual values और estimated values के deviations (errors) के squares का
+            sum minimum हो।</p>
+        <p><b>Method of Least Squares is a method of fitting a line to data such that the sum of squared deviations is
+                minimum.</b></p>
+        <hr>
+        <h3>Basic Idea</h3>
+        <p>मान लो data के points graph पर बिखरे हुए हैं।</p>
+        <img src="/statistics/images/without Trend Line or Regression Line.png" alt="without Trend Line or Regression Line">
+        <p>अब ऐसी line draw करनी है जो इन points को सबसे अच्छी तरह represent करे।</p>
+        <img src="/statistics/images/with Trend Line or Regression Line.png" alt="with Trend Line or Regression Line">
+        <p>यही <b>line Least Squares Line</b> कहलाती है।</p>
+        <hr>
+        <h3>Principle</h3>
+        <p>इस method का सिद्धांत:</p>
+        <p><b>Sum of squares of errors should be minimum.</b></p>
+        <p>Means:</p>
+        <div class="formula">\(\sum e^2\ is\ minimum\)</div>
+        <p>Where</p>
+        <ul>
+            <li>e = Error (Actual Value − Estimated Value)</li>
+        </ul>
+        <hr>
+        <h2>Equation of Trend Line / Regression Line</h2>
+        <pre><div class="center">Y = a + bX</div></pre>
+        <h4>Where</h4>
+        <ul>
+            <li>Y = Dependent Variable</li>
+            <li>X = Independent Variable</li>
+            <li>a = Intercept</li>
+            <li>b = Slope (Rate of Change)</li>
+        </ul>
+        <hr>
+        <h3>Normal Equations</h3>
+        <p>a और b निकालने के लिए:</p>
+        <div class="formula">\[\sum Y = na + b \sum X\]</div>
+        <p>And</p>
+        <div class="formula">\[\sum XY = a \sum X + b \sum X^2\]</div>
+        <hr>
+        <h2>Example</h2>
+        <div class="table-div">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>X</th>
+                        <th>Y</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>12</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>13</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>15</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>16</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p>हमें Best Fit Line निकालनी है।</p>
+        <p>according to formulas, we want \(XY\) and \(X^2\). because we already have <b>X</b> and <b>B</b> and <b>n</b>
+            as well.</p>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>X</th>
+                    <th>Y</th>
+                    <th>X²</th>
+                    <th>XY</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>10</td>
+                    <td>1</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>12</td>
+                    <td>4</td>
+                    <td>24</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>13</td>
+                    <td>9</td>
+                    <td>39</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>15</td>
+                    <td>16</td>
+                    <td>60</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>16</td>
+                    <td>25</td>
+                    <td>80</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>ΣX = 15</th>
+                    <th>ΣY = 66</th>
+                    <th>ΣX² = 55</th>
+                    <th>ΣXY = 213</th>
+                </tr>
+            </tfoot>
+        </table>
+        <p>अब totals:</p>
+        <pre>ΣX = 15
+ΣY = 66
+ΣX² = 55
+ΣXY = 213
+n = 5</pre>
+        <div class="formula">\[\sum Y = na + b \sum X\]</div>
+        <div class="formula">\[66 = 5a + 15b\]</div>
+        <p>Multipy by 3</p>
+        <div class="formula">\[198 = 15a + 45b\]</div>
+        <div class="formula">\[\sum XY = a \sum X + b \sum X^2\]</div>
+        <div class="formula">\[213 = 15a + 55b\]</div>
+        <p>Subtract: Equation 2 - Equation 1</p>
+        <div class="formula">\[213 = 15a + 55b\]</div>
+        <div class="formula">\[198 = 15a + 45b\]</div>
+        <div class="formula">\[=> 15 = 0 \times a + 10b\]</div>
+        <div class="formula">\[=> 15 = 10b \]</div>
+        <p>(because 0 Multipy anything = 0)</p>
+        <div class="formmula">\[b = \frac{15}{10} = 1.5\]</div>
+        <p>Now: पहली या दूसरी Equation में b = 1.5 </p>
+        <p>Equation 1</p>
+        <div class="formula">\[66 = 5a + 15b\]</div>
+        <div class="formula">\[66 = 5a + 15(1.5)\]</div>
+        <div class="formula">\[66 = 5a + 22.5\]</div>
+        <div class="formula">\[5a = 66 - 22.5\]</div>
+        <div class="formula">\[5a = 43.5\]</div>
+        <div class="formula">\[a = \frac{43.5}{5} = 8\ .7\]</div>
+        <hr>
+        <h2>Final Trend Equation</h2>
+        <h4>X = 1</h4>
+        <div class="formula">\[Y = a + bX\]</div>
+        <div class="formula">\[Y = 8\ .7 + 1.5(1)\]</div>
+        <div class="formula">\[Y = 10\ .2\]</div>
+        <hr>
+        <h4>X = 2</h4>
+        <div class="formula">\[Y = a + bX\]</div>
+        <div class="formula">\[Y = 8\ .7 + 1.5(2)\]</div>
+        <div class="formula">\[Y = 11.7\]</div>
+        <hr>
+        <h4>X = 3</h4>
+        <div class="formula">\[Y = a + bX\]</div>
+        <div class="formula">\[Y = 8\ .7 + 1.5(3)\]</div>
+        <div class="formula">\[Y = 13.2\]</div>
+        <hr>
+        <h4>X = 4</h4>
+        <div class="formula">\[Y = a + bX\]</div>
+        <div class="formula">\[Y = 8\ .7 + 1.5(4)\]</div>
+        <div class="formula">\[Y = 14.7\]</div>
+        <h4>X = 5</h4>
+        <div class="formula">\[Y = a + bX\]</div>
+        <div class="formula">\[Y = 8\ .7 + 1.5(5)\]</div>
+        <div class="formula">\[Y = 16\ .2\]</div>
+        <hr>
+        <h3>Trend Table</h3>
+        <div class="table-div">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>X</th>
+                        <th>Actual Y</th>
+                        <th>Trend Y</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>10</td>
+                        <td>10.2</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>12</td>
+                        <td>11.7</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>13</td>
+                        <td>13.2</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>15</td>
+                        <td>14.7</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>16</td>
+                        <td>16.2</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <hr>
+        <h2>Forecast</h2>
+        <h4>X = 6</h4>
+        <div class="formula">\[Y = a + bX\]</div>
+        <div class="formula">\[Y = 8\ .7 + 1.5(6)\]</div>
+        <div class="formula">\[Y = 17\ .7\]</div>
+        <hr>
+        <h2>1. Least Squares in Time Series (Trend Line)</h2>
+        <p>समय (Year) के साथ data का trend निकालना और future forecast करना।</p>
+        <pre><div class="center">Y = a + bX</div></pre>
+        <p>जहाँ</p>
+        <ul>
+            <li><strong>Y</strong> = Trend Value</li>
+            <li><strong>X</strong> = Time</li>
+            <li><strong>a</strong> = Trend at Center</li>
+            <li><strong>b</strong> = Annual Change</li>
+        </ul>
+        <hr>
+        <h3>Example</h3>
+        <div class="table-div">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Year</th>
+                        <th>Sales (Y)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2020</td>
+                        <td>100</td>
+                    </tr>
+                    <tr>
+                        <td>2021</td>
+                        <td>110</td>
+                    </tr>
+                    <tr>
+                        <td>2022</td>
+                        <td>120</td>
+                    </tr>
+                    <tr>
+                        <td>2023</td>
+                        <td>130</td>
+                    </tr>
+                    <tr>
+                        <td>2024</td>
+                        <td>140</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <hr>
+        <h3>Step 1: X Assign करो</h3>
+        <p>Odd years होने पर center year = 2022</p>
+        <div class="table-div">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Year</th>
+                        <th>Y</th>
+                        <th>X</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2020</td>
+                        <td>100</td>
+                        <td>-2</td>
+                    </tr>
+                    <tr>
+                        <td>2021</td>
+                        <td>110</td>
+                        <td>-1</td>
+                    </tr>
+                    <tr>
+                        <td>2022</td>
+                        <td>120</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>2023</td>
+                        <td>130</td>
+                        <td>+1</td>
+                    </tr>
+                    <tr>
+                        <td>2024</td>
+                        <td>140</td>
+                        <td>+2</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <hr>
+        <h3>Step 2: X² और XY</h3>
+        <div class="table-div">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>X</th>
+                        <th>Y</th>
+                        <th>X²</th>
+                        <th>XY</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>-2</td>
+                        <td>100</td>
+                        <td>4</td>
+                        <td>-200</td>
+                    </tr>
+                    <tr>
+                        <td>-1</td>
+                        <td>110</td>
+                        <td>1</td>
+                        <td>-110</td>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td>120</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>130</td>
+                        <td>1</td>
+                        <td>130</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>140</td>
+                        <td>4</td>
+                        <td>280</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th>ΣX = 0</th>
+                        <th>ΣY = 600</th>
+                        <th>ΣX² = 10</th>
+                        <th>ΣXY = 100</th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+        <hr>
+        <p>totals:</p>
+        <pre>ΣY = 600
+ΣX² = 10
+ΣXY = 100
+n = 5</pre>
+        <hr>
+        <h3>Step 3: Formulas</h3>
+        <div class="formula">\(a = \frac{\sum Y}{n}\)</div>
+        <div class="formula">\[a = \frac{600}{5} = 120\]</div>
+        <hr>
+        <div class="formula">\(b = \frac{\sum XY}{\sum X^2}\)</div>
+        <div class="formula">\[b = \frac{100}{10} = 10\]</div>
+        <hr>
+        <h3>Trend Equation</h3>
+        <div class="formula">\(Y = a + bX\)</div>
+        <hr>
+        <h3>Forecast</h3>
+        <p>2025 के लिए X = 3</p>
+        <div class="formula">\[Y = 120 + 10(3)\]</div>
+        <p>Forecast Sales = <b>150</b></p>
+        <hr>
+        <h2>2. Least Squares in Regression</h2>
+        <p>उद्देश्य:</p>
+        <p>X की value से Y predict करना।</p>
+        <h3>Example</h3>
+        <div class="table-div">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Study Hours (X)</th>
+                        <th>Marks (Y)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>40</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>50</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>55</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>65</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>70</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <hr>
+        <h4>Step 1</h4>
+        <div class="table-div">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>X</th>
+                        <th>Y</th>
+                        <th>X²</th>
+                        <th>XY</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>40</td>
+                        <td>1</td>
+                        <td>40</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>50</td>
+                        <td>4</td>
+                        <td>100</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>55</td>
+                        <td>9</td>
+                        <td>165</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>65</td>
+                        <td>16</td>
+                        <td>260</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>70</td>
+                        <td>25</td>
+                        <td>350</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th>ΣX = 15</th>
+                        <th>ΣY = 280</th>
+                        <th>ΣX² = 55</th>
+                        <th>ΣXY = 915</th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+        <pre>ΣX = 15
+ΣY = 280
+ΣX² = 55
+ΣXY = 915
+n = 5</pre>
+        <hr>
+        <div class="grid">
+            <div class="grid-1 grid-item">
+                <h4>First Equation 1</h4>
+                <div class="formula">\[\sum Y = na + b \sum X\]</div>
+                <div class="formula">\[280 = 5a + 15b\]</div>
+                <p class="center">divided by 5</p>
+                <div class="formula">\[56 = 1a + 3b\]</div>
+                <div class="formula">\[a = 56 - 3b\]</div>
+                <p class="center">add into 2nd Equation</p>
+                <div class="formula">\[a = 56 - 3(7.5)\]</div>
+                <div class="formula">\[\boxed{a = 33.5}\]</div>
+            </div>
+            <div class="grid-2 grid-item">
+                <h4>Second Equation 2</h4>
+                <div class="formula">\[\sum XY = a \sum X + b \sum X^2\]</div>
+                <div class="formula">\[915 = 15a + 55b\]</div>
+                <div class="formul">\[915 = 15(56 - 3b) + 55b\]</div>
+                <div class="formula">\[915 = 15 \times 56 - 15 \times 3b + 55b\]</div>
+                <div class="formula">\[915 = 840 - 45b + 55b\]</div>
+                <div class="formula">\[915 = 840 + 10b\]</div>
+                <div class="formula">\[10b = 915 - 840\]</div>
+                <div class="formula">\[10b = 75\]</div>
+                <div class="formula">\[\boxed{b = \frac{75}{10} = 7.5}\]</div>
+            </div>
+        </div>
+        <hr>
+        <h3>Regression Equation</h3>
+        <h4>Prediction</h4>
+        <p>यदि Study Hours = 6</p>
+        <div class="formula">\(Y = a + bX\)</div>
+        <div class="formula">\[Y = 33.5 + 7.5(6)\]</div>
+        <p>Expected Marks = 78.5</p>
+        <hr>
+        <h3>Types of Trend Equations in Regression and Time Series</h3>
+        <div class="table-div">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Formula</th>
+                        <th>Trend Type</th>
+                        <th>Regression</th>
+                        <th>Time Series</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Y = a + bX</td>
+                        <td><strong>Linear Trend</strong></td>
+                        <td>✔</td>
+                        <td>✔</td>
+                    </tr>
+                    <tr>
+                        <td>Y = a + bX + cX²</td>
+                        <td><strong>Quadratic (Parabolic) Trend</strong></td>
+                        <td>✔</td>
+                        <td>✔</td>
+                    </tr>
+                    <tr>
+                        <td>Y = a + bX + cX² + dX³</td>
+                        <td><strong>Cubic Trend</strong></td>
+                        <td>✔</td>
+                        <td>✔</td>
+                    </tr>
+                    <tr>
+                        <td>Y = ab<sup>X</sup></td>
+                        <td><strong>Exponential Trend</strong></td>
+                        <td>✔</td>
+                        <td>✔</td>
+                    </tr>
+                    <tr>
+                        <td>Y = a + b log X</td>
+                        <td><strong>Logarithmic Trend</strong></td>
+                        <td>✔</td>
+                        <td>✔</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <hr>
+        <h2>Uses of Least Squares Method</h2>
+        <h4>1. Trend Analysis</h4>
+        <p>Time Series में trend ज्ञात करने के लिए।</p>
+        <h4>2. Regression Analysis</h4>
+        <p>Regression Line fit करने के लिए।</p>
+        <h4>3. Forecasting</h4>
+        <p>Future values का अनुमान लगाने के लिए।</p>
+        <h4>4. Business Planning</h4>
+        <p>Sales, Demand, Production आदि की prediction के लिए।</p>
+        <hr>
+        <h2>Characteristics</h2>
+        <h4>1. Mathematical Method</h4>
+        <p>Purely numerical technique है।</p>
+        <h4>2. Objective Method</h4>
+        <p>Judgment पर निर्भर नहीं करती।</p>
+        <h4>3. Best Fit Line</h4>
+        <p>Data के लिए सबसे उपयुक्त line देती है।</p>
+        <h4>4. Forecasting Tool</h4>
+        <p>Future estimation में उपयोगी।</p>
+        <hr>
+        <h2>Merits (Advantages)</h2>
+        <h4>1. Scientific Method</h4>
+        <p>बहुत reliable और objective।</p>
+        <h4>2. Accurate Results</h4>
+        <p>Trend का अच्छा estimate देती है।</p>
+        <h4>3. Forecasting Possible</h4>
+        <p>Future prediction की जा सकती है।</p>
+        <h4>4. Widely Used</h4>
+        <p>Economics, Statistics, Data Analysis में अत्यधिक उपयोग।</p>
+        <hr>
+        <h2>Demerits (Limitations)</h2>
+        <h4>1. Lengthy Calculations</h4>
+        <p>Manual calculation लंबी हो सकती है।</p>
+        <h4>2. Assumes Linear Trend</h4>
+        <p>हमेशा linear relationship मान लेती है।</p>
+        <h4>3. Sensitive to Outliers</h4>
+        <p>Extreme values result को प्रभावित कर सकती हैं।</p>
+        <hr>
+        <h3>One-Line Revision</h3>
+        <p><b>Method of Least Squares वह विधि है जिसमें ऐसी line fit की जाती है कि errors के squares का total minimum
+                हो।</b></p>
+
+
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+
+</html>

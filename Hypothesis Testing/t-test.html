@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="/statistics/styles/style_formate.css">
+    <title>Business Statistics | Testing of Hypothesis | T-Test</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>t-test</h1>
+        <hr>
+        <h2>1. One Sample t-Test</h2>
+        <p class="para">Sample Mean vs Population Mean</p>
+        <p>सवाल:</p>
+        <p class="para">"क्या population mean 70 है?"</p>
+        <p>यह One Sample Z-Test जैसा ही है, बस एक फर्क है:</p>
+        <p class="para">Population Standard Deviation \((\sigma)\) पता नहीं होती।</p>
+        <hr>
+        <h2>2. Independent Two Sample t-Test</h2>
+        <p class="para">Group A Mean vs Group B Mean</p>
+        <p>सवाल:</p>
+        <p class="para">"क्या Program A और Program B के average scores अलग हैं?"</p>
+        <p>यह Two Sample Z-Test जैसा है।</p>
+        <hr>
+        <h2>3. Paired t-Test</h2>
+        <p class="para">Same लोगों का Before vs After comparison</p>
+        <p>सवाल:</p>
+        <p class="para">"Training से पहले average score क्या था और बाद में क्या हुआ?"</p>
+        <p>या </p>
+        <p class="para">"Weight loss program से पहले और बाद का weight"</p>
+        <hr>
+        <h2>सबसे बड़ा फर्क Z-Test और t-Test में</h2>
+        <p>Z-Test में:</p>
+        <div class="formula">\[\sigma\]</div>
+        <p>(Population SD) पता होती है।</p>
+        <hr>
+        <p>t-Test में:</p>
+        <div class="formula">\[s\]</div>
+        <p>(Sample SD) use करते हैं।</p>
+        <p>क्यों?</p>
+        <p>क्योंकि real life में population SD लगभग कभी पता नहीं होती।</p>
+        <hr>
+        <h3>t-distribution क्या है और जब Z-Test है तो t-Test की जरूरत क्यों पड़ी?</h3>
+        <hr>
+        <h3>Problem: Z-Test में एक hidden assumption थी</h3>
+        <p>जब हम Z-Test कर रहे थे, तब formula में:</p>
+        <div class="formula">\[\sigma\]</div>
+        <p>था।</p>
+        <p>यह <b>Population Standard Deviation</b> है।</p>
+        <hr>
+        <p>लेकिन real life में समस्या यह है कि:</p>
+        <p>Population Mean तो छोड़ो, Population SD भी अक्सर पता नहीं होती।</p>
+        <h4>Example</h4>
+        <p>मान लो भारत के सभी BBA students की height का study कर रहे हो।</p>
+        <p>क्या तुम्हें पूरी population का SD पता है?</p>
+        <p>❌ नहीं।</p>
+        <hr>
+        <h3>तो अब क्या करें?</h3>
+        <p>हम sample लेते हैं।</p>
+        <p>और sample से SD निकालते हैं:</p>
+        <div class="formula">\[s\]</div>
+        <p>इसे <b>Sample Standard Deviation</b> कहते हैं।</p>
+        <hr>
+        <h3>Problem No. 2</h3>
+        <p>जब हम \(\sigma\) की जगह s use करते हैं,</p>
+        <p>तो uncertainty बढ़ जाती है।</p>
+        <p>क्यों?</p>
+        <p>क्योंकि:</p>
+        <ul>
+            <li>\(\sigma\) = Exact Population Information</li>
+            <li>s = Sample से आया estimate</li>
+        </ul>
+        <p>Estimate हमेशा थोड़ी गलती कर सकता है।</p>
+        <hr>
+        <h3>इसलिए t-distribution पैदा हुई</h3>
+        <p>देखो:</p>
+        <p>Z-Test:</p>
+        <div class="formula">\[Z = \frac{\bar{X} - \mu}{\sigma / \sqrt{n}}\]</div>
+        <p>t-Test:</p>
+        <div class="formula">\[t = \frac{\bar{X} - \mu}{s / \sqrt{n}}\]</div>
+        <p>बस \sigma की जगह s आ गया।</p>
+        <hr>
+        <h3>लेकिन नया Distribution क्यों?</h3>
+        <p>क्योंकि s use करने से extra uncertainty आती है।</p>
+        <p>इस uncertainty को handle करने के लिए statisticians ने <b>t-distribution</b> बनाई।</p>
+        <hr>
+        <p>दोनों लगभग एक जैसे दिखते हैं।</p>
+        <p>लेकिन t-distribution की tails थोड़ी मोटी होती हैं।</p>
+        <img src="https://www.statology.org/wp-content/uploads/2020/11/norm_vs_t2.png" alt="t-distribution tails">
+        <p>मतलब:</p>
+        <p class="para">Extreme values आने की संभावना थोड़ी ज्यादा मानी जाती है।</p>
+        <p>Statistics थोड़ा ज्यादा cautious (सावधान) हो जाती है।</p>
+        <hr>
+        <h3>Sample Size का असर</h3>
+        <h4>Small Sample</h4>
+        <p>मान लो:</p>
+        <div class="formula">\[n = 10\]</div>
+        <p>तो uncertainty ज्यादा है।</p>
+        <p>इसलिए t-distribution और Normal Distribution में बड़ा फर्क होगा।</p>
+        <hr>
+        <h4>Large Sample</h4>
+        <p>मान लो:</p>
+        <div class="formula">\[n = 1000\]</div>
+        <p>तो s लगभग \(sigma\) जैसा हो जाता है।</p>
+        <p>और:</p>
+        <p class="para">t-distribution लगभग Normal Distribution जैसी बन जाती है।</p>
+        <hr>
+        <H2>One Sample t-Test (Two-Tailed)</H2>
+        <p>ध्यान दो:</p>
+        <p class="para">यह One Sample Z-Test जैसा ही लगेगा।</p>
+        <p>बस 3 बदलाव हैं:</p>
+        <ol>
+            <li>\(\sigma\) नहीं होगी।</li>
+            <li>s (Sample SD) होगी।</li>
+            <li>Z की जगह t निकलेगा।</li>
+        </ol>
+        <hr>
+        <h2>Situation</h2>
+        <p>एक coaching institute दावा करता है:</p>
+        <p class="para">Students का average score 70 marks है।</p>
+        <p>हम check करना चाहते हैं कि average वास्तव में 70 है या नहीं।</p>
+        <h2>Step 1: Hypotheses</h2>
+        <div class="formula">\[H_0 : \mu = 70\]</div>
+        <div class="formula">\[H_1 : \mu \neq 70\]</div>
+        <p>✅ Two-Tailed Test</p>
+        <hr>
+        <h3>Step 2: Given Data</h3>
+        <ul>
+            <li>n = 25</li>
+            <li>\(\bar{X}\) = 75</li>
+            <li>s = 10</li>
+            <li>\(\alpha \) = 0.05</li>
+        </ul>
+        <p>ध्यान दो:</p>
+        <p>यहाँ \(\sigma\) नहीं दी गई।</p>
+        <p>इसीलिए t-Test use करेंगे।</p>
+        <hr>
+        <h3>Step 3: Degrees of Freedom</h3>
+        <p>Formula:</p>
+        <div class="formula">\[df = n - 1\]</div>
+        <div class="formula">\[df = 25 - 1\]</div>
+        <div class="formula">\[df = 24\]</div>
+        <p>✅ df = 24</p>
+        <hr>
+        <h3>Step 4: Standard Error</h3>
+        <div class="formula">\[SE = \frac{s}{\sqrt{n}}\]</div>
+        <div class="formula">\[SE = \frac{10}{\sqrt{25}}\]</div>
+        <div class="formula">\[SE = \frac{10}{5} = 2\]</div>
+        <p>✅ SE = 2</p>
+        <hr>
+        <h3>Step 5: t-Statistic</h3>
+        <div class="formula">\[t = \frac{\bar{X} - \mu}{s/ \sqrt{n}}\]</div>
+        <div class="formula">\[t = \frac{75 - 70}{2}\]</div>
+        <div class="formula">\[t = \frac{5}{2} = 2.5\]</div>
+        <p>✅ Calculated t = 2.5</p>
+        <hr>
+        <h3>Step 6: Critical Value Decision</h3>
+        <p>क्योंकि:</p>
+        <ul>
+            <li>\(\alpha \) = 0.05</li>
+            <li>Two-Tailed Test</li>
+            <li>df = 24</li>
+        </ul>
+        <p>t-table से:</p>
+        <div class="formula">\[Critical\ Value = \pm 2.064\]</div>
+        <p>compare:</p>
+        <div class="formula">\[|t| = 2.5\]</div>
+        <div class="formula">\[2.5 > 2.064\]</div>
+        <p>✅ \(H_0\) Reject</p>
+        <hr>
+        <h3>Step 7: p-value Decision</h3>
+        <p>t = 2.5, df = 24, Two-Tailed test</p>
+        <div class="formula">\[P-Value = 0.0197\]</div>
+        <p>p-value 0.05 से छोटी आती है।</p>
+        <p>✅ H_0 Reject</p>
+        <hr>
+        <h3>Final Conclusion</h3>
+        <p>Data यह संकेत देता है कि:</p>
+        <p class="para">Population Mean 70 नहीं है।</p>
+        <p>या </p>
+        <p class="para">Coaching institute का "Average score = 70" वाला claim support नहीं होता।</p>
+        <hr>
+        <h2>Independent Two Sample t-Test (Two-Tailed)</h2>
+        <h3>Situation</h3>
+        <p>एक company ने दो training programs चलाए।</p>
+        <p>Management जानना चाहती है:</p>
+        <p class="para">क्या दोनों programs के average scores अलग हैं?</p>
+        <h3>Step 1: Hypotheses</h3>
+        <div class="formula">\[H_0 : \mu_1 = \mu_2\]</div>
+        <div class="formula">\[H_1 : \mu_1 \neq \mu_2\]</div>
+        <p>✅ Two-Tailed Test</p>
+        <hr>
+        <h3>Step 2: Given Data</h3>
+        <p><b>Program A</b></p>
+        <ul>
+            <li>\(n_1 = 25\)</li>
+            <li>\(\bar{X}_1 = 75\)</li>
+            <li>\(s_1 = 10\)</li>
+        </ul>
+        <p><b>Program B</b></p>
+        <ul>
+            <li>\(n_2 = 25\)</li>
+            <li>\(\bar{X}_2 = 68\)</li>
+            <li>\(s_2 = 8\)</li>
+        </ul>
+        <h4>Significance Level</h4>
+        <div class="formula">\[\alpha = 0.05\]</div>
+        <hr>
+        <h3>Step 3: Degrees of Freedom</h3>
+        <p>अभी notes के लिए simple version लेते हैं:</p>
+        <div class="formula">\[df = n_1 + n_2 - 2\]</div>
+        <div class="formula">\[df = 25 + 25 - 2\]</div>
+        <div class="formula">\[\boxed{df = 48}\]</div>
+        <p>✅ df = 48</p>
+        <hr>
+        <h3>Step 4: Standard Error</h3>
+        <div class="formula">\[SE = \sqrt{\frac{s^2_1}{n_1} + \frac{s^2_2}{n_2}}\]</div>
+        <div class="formula">\[SE = \sqrt{\frac{10 \times 10}{25} + \frac{8 \times 8}{25}}\]</div>
+        <div class="formula">\[SE = \sqrt{\frac{100}{25} + \frac{64}{25}}\]</div>
+        <div class="formula">\[SE = \sqrt{4 + 2.56}\]</div>
+        <div class="formula">\[SE = \sqrt{6.56} = 2.56\]</div>
+        <p>✅ SE ≈ 2.56</p>
+        <hr>
+        <h3>Step 5: t-Statistic</h3>
+        <div class="formula">\[SE = \frac{(\bar{X}_1 - \bar{X}_2) - (\mu_1 - \mu_2)}{\sqrt{\frac{s^2_1}{n_1} +
+            \frac{s^2_2}{n_2}}}\]</div>
+        <p>अब चयोंकि </p>
+        <div class="formula">\[H_0 : \mu_1 = \mu_2\]</div>
+        <p>तो:</p>
+        <div class="formula">\[\mu_1 - \mu_2 = 0\]</div>
+        <p>और formula छोटा हो गया।</p>
+        <div class="formula">\[SE = \frac{(\bar{X}_1 - \bar{X}_2)}{\sqrt{\frac{s^2_1}{n_1} + \frac{s^2_2}{n_2}}}\]</div>
+        <div class="formula">\[SE = \frac{75 - 68}{2.56}\]</div>
+        <div class="formula">\[SE = \frac{7}{2.56} = 2.73\]</div>
+        <p>✅ t = 2.73</p>
+        <hr>
+        <h3>Step 6: Critical Value Decision</h3>
+        <p>क्योंकि:</p>
+        <ul>
+            <li>\(\alpha = 0.05\)</li>
+            <li>Two-Tailed</li>
+            <li>df = 48</li>
+        </ul>
+        <p>✅ Critical Value ≈ ±2.01</p>
+        <div class="formula">\[|t| = 2.73\]</div>
+        <div class="formula">\[2.73 > 2.01\]</div>
+        <p>✅ \(H_0\) Reject</p>
+        <hr>
+        <h3>Step 7: p-value Decision</h3>
+        <div class="formula">\[P-Value = f(t, h_1, df)\]</div>
+        <div class="formula">\[f(2.73, Two-Tailed, 48) = 0.00883\]</div>
+        <p>p-value 0.05 से छोटी आएगी।</p>
+        <p>✅ \(H_0\) Reject</p>
+        <hr>
+        <h3>Final Conclusion</h3>
+        <p>Data यह संकेत देता है कि:</p>
+        <p class="para">Program A और Program B के average scores में statistically significant difference है।</p>
+        <hr>
+        <h3>Paired t-Test (Two-Tailed) — Complete Example</h3>
+        <h4>Situation</h4>
+        <p>एक coaching institute दावा करती है:</p>
+        <p class="para">Training से students के marks बदलते हैं।</p>
+        <p>7 students का test training से पहले और बाद में लिया गया।</p>
+        <h3>Step 1: Data</h3>
+        <div class="table-div">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Students</th>
+                        <th>Test 1</th>
+                        <th>Test 2</th>
+                        <th>Difference</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>97</td>
+                        <td>90</td>
+                        <td>-7</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>91</td>
+                        <td>96</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>65</td>
+                        <td>77</td>
+                        <td>12</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>76</td>
+                        <td>84</td>
+                        <td>8</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>69</td>
+                        <td>79</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>75</td>
+                        <td>69</td>
+                        <td>-6</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>90</td>
+                        <td>79</td>
+                        <td>-11</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <hr>
+        <h3>Step 1 - Hypothesis:</h3>
+        <div class="formula">\[H_0 : D = 0\]</div>
+        <div class="formula">\[H_1 : D \neq 0\]</div>
+        <hr>
+        <h3>step 2 - Mean of Difference</h3>
+        <div class="formula">\[\bar{d} = \frac{\sum d}{n}\]</div>
+        <div class="formula">\[\bar{d} = \frac{11}{7} = 1.571\]</div>
+        <hr>
+        <h3>step 3 - Standard Deviation of Difference</h3>
+        <div class="formula">\[s_d = \sqrt{\frac{\sum (d_i-\bar{d})^2}{n-1}} = 9.325\]</div>
+        <hr>
+        <h3>step 4 - Degrees of Freedom</h3>
+        <div class="formula">\[DF = n - 1 = 7 - 1 = 6\]</div>
+        <hr>
+        <h3>step 5 - Standard Error</h3>
+        <div class="formula">\[SE(\bar{d}) = \frac{s_d}{\sqrt{n}} = \frac{9.325}{\sqrt{7}} = 3.525\]</div>
+        <hr>
+        <h3>step 6 - t-statistics</h3>
+        <div class="formula">\[t = \frac{\bar{d}}{se{\bar{d}}} = \frac{1.571}{3.525} = 0.446\]</div>
+        <hr>
+        <h3>step 7 - Critical value Decision</h3>
+        <p>क्योंकि:</p>
+        <div class="formula">\[Critical \ Value = f(\alpha, h_1, df)\]</div>
+        <div class="formula">\[Critical \ value = f(0.05, Two-Tailed, 6)\]</div>
+        <div class="formula">\[Critical \ value = \pm 2.447\]</div>
+        <div class="formula">\[|t| = 0.446\]</div>
+        <div class="formula">\[0.446 < +2.447\]</div>
+                <p>❎ \(H_0\) Not Reject</p>
+                <hr>
+                <h3>step 8 - P-Value Decision</h3>
+                <p>क्योंकि:</p>
+                <div class="formula">\[P-Value = f(t, h_1, df)\]</div>
+                <div class="formula">\[P-Value = f(0.446, Two-Tailed, 6)\]</div>
+                <div class="formula">\[P-Value = 0.6715\]</div>
+                <div class="formula">\[\alpha = 0.05\]</div>
+                <div class="formula">\[0.6715 > 0.05\]</div>
+                <p>❎ \(H_0\) Not Reject</p>
+                <hr>
+                <h3>Final Conclusion</h3>
+                <p>
+                    There is insufficient evidence to conclude that the training changed the students' average marks.
+                </p>
+                <p>
+                    अर्थात, training के कारण marks में statistically significant परिवर्तन होने का पर्याप्त evidence नहीं
+                    मिला।
+                </p>
+                <hr>
+
+        </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+
+</html>

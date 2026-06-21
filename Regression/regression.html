@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="/statistics/styles/style_formate.css">
+    <title>Business Statistics | Regression</title>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Difference between Correlation and Regression</h2>
+        <hr>
+        <p><b>Correlation tells us how strongly variables are related, whereas Regression uses that relationship to
+                predict values.</b></p>
+        <div class="table-div">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Correlation</th>
+                        <th>Regression</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><b>"क्या relationship है?"</b></td>
+                        <td><b>"क्या prediction है?"</b></td>
+                    </tr>
+                    <tr>
+                        <td>Relationship measure करता है</td>
+                        <td>Prediction करता है</td>
+                    </tr>
+                    <tr>
+                        <td>Variables के बीच connection बताता है</td>
+                        <td>Future या unknown value estimate करता है</td>
+                    </tr>
+                    <tr>
+                        <td>Correlation Coefficient (r) देता है</td>
+                        <td>Regression Equation देता है</td>
+                    </tr>
+                    <tr>
+                        <td>X और Y को बराबर मानता है</td>
+                        <td>X और Y की अलग-अलग role होती हैं</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <hr>
+        <h2>A) Regression Lines</h2>
+        <hr>
+        <h3>1) Regression Line of Y on X</h3>
+        <hr>
+        <h4>Meaning</h4>
+        <p><b>Regression Line of Y on X</b> का मतलब:</p>
+        <p><b>X की help से Y की value predict करना।</b></p>
+        <hr>
+        <h4>Purpose</h4>
+        <p><b>Given X → Predict Y</b></p>
+        <h4>Equation</h4>
+        <pre>Y = a + bX</pre>
+        <p><b>Actual Y values और Predicted Y values के differences (errors) के squares का sum minimum हो।</b></p>
+        <p>यानी:</p>
+        <div class="formula">\[\sum (Y - \widehat{Y})^2\]</div>
+        <p>minimum होता है।</p>
+        <p><b>hat Y = Predicted Y</b></p>
+        <hr>
+        <h4>Example</h4>
+        <p>अगर Regression Equation है:</p>
+        <div class="formula">\[Y = 30 + 10X\]</div>
+        <div class="formula">\[X = 5\]</div>
+        <div class="formula">\[Y = 30 + 10(5)\]</div>
+        <div class="formula">\[\boxed{Y = 80}\]</div>
+        <h4>Given X -> Predicted Y = 80</h4>
+        <hr>
+        <h3>2) Regression Line of X on Y</h3>
+        <h4>Meaning</h4>
+        <p><b>Regression Line of X on Y </b>का मतलब:</p>
+        <p><b>Y की help से X की value predict करना।</b></p>
+        <hr>
+        <h4>Equation</h4>
+        <pre>X = a + bY</pre>
+        <hr>
+        <p>यह line ऐसी प्राप्त की जाती है कि:</p>
+        <div class="formula">\[\sum (X - \widehat{X})^2\]</div>
+        <p>minimum हो।</p>
+        <p>अर्थात Actual X और Predicted X के errors के squares का sum minimum होता है।</p>
+        <hr>
+        <h4>Given Y → Predict X</h4>
+        <hr>
+        <h3>Example</h3>
+        <p>अगर Regression Equation है:</p>
+        <div class="formula">\[X = 2 + 0.5Y\]</div>
+        <div class="formula">\[Y = 10\]</div>
+        <div class="formula">\[X = 2 + 0.5(10)\]</div>
+        <div class="formula">\[\boxed{X = 7}\]</div>
+        <h4>Given Y → Predict X = 7</h4>
+        <hr>
+        <h2>B) Regression Coefficients</h2>
+        <hr>
+        <h3>1) Regression Coefficient \(b_{yx}\)</h3>
+        <p>\(b_{yx}\)का मतलब:</p>
+        <p><b>Regression Coefficient of Y on X</b></p>
+        <p>Means:</p>
+        <p><b>X बदलेगा तो Y कितना बदलेगा?</b></p>
+        <hr>
+        <h4>Example</h4>
+        <p>Regression Equation:</p>
+        <div class="formula">\[Y = 20 + 5X\]</div>
+        <p>here:</p>
+        <div class="formula">\[b_{yx} = 5\]</div>
+        <p>Because : it's standard form is:</p>
+        <div class="formula">\[Y = 20 + b_{yx}X\]</div>
+        <p>इसका मतलब:</p>
+        <p>अगर X में 1 unit की वृद्धि होती है, तो Y में लगभग 5 units की वृद्धि होने की उम्मीद है।</p>
+        <hr>
+        <h3>Real Meaning</h3>
+        <div class="table-div">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>X Change</th>
+                        <th>Expected Y Change</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>+1</td>
+                        <td>+5</td>
+                    </tr>
+                    <tr>
+                        <td>+2</td>
+                        <td>+10</td>
+                    </tr>
+                    <tr>
+                        <td>+3</td>
+                        <td>+15</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p>यानी \(b_{yx}\) change की rate बताता है।</p>
+        <hr>
+        <h3>2) Regression Coefficient \(b_{xy}\)</h3>
+        <p>\(b_{xy}\) का मतलब:</p>
+        <p><b>Regression Coefficient of X on Y</b></p>
+        <p>Means:</p>
+        <p><b>Y बदलेगा तो X कितना बदलेगा?</b></p>
+        <hr>
+        <h4>Example</h4>
+        <p>Regression Equation:</p>
+        <div class="formula">\[X = 10 + 2Y\]</div>
+        <p>Here:</p>
+        <div class="formula">\[b_{xy} = 2\]</div>
+        <p>Because, it's standard form is:</p>
+        <div class="formula">\[X = 10 + b_{xy}Y\]</div>
+        <p>इसका मतलब:</p>
+        <p>Y में 1 unit change होने पर X में लगभग 2 units change होगा।</p>
+        <hr>
+        <h1>सबसे बड़ी गलती</h1>
+        <P>कई students सोचते हैं:</P>
+        <div class="formula">\[b_{yx} = b_{xy}\]</div>
+        <P>लेकिन यह लगभग कभी सच नहीं होता।</P>
+        <P>दोनों अलग-अलग coefficients होते हैं क्योंकि दोनों अलग directions की prediction कर रहे हैं।</P>
+        <hr>
+        <h2>C) Properties of Regression Coefficients</h2>
+        <p>अब आते हैं सबसे important exam part पर।</p>
+        <h4>Property 1</h4>
+        <div class="formula">\[b_{yx} \times b_{xy} = r^2\]</div>
+        <p>यह सबसे famous property है।</p>
+        <p>इससे:</p>
+        <div class="formula">\[r = \pm \sqrt{b_{yx} \times b_{xy}}\]</div>
+        <p>निकाला जा सकता है।</p>
+        <hr>
+        <h4>Property 2</h4>
+        <p>दोनों coefficients का sign(+ , -) हमेशा same होता है।</p>
+        <p>IF</p>
+        <div class="formula">\[b_{yx} > 0\]</div>
+        <p>Then</p>
+        <div class="formula">\[b_{xy} > 0\]</div>
+        <p>And If</p>
+        <div class="formula">\[b_{yx} < 0\]</div>
+                <p>Then</p>
+                <div class="formula">\[b_{xy} < 0\]</div>
+                        <hr>
+                        <h4>Reason</h4>
+                        <p>क्योंकि दोनों में r आता है।</p>
+                        <p>और r का sign दोनों formulas में same रहता है।</p>
+                        <hr>
+                        <h3>Property 3</h3>
+                        <p>Regression Coefficients का sign और Correlation Coefficient का sign हमेशा same होता है।</p>
+                        <p>अर्थात:</p>
+                        <ul>
+                            <li>r positive ⇒ दोनों coefficients positive</li>
+                            <li>r negative ⇒ दोनों coefficients negative</li>
+                        </ul>
+                        <hr>
+                        <h4>Property 4</h4>
+                        <p>दोनों coefficients का arithmetic mean जरूरी नहीं कि r के बराबर हो।</p>
+                        <p>यानी:</p>
+                        <div class="formula">\[\frac{b_{yx} + b_{xy}}{2} \neq r\]</div>
+                        <p>आमतौर पर exam में इसे True/False में पूछा जाता है।</p>
+                        <hr>
+                        <h4>Property 5</h4>
+                        <p>अगर एक coefficient 1 से बड़ा है, तो दूसरा coefficient 1 से छोटा होगा।</p>
+                        <p>क्यों?
+                            <br><br>
+                            क्योंकि
+                        </p>
+                        <div class="formula">\[b_{yx} \times b_{xy} = r^2\]</div>
+                        <p>और</p>
+                        <div class="formula">\[r^2 \leq 1\]</div>
+                        <hr>
+                        <h4>Example</h4>
+                        <div class="formula">\[b_{yx} = 2\]</div>
+                        <p>तो</p>
+                        <div class="formula">\[b_{xy} = 0.3\]</div>
+                        <p>जैसा कुछ हो सकता है।</p>
+                        <p>लेकिन</p>
+                        <div class="formula">\[b_{yx} = 2\ ,\ b_{xy} = 3\]</div>
+                        <p>नहीं हो सकता।</p>
+                        <hr>
+                </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+
+</html>

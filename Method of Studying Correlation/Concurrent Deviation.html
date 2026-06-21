@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="/statistics/styles/style_formate.css">
+    <title>Business Statistics | Methods of Studying Correlation | Concurrent Deviation Method</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Concurrent Deviation Method</h1>
+        <hr>
+        <p><b>Concurrent Deviation Method</b> correlation की <b>direction (+/-)</b> और उसकी <b>approximate degree</b>
+            दोनों बताती है, लेकिन क्योंकि यह केवल <b>signs (+/-)</b> पर आधारित होती है और <b>magnitude को ignore</b>
+            करती है, इसलिए इसे <b>rough method</b> कहा जाता है।</p>
+        <p><b>It considers only the direction of changes and ignores the magnitude of changes. Therefore, it provides
+                only a rough measure of correlation.</b></p>
+        <hr>
+        <h3>Example</h3>
+        <div class="table-div">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Year</th>
+                        <th>Sales (X)</th>
+                        <th>Profit (Y)</th>
+                        <th>X Change</th>
+                        <th>Y Change</th>
+                        <th>Same Direction?</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2021</td>
+                        <td>100</td>
+                        <td>20</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td>2022</td>
+                        <td>120</td>
+                        <td>25</td>
+                        <td>+</td>
+                        <td>+</td>
+                        <td>Yes</td>
+                    </tr>
+                    <tr>
+                        <td>2023</td>
+                        <td>110</td>
+                        <td>22</td>
+                        <td>−</td>
+                        <td>−</td>
+                        <td>Yes</td>
+                    </tr>
+                    <tr>
+                        <td>2024</td>
+                        <td>130</td>
+                        <td>28</td>
+                        <td>+</td>
+                        <td>+</td>
+                        <td>Yes</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p>तीनों बार दोनों variables एक ही दिशा में बदले।</p>
+        <p>इसलिए:</p>
+        <pre>C = 3</pre>
+        <p>(Concurrent Deviations = 3)</p>
+        <hr>
+        <h3>Formula</h3>
+        <div class="formula">\[r = \pm \sqrt{\frac{2c - n}{n}}\]</div>
+        <h3>Where</h3>
+        <ul>
+            <li>r = Coefficient of Correlation</li>
+            <li>C = Number of Concurrent Deviations</li>
+            <li>n = Number of Deviations</li>
+        </ul>
+        <hr>
+        <h3>Sign of Correlation</h3>
+        <hr>
+        <h4>Positive Sign (+)</h4>
+        <ul>
+            <li>C > n/2 → Positive Correlation (+)</li>
+        </ul>
+        <pre>n = 8
+C = 6 <hr>8/2 = 4
+6 > 4 = (+)
+</pre>
+        <h3>Negative Sign</h3>
+        <ul>
+            <li>C < n/2 → Negative Correlation (-)</li>
+        </ul>
+        <pre>n = 8
+C = 2
+8/2 = 4
+2 < 4 = (-)
+</pre>
+        <h3>Zero Sign</h3>
+        <ul>
+            <li>C = n/2 → लगभग No Correlation</li>
+        </ul>
+        <pre>n = 8
+C = 4
+8/2 = 4
+4 == 4 = zero Correlation</pre>
+        <hr>
+        <h2>Example</h2>
+        <hr>
+        <h3>Data</h3>
+        <h3>Changes (+ / -)</h3>
+        <hr>
+        <div class="table div">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Year</th>
+                        <th>Sales (X)</th>
+                        <th>Profit (Y)</th>
+                        <th>X Change</th>
+                        <th>Y Change</th>
+                        <th>Same Direction?</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2020</td>
+                        <td>100</td>
+                        <td>50</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td>2021</td>
+                        <td>120</td>
+                        <td>55</td>
+                        <td>+</td>
+                        <td>+</td>
+                        <td>Yes</td>
+                    </tr>
+                    <tr>
+                        <td>2022</td>
+                        <td>110</td>
+                        <td>52</td>
+                        <td>−</td>
+                        <td>−</td>
+                        <td>Yes</td>
+                    </tr>
+                    <tr>
+                        <td>2023</td>
+                        <td>130</td>
+                        <td>60</td>
+                        <td>+</td>
+                        <td>+</td>
+                        <td>Yes</td>
+                    </tr>
+                    <tr>
+                        <td>2024</td>
+                        <td>125</td>
+                        <td>58</td>
+                        <td>−</td>
+                        <td>−</td>
+                        <td>Yes</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p>सभी 4 बार changes एक ही दिशा में हुए।</p>
+        <pre>C = 4</pre>
+        <p>Concurrent Deviations = 4</p>
+        <hr>
+        <p>Observations = 5</p>
+        <p>लेकिन deviations हमेशा एक कम होते हैं:</p>
+        <pre>n = 5 - 1
+n = 4</pre>
+        <hr>
+        <p>sign = (+)</p>
+        <pre>4/2 = 2
+4 > 2 = (+) 
+</pre>
+        <hr>
+        <div class="formul">\[r = \pm \sqrt{\frac{2c - n}{n}}\]</div>
+        <div class="formula">\[r = + \sqrt{\frac{2 \times 4 - 4}{4}}\]</div>
+        <div class="formula">\[r = \frac{4}{4} = + 1\]</div>
+        <h4>--> Perfect Positive Correlation</h4>
+        <hr>
+        <h2>Example</h2>
+        <hr>
+        <h3>Data</h3>
+        <h3>Changes (+ / -)</h3>
+        <div class="table-div">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Year</th>
+                        <th>Price (X)</th>
+                        <th>Demand (Y)</th>
+                        <th>X Change</th>
+                        <th>Y Change</th>
+                        <th>Same Direction?</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2020</td>
+                        <td>10</td>
+                        <td>100</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td>2021</td>
+                        <td>15</td>
+                        <td>95</td>
+                        <td>+</td>
+                        <td>−</td>
+                        <td>No</td>
+                    </tr>
+                    <tr>
+                        <td>2022</td>
+                        <td>12</td>
+                        <td>98</td>
+                        <td>−</td>
+                        <td>+</td>
+                        <td>No</td>
+                    </tr>
+                    <tr>
+                        <td>2023</td>
+                        <td>18</td>
+                        <td>90</td>
+                        <td>+</td>
+                        <td>−</td>
+                        <td>No</td>
+                    </tr>
+                    <tr>
+                        <td>2024</td>
+                        <td>16</td>
+                        <td>94</td>
+                        <td>−</td>
+                        <td>+</td>
+                        <td>No</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p>एक भी बार दोनों same direction में नहीं बदले।</p>
+        <pre>C = 0</pre>
+        <hr>
+        <p>Total observations = 5</p>
+        <pre>n = 5 - 1
+n = 4</pre>
+        <hr>
+        <p>sign = (-)</p>
+        <pre>4/2 = 2
+0 < 2 = (-)
+</pre>
+        <hr>
+        <p>(जब majority changes opposite direction में हों, तब यही convenient form use की जाती है।)</p>
+        <div class="formula">\[r = \pm \sqrt{\frac{n - 2c}{n}}\]</div>
+        <div class="formula">\[r = - \sqrt{\frac{4 - 2 \times 0}{4}}\]</div>
+        <div class="formula">\[r = \sqrt{\frac{4}{4}} = - 1\]</div>
+        <h4>--> Perfect Negative Correlation</h4>
+        <hr>
+        <h4>Let's</h4>
+        <pre>n = 8
+C = 6 <hr>8/2 = 4
+6 > 4 = (+)</pre>
+        <div class="formula">\[r = \pm \sqrt{\frac{2C - n}{n}}\]</div>
+        <div class="formula">\[r = + \sqrt{\frac{2 \times 6 - 8}{8}}\]</div>
+        <div class="formula">\[\sqrt{\frac{4}{8}} = \sqrt{0.5} = + 0.71\]</div>
+        <h4>--> Moderate Correlation</h4>
+        <hr>
+        <h4>Let's</h4>
+        <pre>n = 8
+C = 5 <hr>8/2 = 4
+5 > 4 = (+)</pre>
+        <div class="formula">\[r = \pm \sqrt{\frac{2C - n}{n}}\]</div>
+        <div class="formula">\[r = + \sqrt{\frac{2 \times 5 - 8}{8}}\]</div>
+        <div class="formula">\[r = + \sqrt{\frac{2}{8}} = \sqrt{0.25} = 0.5\]</div>
+        <h4>--> Moderate Correlation</h4>
+        <hr>
+        <h4>Let's</h4>
+        <pre>n = 8
+C = 1 <hr>8/2 = 4
+1 < 4 = (-)</pre>
+        <div class="formula">\[r = \pm \sqrt{\frac{n - 2C}{n}}\]</div>
+        <div class="formula">\[r = - \sqrt{\frac{8 - 2 \times 1}{8}}\]</div>
+        <div class="formula">\[r = - \sqrt{\frac{6}{8}} = \sqrt{0.75} = -0.87\]</div>
+        <h4>--> Hign Negative Correlation</h4>
+        <hr>
+        <h4>अगर Karl Pearson's r अधिक accurate है, तो फिर यह method क्यों बनाई गई?</h4>
+        <hr>
+        <h5>उत्तर: सुविधा और simplicity।</h5>
+        <hr>
+        <h3>Karl Pearson's Method</h3>
+        <hr>
+        <h4>Advantages</h4>
+        <p>✔ बहुत accurate</p>
+        <p>✔ Correlation की exact degree बताती है</p>
+        <p>✔ Statistical analysis के लिए best</p>
+        <hr>
+        <h4>Problems</h4>
+        <p>❌ Mean निकालना पड़ता है</p>
+        <p>❌ Deviations निकालने पड़ते हैं</p>
+        <p>❌ xy, x², y² निकालने पड़ते हैं</p>
+        <p>❌ बड़े data में calculation लंबी हो जाती है</p>
+        <hr>
+        <h3>Concurrent Deviation Method</h3>
+        <h4>Advantages</h4>
+        <p>✔ केवल + और − signs देखने होते हैं
+            <br><br>
+            ✔ बहुत जल्दी calculation हो जाती है
+            <br><br>
+            ✔ Time Series Data में उपयोगी
+            <br><br>
+            ✔ Rough idea तुरंत मिल जाता है
+        </p>
+        <hr>
+        <h4>Problems</h4>
+        <p>❌ Accuracy कम
+            <br><br>
+            ❌ Magnitude को ignore करता है
+            <br><br>
+            ❌ केवल approximate correlation देता है
+        </p>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+
+</html>

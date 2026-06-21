@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="/statistics/styles/style_formate.css">
+    <title>Business Statistics | Testing of Hypothesis | Z-Test</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Z-Test</h1>
+        <hr>
+        <h2>One Sample Z-Test</h2>
+        <hr>
+        <p><b>One Sample Z-Test</b> का उपयोग तब किया जाता है जब हमें <b>एक Sample</b> के average (mean) की
+            तुलना <b>Population Mean</b> से करनी हो।</p>
+        <h3>Example</h3>
+        <p>एक school दावा करता है:</p>
+        <pre>Average marks = 70</pre>
+        <p>यानी</p>
+        <p>\(H_0 : \mu = 70\)</p>
+        <p>अब तुम 100 students का Sample लेते हो और उनका average marks 74 निकलता है।</p>
+        <p>अब सवाल है:</p>
+        <p>क्या 74 और 70 का difference सिर्फ chance की वजह से है, या वास्तव में average बदल गया है?</p>
+        <p>इसका जवाब <b>One Sample Z-Test </b>देता है। ✅</p>
+        <h4>कब Use करते हैं?</h4>
+        <ul>
+            <li>केवल <b>1 Sample</b> हो।</li>
+            <li>Population Mean दिया हो।</li>
+            <li>Population Standard Deviation \((\sigma)\) ज्ञात हो।</li>
+            <li>Sample size आमतौर पर बड़ा हो (n \(\leq\) 30)।</li>
+        </ul>
+        <h4>Goal</h4>
+        <p>👉 Sample Mean और Population Mean के बीच का difference significant है या नहीं, यह check करना।</p>
+        <p><b>One Sample Z-Test = एक Sample के Mean को Population Mean से compare करने वाला test। 🎯</b></p>
+        <hr>
+
+        <h1>One Sample Z-Test (Two-Tailed) — Complete Example</h1>
+        <h3>Situation</h3>
+        <p>एक coaching institute दावा करता है:</p>
+        <p><b>Students का average score 70 marks है।</b></p>
+        <p>यानी:</p>
+        <div class="formula">\[H_0 : \mu = 70\]</div>
+        <p>हम check करना चाहते हैं कि average वास्तव में 70 है या नहीं।</p>
+        <p>इसलिए:</p>
+        <div class="formula">\[H_1 : \mu \neq 70\]</div>
+        <p>✅ Two-Tailed Test</p>
+        <hr>
+
+        <h3>Given Data</h3>
+        <ul>
+            <li>Population Mean (Claim) = 70</li>
+            <li>Sample Size (n) = 100</li>
+            <li>Sample Mean \((\bar{X})\) = 74</li>
+            <li>Population SD \((\sigma)\) = 10</li>
+            <li>Significance Level \((\alpha)\) = 0.05</li>
+        </ul>
+        <hr>
+
+        <h3>Step 1: Standard Error</h3>
+        <p>formula:</p>
+        <div class="formula">\[SE = \frac{\sigma}{\sqrt{n}}\]</div>
+        <p>Calculation:</p>
+        <div class="formula">\[SE = \frac{10}{\sqrt{100}}\]</div>
+        <div class="formula">\[\boxed{SE = \frac{10}{10} = 1}\]</div>
+        <p>✅ Standard Error = 1</p>
+        <hr>
+
+        <h3>Step 2: Z-Statistic</h3>
+        <p>Formula:</p>
+        <div class="formula">\[Z = \frac{\bar{X} - \mu}{\frac{\sigma}{\sqrt{n}}}\]</div>
+        <div class="formula">\[Z = \frac{74 - 70}{1} = \frac{4}{1}\]</div>
+        <p>✅ Calculated Z = 4</p>
+        <hr>
+
+        <h3>Step 3: Decision Using Critical Value</h3>
+        <p>IF ( \(\alpha\) = 0.05 and \(H_1 : \mu \neq 70\) (Two-Tailed))(Critical value?)</p>
+        <p>Critical Value = \(\pm\) 1.96</p>
+        <div class="formula">\[|Z| > Critical\ Value\]</div>
+        <div class="formula">\[4 > +1.96\]</div>
+        <p>✅ \(H_0\) Reject</p>
+        <hr>
+
+        <h3>Step 4: Decision Using p-value</h3>
+        <p>IF (Z = 4 and \(H_1 : \mu \neq 70\) (Two-Tailed))(P-Value?)</p>
+        <p>P-Value = 0.00006</p>
+        <div class="formula">\[P < \alpha\]</div>
+        <div class="formula">\[0.00006 < 0.05\]</div>
+        <p>✅ \(H_0\) Reject</p>
+        <hr>
+
+        <h3>Final Conclusion</h3>
+        <p>Sample Data यह संकेत देता है कि:</p>
+        <p>Coaching institute का "Average score = 70" वाला claim support नहीं होता।</p>
+        <p>या </p>
+        <p>Population Mean 70 से significantly different है।</p>
+        <hr>
+
+        <h1>Right-Tailed One Sample Z-Test Example</h1>
+        <h3>Situation</h3>
+        <p>एक factory दावा करती है:</p>
+        <p>एक bulb की average life <b>1000 hours</b> है।</p>
+        <p>लेकिन factory ने नई technology लगाई है और manager कहता है:</p>
+        <p>"अब bulb पहले से ज्यादा चलता है।"</p>
+        <p>यानी हम check करना चाहते हैं कि <b>average life 1000 से बढ़ी है या नहीं।</b></p>
+        <hr>
+
+        <h3>Step 1: Hypotheses</h3>
+        <p>Null Hypothesis:</p>
+        <div class="formula">\[H_0 : \mu = 1000\]</div>
+        <p>Alternative Hypothesis:</p>
+        <div class="formula">\[H_1 : \mu > 1000\]</div>
+        <p>✅ Right-Tailed Test</p>
+        <hr>
+
+        <h3>Given Data</h3>
+        <ul>
+            <li>n = 100</li>
+            <li>\(\bar{X} = 1025\)</li>
+            <li>\(\sigma \) = 100</li>
+            <li>\(\alpha \) = 0.05</li>
+        </ul>
+        <hr>
+
+        <h3>Step 2: Standard Error</h3>
+        <div class="formula">\[SE = \frac{\sigma}{\sqrt{n}}\]</div>
+        <div class="formula">\[SE = \frac{100}{\sqrt{100}}\]</div>
+        <div class="formula">\[SE = \frac{100}{10} = 10\]</div>
+        <p>✅ SE = 10</p>
+
+        <h3>Step 3: Z-Statistic</h3>
+        <p>Formula</p>
+        <div class="formula">\[Z = \frac{\bar{X} - \mu}{\frac{\sigma}{\sqrt{n}}}\]</div>
+        <p>Calculation</p>
+        <div class="formula">\[Z = \frac{1025 - 1000}{10}\]</div>
+        <div class="formula">\[\boxed{Z = \frac{25}{10} = 2.5}\]</div>
+        <p>✅ Z = 2.5</p>
+        <hr>
+
+        <h3>Step 4: Critical Value Decision</h3>
+        <P>IF (\(\alpha = 0.05 \) and \(H_1 : \mu > 1000\) (Right-Tailed))(Critical Value?)</P>
+        <p>Critical Value = +1.645</p>
+        <div class="formula">\[|Z| > Critical\ Value\]</div>
+        <div class="formula">\[2 \ .5 > 1.645\]</div>
+        <p>✅ \(H_0\) Reject</p>
+        <hr>
+
+        <h3>Step 5: p-value Decision</h3>
+        <p>IF (Z = 2.5 and \(H_1 : \mu > 1000\))(P_Value?)</p>
+        <p>P-Value = 0.0062</p>
+        <div class="formula">\[P < \alpha\]</div>
+        <div class="formula">\[0.0062 < 0.05\]</div>
+        <p>✅ \(H_0\) Reject</p>
+        <hr>
+
+        <h3>Final Conclusion</h3>
+        <p>Data यह संकेत देता है कि:</p>
+        <p>Bulb की average life 1000 hours से अधिक है।</p>
+        <p>या </p>
+        <p>नई technology ने bulb life बढ़ाई है।</p>
+        <hr>
+
+        <h1>Left-Tailed One Sample Z-Test Example</h1>
+        <h3>Situation</h3>
+        <p>एक juice factory दावा करती है:</p>
+        <p>Bottle में average 500 ml juice भरा जाता है।</p>
+        <p>लेकिन customer complaint आई है कि:</p>
+        <p>"शायद 500 ml से कम juice भरा जा रहा है।"</p>
+        <p>अब हमें check करना है:</p>
+        <p>क्या average filling 500 ml से कम हो गई है?</p>
+        <hr>
+
+        <h3>Step 1: Hypotheses</h3>
+        <p>Null Hypothesis:</p>
+        <div class="formula">\[H_0 : \mu = 500\]</div>
+        <p>Alternative Hypothesis:</p>
+        <div class="formula">\[H_1 : \mu < 500\]</div>
+        <p>✅ Left-Tailed Test</p>
+        <hr>
+
+        <h3>Given Data</h3>
+        <ul>
+            <li>\(n = 100\)</li>
+            <li>\(\bar{X} = 495\)</li>
+            <li>\(\sigma = 20\)</li>
+            <li>\(\alpha = 0.05\)</li>
+        </ul>
+        <hr>
+
+        <h3>Step 2: Standard Error</h3>
+        <div class="formula">\[SE = \frac{\sigma}{\sqrt{n}}\]</div>
+        <div class="formula">\[SE = \frac{20}{\sqrt{100}}\]</div>
+        <div class="formula">\[SE = \frac{20}{10} = 2\]</div>
+        <p>✅ SE = 2</p>
+        <hr>
+
+        <h3>Step 3: Z-Statistic</h3>
+        <p>Formula:</p>
+        <div class="formula">\[Z = \frac{\bar{X} - \mu}{\frac{\sigma}{\sqrt{n}}}\]</div>
+        <p>Calculation:</p>
+        <div class="formula">\[Z = \frac{495 - 500}{2}\]</div>
+        <div class="formula">\[Z = \frac{-5}{2} = -2.5\]</div>
+        <p>✅ Z = -2.5</p>
+        <hr>
+
+        <h3>Step 4: Critical Value Decision</h3>
+        <p>IF (\(\alpha\) = 0.05 and \(H_1 : \mu < 500\)(Left-Tailed))(Critical Value?)</p>
+        <p>Critical Value = -1.645</p>
+        <p>✅ Critical Value = -1.645</p>
+        <div class="formula">\[|Z| < Critical\ Value\]</div>
+        <div class="formula">\[-2.5 < -1.645\]</div>
+        <p>✅ \(H_0\) Reject</p>
+        <hr>
+
+        <h3>Step 5: p-value Decision</h3>
+        <p>IF(Z = -2.5 and \(H_1 : \mu < 500\) (Left-Tailed)(P-Value?)</p>
+        <p>$$\mathbf{P\text{-value} = 0.0062} \quad (0.62\%)$$</p>
+        <div class="formula">\[P < \alpha\]</div>
+        <div class="formula">\[0.0062 < 0.05\]</div>
+        <p>✅ \(H_0\) Reject</p>
+        <hr>
+
+        <h3>Final Conclusion</h3>
+        <p>Data यह संकेत देता है कि:</p>
+        <p>Bottle में average filling 500 ml से कम है।</p>
+        <p>या </p>
+        <p>Factory का "500 ml average filling" वाला claim support नहीं होता।</p>
+        <hr>
+
+        <h2>Two Sample Z-Test</h2>
+        <p><b>Two Sample Z-Test</b> का उपयोग तब किया जाता है जब हमें दो
+            <b>Samples के means</b> की तुलना करनी हो।
+        </p>
+        <h3>Example</h3>
+        <p>मान लो:</p>
+        <ul>
+            <li>School A के 100 students का average marks = 70</li>
+            <li>School B के 100 students का average marks = 75</li>
+        </ul>
+        <p>अब सवाल है:</p>
+        <p>क्या दोनों schools के average marks वास्तव में अलग हैं, या यह difference सिर्फ chance की वजह से आया है?</p>
+        <p>इसका जवाब <b>Two Sample Z-Test</b> देता है। ✅</p>
+        <h3>Goal</h3>
+        <p>👉 <b>Sample 1 Mean</b> और <b>Sample 2 Mean</b> के बीच का difference significant है या नहीं, यह check करना।</p>
+        <h3>Trick</h3>
+        <ul>
+            <li><b>One Sample Z-Test </b>→ Sample Mean vs Population Mean</li>
+            <li><b>Two Sample Z-Test</b> → Sample Mean vs Sample Mean</li>
+        </ul>
+        <p>🎯 यानी <b>दो groups के averages compare करने के लिए Two Sample Z-Test use होता है।</b></p>
+        <hr>
+        <h2>Two Sample Z-Test (Two-Tailed) — Complete Example</h2>
+        <hr>
+        <h3>Situation</h3>
+        <p>एक company ने दो अलग-अलग training programs चलाए।</p>
+        <p>अब management जानना चाहता है:</p>
+        <p>क्या दोनों training programs के students का average score अलग है?</p>
+        <hr>
+        <h3>Step 1: Hypotheses</h3>
+        <p>Null Hypothesis:</p>
+        <div class="formula">\[H_0 : \mu_1 = \mu_2\]</div>
+        <p>Alternative Hypothesis:</p>
+        <div class="formula">\[H_1 : \mu_1 \neq \mu_2\]</div>
+        <p>✅ Two-Tailed Test</p>
+        <hr>
+        <h3>Step 2: Given Data</h3>
+        <p><b>Program A</b></p>
+        <ul>
+            <li>\(n_1 = 100\)</li>
+            <li>\(\bar{X}_1 = 75\)</li>
+            <li>\(\sigma_1 = 10\)</li>
+        </ul>
+        <p><b>Program B</b></p>
+        <ul>
+            <li>\(n_2 = 100\)</li>
+            <li>\(\bar{X}_2 = 70\)</li>
+            <li>\(\sigma_2 = 10\)</li>
+        </ul>
+        <h3>Significance Level</h3>
+        <div class="formula">\[\alpha = 0.05\]</div>
+        <hr>
+        <h3>Step 3: Formula</h3>
+        <div class="formula">\[Z = \frac{(\bar{X}_1 - \bar{X}_2) - (\mu_1 - \mu_2)}{\sqrt{\frac{\sigma^2_1}{n_1} + \frac{\sigma^2_2}{n_2}}}\]</div>
+        <div class="formula">\[Z = \frac{(75 - 70)-(0)}{\sqrt{\frac{10 \times 10}{100} + \frac{10 \times 10}{100}}}\]</div>
+        <div class="formula">\[Z = \frac{5}{\sqrt{1 + 1}} = \frac{5}{\sqrt{2}}\]</div>
+        <div class="formula">\[\boxed{Z = \frac{5}{1.414} = 3.54}\]</div>
+        <hr>
+        <p>✅ Calculated Z = 3.54</p>
+        <h3>Step 4: Critical Value Decision</h3>
+        <p>क्योंकि:</p>
+        <ul>
+            <li>\(\alpha = 0.05\)</li>
+            <li>\(H_1 : \mu_1 \neq \mu_2\) (Two-Tailed Test)</li>
+        </ul>
+        <p>✅ Critical Value = ±1.96</p>
+        <p>Compare:</p>
+        <div class="formula">\[Z > Critical\ Value\]</div>
+        <div class="formula">\[3.54 > 1.96\]</div>
+        <p>✅ \(H_0\) Reject</p>
+        <hr>
+        <h3>Step 5: p-value Decision</h3>
+        <p>क्योंकि:</p>
+        <ul>
+            <li>Z = 3.54</li>
+            <li>\(H_1 : \mu_1 \neq \mu_2\) (Two-Tailed Test)</li>
+        </ul>
+        <p>✅ P-Value = 0.0004</p>
+        <div class="formula">\[P < \alpha\]</div>
+        <div class="formula">\[0.0004 < 0.05\]</div>
+        <p>✅ \(H_0\) Reject</p>
+        <hr>
+        <h3>Final Conclusion</h3>
+        <p>Data यह संकेत देता है कि:</p>
+        <p>Program A और Program B के average scores में statistically significant difference है।</p>
+        <p>या</p>
+        <p>दोनों training programs का average performance समान नहीं है।</p>
+        <hr>
+        <h2>Two Sample Z-Test (Right-Tailed) Example</h2>
+        <h3>Situation</h3>
+        <p>एक company दो sales training programs चला रही है।</p>
+        <p>Management को लगता है कि:</p>
+        <p>Program A, Program B से बेहतर है।</p>
+        <p>यानी वे साबित करना चाहते हैं कि Program A का average score ज्यादा है।</p>
+        <hr>
+        <h3>Step 1: Hypotheses</h3>
+        <p>Null Hypothesis:</p>
+        <div class="formula">\[H_0 : \mu_1 = \mu_2\]</div>
+        <p>Alternative Hypothesis:</p>
+        <div class="formula">\[H_1 : \mu_1 > \mu_2\]</div>
+        <p>✅ Right-Tailed Test</p>
+        <hr>
+        <h3>Step 2: Given Data</h3>
+        <p><b>Program A</b></p>
+        <ul>
+            <li>\(n_1 = 100\)</li>
+            <li>\(\bar{X}_1 = 78\)</li>
+            <li>\(\sigma_1 = 10\)</li>
+        </ul>
+        <p><b>Program B</b></p>
+        <ul>
+            <li>\(n_2 = 100\)</li>
+            <li>\(\bar{X}_2 = 74\)</li>
+            <li>\(\sigma_2 = 10\)</li>
+        </ul>
+        <h4>Significance Level</h4>
+        <div class="formula">\[\alpha = 0.05\]</div>
+        <hr>
+        <h3>Step 3: Formula</h3>
+        <div class="formula">\[Z = \frac{(\bar{X}_1 - \bar{X}_2) - (\mu_1 - \mu_2)}{\sqrt{\frac{\sigma^2_1}{n_1} + \frac{\sigma^2_2}{n_2}}}\]</div>
+        <div class="formula">\[Z = \frac{(78 - 74) - (0)}{\sqrt{\frac{10 \times 10}{100} + \frac{10 \times 10}{100}}}\]</div>
+        <div class="formula">\[Z = \frac{4}{\sqrt{1 + 1}} = \frac{4}{\sqrt{2}}\]</div>
+        <div class="formula">\[Z = \frac{4}{1.414} = 2.83\]</div>
+          <p>✅ Calculated Z = 2.83</p>
+          <hr>
+          <h3>Step 4: Critical Value Decision</h3>
+          <p>क्योंकि:</p>
+          <ul>
+            <li>\(\alpha = 0.05\)</li>
+            <li>\(H_1 : \mu_1 > \mu_2\) (Right-Tailed test)</li>
+          </ul>
+          <p>✅ Critical Value = +1.645</p>
+          <div class="formula">\[Z > critical\ value\]</div>
+          <div class="formula">\[2.83 > +1.645\]</div>
+          <p>✅ H₀ Reject</p>
+          <hr>
+          <h3>Step 5: p-value Decision</h3>
+          <p>क्योंकि:</p>
+          <ul>
+            <li>\(Z = 2.83\)</li>
+            <li>\(H_1 : \mu_1 > \mu_2\) (Right-Tailed test)</li>
+          </ul>
+          <p>✅ P-Value = 0.0023</p>
+          <div class="formula">\[P-Value < \alpha\]</div>
+          <div class="formula">\[0.0023 < 0.05\]</div>
+          <p>✅ \(H_0\) Reject</p>
+          <hr>
+          <h3>Final Conclusion</h3>
+          <p>Data यह संकेत देता है कि:</p>
+          <p>Program A का average score Program B से अधिक है।</p>
+          <p>या </p>
+          <p>Program A statistically better performance देता है।</p>
+        <hr>  
+        <h2>Two Sample Z-Test (Left-Tailed) Example</h2>
+        <hr>
+        <h3>Situation</h3>
+        <p>एक company दो manufacturing machines का उपयोग करती है।</p>
+        <p>Management को शक है कि:</p>
+        <p>Machine A, Machine B से कम output दे रही है।</p>
+        <p>हमें check करना है:</p>
+        <p>क्या Machine A का average output, Machine B से कम है?</p>
+        <hr>
+        <h3>Step 1: Hypotheses</h3>
+        <p>Null Hypothesis:</p>
+        <div class="formula">\[H_0 : \mu_1 = \mu_2\]</div>
+        <p>Alternative Hypothesis:</p>
+        <div class="formula">\[H_0 : \mu_1 > \mu_2\]</div>
+        <p>✅ Left-Tailed Test</p>
+        <hr>
+        <h3>Step 2: Given Data</h3>
+        <p><b>Machine A</b></p>
+        <ul>
+            <li>\(n_1 = 100\)</li>
+            <li>\(\bar{X}_1 = 72\)</li>
+            <li>\(\sigma_1 = 10\)</li>
+        </ul>
+        <p><b>Machine B</b></p>
+        <ul>
+            <li>\(n_2 = 100\)</li>
+            <li>\(\bar{X}_2 = 76\)</li>
+            <li>\(\sigma_2 = 10\)</li>
+        </ul>
+        <h4>Significance Level</h4>
+        <div class="formula">\[\alpha = 0.05\]</div>
+        <hr>
+        <h3>Step 3: Formula</h3>
+        <div class="formula">\[Z = \frac{(\bar{X}_1 - \bar{X}_2) - (\mu_1 - \mu_2)}{\sqrt{\frac{\sigma^2_1}{n_1} + \frac{\sigma^2_2}{n_2}}}\]</div>
+        <div class="formula">\[Z = \frac{(72 - 76) - (0)}{\sqrt{\frac{10 \times 10}{100} + \frac{10 \times 10}{100}}}\]</div>
+        <div class="formula">\[Z = \frac{-4}{\sqrt{\frac{10 \times 10}{100} + \frac{10 \times 10}{100}}}\]</div>
+        <div class="formula">\[Z = \frac{-4}{\sqrt{ 1 + 1}} = \frac{-4}{\sqrt{2}}\]</div>
+        <div class="formula">\[Z = \frac{-4}{1.414} = - 2.83\]</div>
+        <p>✅ Calculated Z = -2.83</p>
+        <hr>
+        <h3>Step 4: Critical Value Decision</h3>
+        <p>क्योंकि:</p>
+        <ul>
+            <li>\(\alpha = 0.05\)</li>
+            <li>\(H_1 : \mu_1 < \mu_2\) (Left-Tailed test)</li>
+        </ul>
+        <p>✅ Critical Value = -1.645</p>
+        <div class="formula">\[Z < Critical\ Value\]</div>
+        <div class="formula">\[-2.83 < -1.645\]</div>
+        <p>✅ \(H_0\) Reject</p>
+        <hr>
+        <h3>Step 5: p-value Decision</h3>
+        <p>क्योंकि:</p>
+        <ul>
+            <li>\(Z = -2.83\)</li>
+            <li>\(H_1 : \mu_1 < \mu_2\) (Left-Tailed test)</li>
+        </ul>
+        <div class="formula">\[P-Value\ < \alpha\]</div>
+        <div class="formula">\[0.0023 < 0.05\]</div>
+        <p>✅ \(H_0\) Reject</p>
+        <hr>
+        <h3>Final Conclusion</h3>
+        <p>Data यह संकेत देता है कि:</p>
+        <p>Machine A का average output, Machine B से कम है।</p>
+        <p>या </p>
+        <p>Machine A statistically कम performance दे रही है।</p>
+        <hr>
+        <h2>Test for Population Mean</h2>
+        <p><b>Test for Population Mean</b> का मतलब है:</p>
+        <p>👉 यह जाँचना कि <b>Population Mean \((\mu)\)</b> किसी दिए गए value के बराबर है या नहीं।</p>
+        <h3>Example</h3>
+        <p>एक factory दावा करती है:</p>
+        <p>Average bulb life = 1000 hours</p>
+        <p>यानी,</p>
+        <p>\(H_0 : \mu = 1000\)</p>
+        <p>अब कुछ bulbs का Sample लेकर check किया जाता है कि data इस claim को support करता है या नहीं।</p>
+        <h3>Goal</h3>
+        <p>👉 <b>Population Mean \(\mu\)</b> के बारे में decision लेना।</p>
+        <h3>Trick</h3>
+        <p><b>Test for Population Mean = Population के average \((\mu)\) की जाँच। 🎯</b></p>
+        <p>यह काम अक्सर <b>One Sample Z-Test</b> या <b>One Sample t-Test</b> से किया जाता है। ✅</p>
+        <hr>
+
+        <h2>Test for Difference Between Means</h2>
+        <p><b>Test for Difference Between Means</b> का मतलब है:</p>
+        <p>👉 यह जाँचना कि <b>दो groups के average (means)</b> एक जैसे हैं या अलग।</p>
+        <h3>Example</h3>
+        <ul>
+            <li>Class A का average marks = 70</li>
+            <li>Class B का average marks = 75</li>
+        </ul>
+        <p>अब सवाल:</p>
+        <p>क्या दोनों classes का average वास्तव में अलग है?</p>
+        <p>या </p>
+        <p>यह difference सिर्फ chance की वजह से आया है?</p>
+        <p>इसी की जाँच <b>Test for Difference Between Means</b> करता है। ✅</p>
+        <h4>Hypotheses</h4>
+        <ul>
+            <li>\(H_0 : \mu_1 = \mu_2\)</li>
+            <li>\(H_1 : \mu_1 \neq \mu_2\)</li>
+        </ul>
+        <h4>Trick</h4>
+        <p><b>Test for Population Mean</b> → एक average की जाँच</p>
+        <p><b>Test for Difference Between Means</b> → दो averages की तुलना 🎯</p>
+        <p>यह काम अक्सर <b>Two Sample Z-Test</b> या <b>Two Sample t-Test</b> से किया जाता है। ✅</p>
+        <hr>
+
+        <h2>Test for Population Proportion</h2>
+        <p><b>Test for Population Proportion</b> का मतलब है:</p>
+        <p>👉 यह जाँचना कि Population का proportion (percentage) किसी दिए गए value के बराबर है या नहीं।</p>
+        <h3>Example</h3>
+        <p>एक company दावा करती है:</p>
+        <p>80% customers हमारे product से satisfied हैं।</p>
+        <p>यानी,</p>
+        <p>\(H_0 : P = 0.80\)</p>
+        <p>अब कुछ customers का Sample लेकर check किया जाता है कि यह claim सही लगता है या नहीं।</p>
+        <h3>Goal</h3>
+        <p>👉 <b>Population Proportion (p)</b> के बारे में decision लेना।</p>
+        <h3>Trick</h3>
+        <ul>
+            <li>Mean \((\mu)\) → Average की बात</li>
+            <li>Proportion (p) → Percentage / Ratio की बात</li>
+        </ul>
+        <p><b>🎯 Test for Population Proportion = Population के percentage (p) की जाँच। ✅</b></p>
+        <hr>
+        <h2>Test for Population Proportion (Two-Tailed) Example</h2>
+        <h3>Situation</h3>
+        <p>एक mobile company दावा करती है:</p>
+        <p>80% customers उसके service से satisfied हैं।</p>
+        <p>यानी:</p>
+        <div class="formula">\[H_0 : P = 0.80\]</div>
+        <p>हम check करना चाहते हैं कि 80% सच है या नहीं।</p>
+        <p>इसलिए:</p>
+        <div class="formula">\[H_0 : P \neq 0.80\]</div>
+        <p>✅ Two-Tailed Test</p>
+        <hr>
+        <h3>Given Data by Sample</h3>
+        <ul>
+            <li>Sample Size = n = 100</li>
+            <li>Satisfied Customers = 75</li>
+            <li>Claimed Proportion = p = 0.80</li>
+            <li>\(\alpha\) = 0.05</li>
+        </ul>
+        <hr>
+        <h3>Step 1: Standard Error</h3>
+        <p>Formula :</p>
+        <div class="formula">\[SE = \sqrt{\frac{p(1 - p)}{n}}\]</div>
+        <div class="formula">\[SE = \sqrt{\frac{0.80(1 - 0.80)}{100}}\]</div>
+        <div class="formula">\[SE = \sqrt{\frac{0.80(0.20)}{100}}\]</div>
+        <div class="formula">\[SE = \sqrt{\frac{0.16}{100}}\]</div>
+        <div class="formula">\[SE  = \sqrt{0.0016} = 0.04\]</div>
+        <p>✅ SE = 0.04</p>
+        <hr>
+        <h3>Step 2: Z-Statistic</h3>
+        <p>Formula:</p>
+        <div class="formula">\[Z = \frac{\widehat{p} - p}{\sqrt{\frac{p(1 - p)}{n}}}\]</div>
+        <p>Calculation:</p>
+        <div class="formula">\[Z = \frac{0.75 - 0.80}{0.04}\]</div>
+        <div class="formula">\[Z = \frac{-0.05}{0.04} = - 1.25\]</div>
+        <p>✅ Z = -1.25</p>
+        <hr>
+        <h3>Step 3: Critical Value decision</h3>
+        <p>क्योंकि:</p>
+        <ul>
+            <li>\(\alpha = 0.05\)</li>
+            <li>\(H_1 : p \neq 0.80\)</li>
+        </ul>
+        <p>इसलिए:</p>
+        <p>✅ Critical Value = ±1.96</p>
+        <div class="formula">\[|Z| < Critical \ Value\]</div>
+        <div class="formula">\[-1.25 > -1.96\]</div>
+        <p>✅ \(H_0\) Reject नहीं करेंगे।</p>
+        <hr>
+        <h3>Step 4: p-value Decision</h3>
+        <p>क्योंकि:</p>
+        <ul>
+            <li>\(Z = -1.25\)</li>
+            <li>\(H_1 : p \neq 0.80\)</li>
+        </ul>
+        <p><b>P-Value = 0.2113</b></p>
+        <div class="formula">\[p-value < \alpha\]</div>
+        <div class="formula">\[0.2113 > 0.05\]</div>
+        <p>✅ \(H_0\) Reject नहीं करेंगे।</p>
+        <hr>
+        <h3>Final Conclusion</h3>
+        <p>Data यह साबित नहीं करता कि satisfaction rate 80% से अलग है।</p>
+        <p>इसलिए:</p>
+        <p>Company का "80% customers satisfied हैं" वाला claim अभी acceptable माना जाएगा।</p>
+<hr>
+        <h2>Test for Difference Between Proportions</h2>
+        <p><b>Test for Difference Between Proportions</b> का मतलब है:</p>
+        <p>👉 यह जाँचना कि <b>दो groups के proportions (percentages)</b> एक जैसे हैं या अलग।</p>
+        <h3>Example</h3>
+        <ul>
+            <li>Website A पर 20% visitors product खरीदते हैं।</li>
+            <li>Website B par 30% visitors product खरीदते हैं।</li>
+        </ul>
+        <p>अब सवाल:</p>
+        <p>क्या 20% और 30% का difference वास्तव में है?</p>
+        <p>या</p>
+        <p>यह difference सिर्फ chance की वजह से आया है?</p>
+        <p>इसी की जाँच <b>Test for Difference Between Proportions</b> करता है। ✅</p>
+        <h4>Hypotheses</h4>
+        <ul>
+            <li>\(H_0 = P_1 = P_2\)</li>
+            <li>\(H_1 = p_1 \neq P_2\)</li>
+        </ul>
+        <h3>Trick</h3>
+        <ul>
+            <li><b>Difference Between Means</b> → Average compare करता है।</li>
+            <li><b>Difference Between Proportions</b> → Percentage compare करता है।</li>
+        </ul>
+        <p><b>🎯 दो groups के percentages की तुलना = Test for Difference Between Proportions। ✅</b></p>
+        <hr>
+        <h2>Test for Difference Between Proportions (Two-Tailed) Example</h2>
+        <h3>Situation</h3>
+        <p>एक company ने दो advertisements चलाईं:</p>
+        <ul>
+            <li>AD A</li>
+            <li>AD B</li>
+        </ul>
+        <p>अब company जानना चाहती है:</p>
+        <p>क्या दोनों ads का conversion rate अलग है?</p>
+        <hr>
+        <h3>Step 1: Hypotheses</h3>
+        <p>Null Hypothesis:</p>
+        <div class="formula">\[H_0 : p_1 = P_2\]</div>
+        <p>Alternative Hypothesis:</p>
+        <div class="formula">\[H_1 : P_1 \neq P_2\]</div>
+        <p>✅ Two-Tailed Test</p>
+        <hr>
+        <h3>Step 2: Given Data</h3>
+        <p><b>Ad A</b></p>
+        <ul>
+            <li>\(n_1\) = 200 people</li>
+            <li>Successes = 120</li>
+        </ul>
+        <p><b>Ad B</b></p>
+        <ul>
+            <li>\(n_2\) = 200 people</li>
+            <li>Successes = 100</li>
+        </ul>
+        <h4>Significance Level</h4>
+        <div class="formula">\[\alpha = 0.05\]</div>
+        <hr>
+        <h3>Step 1: Pooled Proportion</h3>
+        <h5>अब Pooled Proportion क्यों आया?</h5>
+        <p>क्योंकि \(H_0\) में हमने माना है:</p>
+        <div class="formula">\[P_1 = P_2\]</div>
+        <p>यानी:</p>
+        <p>दोनों populations का proportion समान है।</p>
+        <p>अगर दोनों समान हैं, तो दोनों samples को मिलाकर एक common proportion estimate कर सकते हैं।</p>
+        <p>इसी common estimate को <b>Pooled Proportion </b>कहते हैं।</p>
+        <p>Formula:</p>
+        <div class="formula">\[\widehat{p} = \frac{x_1 + x_2}{n_1 + n_2}\]</div>
+        <div class="formula">\[\widehat{p} = \frac{120  + 100}{200 + 200}\]</div>
+        <div class="formula">\[\widehat{p} = \frac{220}{400} = 0.55\]</div>
+        <hr>
+        <h3>Step 2: Sample Proportions</h3>
+        <p>For Ad A:</p>
+        <div class="formula">\[\widehat{p}_1 = \frac{120}{200} = 0.60\]</div>
+        <p>For Ad B:</p>
+        <div class="formula">\[\widehat{p}_2 = \frac{100}{200} = 0.50\]</div>
+        <p>✅ Difference:</p>
+        <div class="formula">\[\widehat{p}_1 - \widehat{p}_2\]</div>
+        <div class="formula">\[0.60 - 0.50\]</div>
+        <div class="formula">\[0.10\]</div>
+        <hr>
+        <h3>Step 3: Standard Error</h3>
+        <p>Formula:</p>
+        <div class="formula">\[SE = \sqrt{\widehat{p}(1 - \widehat{p}) \left( \frac{1}{n_1} \frac{1}{n_2} \right)}\]</div>
+        <div class="formula">\[SE = \sqrt{0.55(1 - 0.55) \left( \frac{1}{200} + \frac{1}{200} \right)}\]</div>
+        <div class="formula">\[SE = \sqrt{0.55(0.45) \left( 0.01 \right)}\]</div>
+        <div class="formula">\[SE = 0.0497\]</div>
+        <p>✅ SE ≈ 0.0497</p>
+        <hr>
+        <h3>Step 4: Z-Statistic</h3>
+        <div class="formula">\[Z = \frac{(\widehat{p}_1 - \widehat{p}_2) - (p_1 - p_2)}{\sqrt{\widehat{p}(1 - \widehat{p})} \left( \frac{1}{n_1} + \frac{1}{n_2} \right)}\]</div>
+        <div class="formula">\[Z = \frac{0.10}{0.0479}\]</div>
+        <div class="formula">\[Z = 2.01\]</div>
+        <p>✅ Z ≈ 2.01</p>
+        <hr>
+        <h3>Step 5: Critical Value Decision</h3>
+        <p>क्योंकि:</p>
+        <ul>
+            <li>\(\alpha = 0.05\)</li>
+            <li>H_1 : P_1 \neq P_2</li>
+        </ul>
+        <p>इसलिए:</p>
+        <p>✅ Critical Value = ±1.96</p>
+        <div class="formula">\[|Z| > Critical\ Value\]</div>
+        <div class="formula">\[2.01 > +1.96\]</div>
+        <p>✅ \(H_0\) Reject</p>
+        <hr>
+        <h3>Step 6: p-value Decision</h3>
+        <p>क्योंकि:</p>
+        <ul>
+            <li>\(Z = 2.01\)</li>
+            <li>H_1 : P_1 \neq P_2</li>
+        </ul>
+        <p>✅  P-Value = 0.0444</p>
+        <div class="formula">\[P-Value \leq alpha\]</div>
+        <div class="formula">\[0.0444 < 0.05\]</div>
+        <p>✅ \(H_0\)Reject</p>
+        <hr>
+        <h3>Final Conclusion</h3>
+        <p>Data यह संकेत देता है कि:</p>
+        <p>Ad A और Ad B के conversion rates में statistically significant difference है।</p>
+        <p>या </p>
+        <p>दोनों advertisements समान performance नहीं दे रही हैं।</p>
+        <hr>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyioEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+
+</html>

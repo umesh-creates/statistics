@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <link rel="stylesheet" href="/statistics/styles/style_formate.css">
+    <title>Business Statistics | Testing of Hypothesis | ANOVA</title>
+</head>
+<body>
+    <div class="container">
+<H1>ANOVA (Very Important)</H1><hr>
+<p class="para">2 नहीं बल्कि <b>3 या उससे ज्यादा groups हों</b> तो <b>ANOVA (Analysis of Variance)</b> आता है।</p>
+<h3>Problem That ANOVA Solves</h3>
+<p>मान लो एक company ने 3 training programs बनाए:</p>
+<ul>
+    <li>Program A</li>
+    <li>Program B</li>
+    <li>Program C</li>
+</ul>
+<p>और training के बाद scores मिले:</p>
+<div class="table-div">
+    <table class="table">
+    <thead>
+        <tr>
+            <th>Group A</th>
+            <th>Group B</th>
+            <th>Group C</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>70</td>
+            <td>80</td>
+            <td>90</td>
+        </tr>
+        <tr>
+            <td>75</td>
+            <td>85</td>
+            <td>95</td>
+        </tr>
+        <tr>
+            <td>80</td>
+            <td>90</td>
+            <td>100</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+<p>Question:</p>
+<p class="para">क्या तीनों programs का average score समान है?</p>
+<h3>क्या हम 3 t-tests लगा सकते हैं?</h3>
+<p>A vs B
+<br>
+A vs C
+<br>
+B vs C</p>
+<p>❌ Technically कर सकते हैं, लेकिन इससे Type I Error बढ़ जाती है।</p>
+<p>इसी समस्या को solve करने के लिए ANOVA बना।</p>
+<hr>
+<h3>ANOVA का Main Idea</h3>
+<p>ANOVA Mean को directly compare नहीं करता।</p>
+<p>यह Variance compare करता है।</p>
+<p>इसलिए नाम है:</p>
+<p class="para">Analysis of Variance</p>
+<hr>
+<h3>Hypotheses</h3>
+<h5>Null Hypothesis</h5>
+<div class="formula">\[H_0 : \mu_1 = \mu_2 = \mu_3\]</div>
+<p>सभी group means समान हैं।</p>
+<hr>
+<h5>Alternative Hypothesis</h5>
+<div class="formula">\[H_0 :\]</div>
+<p>कम से कम एक mean अलग है।</p>
+<hr>
+<h3>ANOVA का Secret Question</h3>
+<p>ANOVA पूछता है:</p>
+<p class="para">Groups के बीच का variation ज्यादा है?</p>
+<p>या</p>
+<p class="para">Groups के अंदर का variation ज्यादा है?</p>
+<hr>
+<h4>If Between-Group Variation is Large</h4>
+<p>Means अलग हैं।</p>
+<p>Reject \(H_0\)</p>
+<hr>
+<h4>If Within-Group Variation is Large</h4>
+<p>Difference random chance हो सकता है।</p>
+<p>Fail to Reject \(H_0\)</p>
+<hr>
+<h3>F-Test Concept</h3>
+<p>ANOVA का test statistic:</p>
+<p>जहाँ:</p>
+<ul>
+    <li>\(MS_{between}\) = Between Groups Mean Square</li>
+    <li>\(MS_{within}\) = Within Groups Mean Square</li>
+</ul>
+<hr>
+<h3>Intuition</h3>
+<p>अगर:</p>
+<div class="formula">\[F \approx 1\]</div>
+<p>तो groups लगभग समान हैं।</p>
+<hr>
+<p>अगर:</p>
+<div class="formula">\[F \gg 1\]</div>
+<p>तो groups अलग हो सकते हैं।</p>
+<hr>
+<h3>ANOVA Roadmap</h3>
+<p>पहले हम समझेंगे:</p>
+<ol>
+    <li>Group Mean</li>
+    <li>Grand mean</li>
+    <li>Between Group variance (SSB)</li>
+    <li>Within Group variance (SSW)</li>
+    <li>F statistic</li>
+    <li>Critical Value</li>
+    <li>P-Value</li>
+    <li>Final Conclusion</li>
+</ol>
+<p>🎯 जैसे Chi-Square में पूरा chapter एक formula के आसपास घूमता था:</p>
+<div class="formula">\[\chi^2 = \sum \frac{(O - E)^2}{E}\]</div>
+<p>वैसे ही ANOVA पूरा इस idea के आसपास घूमता है:</p>
+<div class="formula">\[F = \frac{Between\ Group\ variance}{Within\ Group\ variance}\]</div>
+<hr>
+
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+</html>
