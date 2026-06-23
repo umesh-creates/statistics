@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="\styles\style_formate.css">
+    <link rel="stylesheet" href="statistics\styles\style_formate.css">
     <title>Business Statistics | Confidence Intervals</title>
 </head>
 
@@ -87,7 +87,7 @@
         <p>unknown होती है।</p>
         <p>इसलिए अक्सर t-CI use होता है।</p>
         <hr>
-        <h3>Confidence Interval for Mean — Complete Numerical Example</h3>
+        <h3>Confidence Interval for Mean — Complete Numerical Example (Z-CI)</h3>
         <h4>Situation</h4>
         <p>एक company जानना चाहती है:</p>
         <p class="para">उसके employees के average monthly training score का population mean क्या हो सकता है?</p>
@@ -138,7 +138,7 @@
         <div class="formula">\[73.92\]</div>
         <hr>
         <h3>Final Confidence Interval</h3>
-        <div class="formula">\[(66.08, 73.92)\]</div>
+        <div class="formula">\[(66\ .08\ , 73\ .92)\]</div>
         <p>✅ 95% Confidence Interval = (66.08, 73.92)</p>
         <hr>
         <h3>Interpretation</h3>
@@ -149,10 +149,198 @@
         <p class="para">Sample data के आधार पर अनुमान है कि population mean लगभग 66.08 से 73.92 के बीच है।</p>
         </p>
         <hr>
+        <h3>Confidence Interval for Mean (t-CI) — Complete Numerical Example</h3>
+        <hr>
+        <h4>Situation</h4>
+        <p>एक company जानना चाहती है:</p>
+        <p class="para">Employees का average productivity score क्या है?</p>
+        <p>25 employees का sample लिया गया।</p>
+        <hr>
+        <h4>Given</h4>
+        <p>Sample Mean:</p>
+        <div class="formula">\[\bar{X} = 80\]</div>
+        <p>Sample Standard Deviation :</p>
+        <div class="formula">\[s = 10\]</div>
+        <p>Sample Size :</p>
+        <div class="formula">\[n = 25\]</div>
+        <p>Confidence Level :</p>
+        <div class="formula">\[95\%\]</div>
+        <hr>
+        <h3>Step 1: Why t-CI?</h3>
+        <p>Population Standard Deviation (σ) नहीं दी गई।</p>
+        <p>हमारे पास केवल sample SD है:</p>
+        <div class="formula">\[s = 10\]</div>
+        <p>और sample छोटा है:</p>
+        <div class="formula">\[n = 25\]</div>
+        <p>इसलिए:</p>
+        <p>✅ t-distribution use करेंगे।</p>
+        <hr>
+        <h3>Step 2: Standard Error (SE)</h3>
+        <p>Formula:</p>
+        <div class="formula">\[SE = \frac{s}{\sqrt{n}}\]</div>
+        <p>Substitute:</p>
+        <div class="formula">\[SE = \frac{10}{\sqrt{25}}\]</div>
+        <div class="formula">\[SE = \frac{10}{5}\]</div>
+        <div class="formula">\[\boxed{SE = 2}\]</div>
+        <p>✅ Standard Error = 2</p>
+        <hr>
+        <h3>Step 3: Degrees of Freedom</h3>
+        <div class="formula">\[df = n - 1\]</div>
+        <div class="formula">\[df = 25 - 1\]</div>
+        <div class="formula">\[\boxed{df = 24}\]</div>
+        <p>✅ df = 24</p>
+        <hr>
+        <h3>Step 4: t Critical Value</h3>
+        <p>Dependencies:</p>
+        <ul>
+            <li>Confidence Level = 95%</li>
+            <li>df = 24</li>
+        </ul>
+        <p>Therefore:</p>
+        <div class="formula">\[t_{critical} = 2.064\]</div>
+        <p>(यह table/software से मिलेगा)</p>
+        <hr>
+        <h3>Step 5: Margin of Error</h3>
+        <p>Formula:</p>
+        <div class="formula">\[ME = t_{critical} \times SE\]</div>
+        <p>Substitute:</p>
+        <div class="formula">\[ME = 2.064 \times 2\]</div>
+        <div class="formula">\[\boxed{ME = 4.128}\]</div>
+        <p>✅ Margin of Error = 4.128</p>
+        <hr>
+        <h3>Step 6: Confidence Interval</h3>
+        <p>Formula:</p>
+        <div class="formula">\[CI = \bar{X} \pm ME\]</div>
+        <p>Substitute:</p>
+        <div class="formula">\[CI = 80 \pm 4.128\]</div>
+        <hr>
+        <p>Lower Limit:</p>
+        <div class="formula">\[80 - 4.128\]</div>
+        <div class="formula">\[75.872\]</div>
+        <hr>
+        <p>Upper Limit:</p>
+        <div class="formula">\[80 + 4.128\]</div>
+        <div class="formula">\[84.128\]</div>
+        <hr>
+        <h3>Final Confidence Interval</h3>
+        <div class="formula">\[(75\ .872\ , 84\ .128)\]</div>
+        <p>✅ 95% Confidence Interval = (75.872, 84.128)</p>
+        <hr>
+        <h3>Interpretation</h3>
+        <h4>Statistical Version</h4>
+        <p class="para">We are 95% confident that the population mean productivity score lies between 75.872 and 84.128.
+        </p>
+        <hr>
+        <h4>Simple Hindi Version</h4>
+        <p class="para">Sample data के आधार पर अनुमान है कि population mean productivity score लगभग 75.87 से 84.13 के
+            बीच है।</p>
+        <hr>
+        <h3>Confidence Interval for Proportion</h3>
+        <p>यह तब use होता है जब हम Mean नहीं बल्कि <b>Percentage / Proportion</b> estimate करना चाहते हैं।</p>
+        <hr>
+        <h4>Situation</h4>
+        <p>एक company जानना चाहती है:</p>
+        <p class="para">उसके कितने customers satisfied हैं?</p>
+        <p>पूरी population से पूछना मुश्किल है, इसलिए sample लिया गया।</p>
+        <hr>
+        <h4>Given</h4>
+        <p>Sample Size:</p>
+        <div class="formula">\[n = 200\]</div>
+        <p>Satisfied Customers:</p>
+        <div class="formula">\[x = 150\]</div>
+        <hr>
+        <h3>Step 1: Sample Proportion</h3>
+        <p>Formula:</p>
+        <div class="formula">\[\widehat{P} = \frac{x}{n}\]</div>
+        <p>Substitute:</p>
+        <div class="formula">\[\widehat{P} = \frac{150}{200}\]</div>
+        <div class="formula">\[\boxed{\widehat{P} = 0.75}\]</div>
+        <div class="formula">\[75\%\]</div>
+        <p>customers satisfied हैं।</p>
+        <p>✅ Sample Proportion = 0.75</p>
+        <hr>
+        <h3>Step 2: Standard Error</h3>
+        <p>Formula:</p>
+        <div class="formula">\[SE = \sqrt{\frac{\widehat{P}(1 - \widehat{P})}{n}}\]</div>
+        <div class="formula">\[SE = \sqrt{\frac{0.75(1 - 0.75)}{200}}\]</div>
+        <div class="formula">\[SE = \sqrt{\frac{0.1875}{200}}\]</div>
+        <div class="formula">\[SE = \sqrt{0.0009375}\]</div>
+        <div class="formula">\[SE \approx 0.0306\]</div>
+        <p>✅ Standard Error ≈ 0.0306</p>
+        <hr>
+        <h3>Step 3: Critical Value</h3>
+        <p>95% Confidence Level</p>
+        <div class="formula">\[Z_{critical} = 1.96\]</div>
+        <hr>
+        <h3>Step 4: Margin of Error</h3>
+        <p>Formula:</p>
+        <div class="formula">\[ME = Z_{critical} \times SE\]</div>
+        <p>Substitute:</p>
+        <div class="formula">\[ME = 1.96 \times 0.0306\]</div>
+        <div class="formula">\[ME \approx 0.06\]</div>
+        <p>✅ Margin of Error ≈ 0.06</p>
+        <hr>
+        <h3>Step 5: Confidence Interval</h3>
+        <p>Formula:</p>
+        <div class="formula">\[CI = \widehat{P} \pm ME\]</div>
+        <p>Substitute:</p>
+        <div class="formula">\[CI = 0.05 \pm 0.06\]</div>
+        <p>Lower Limit:</p>
+        <div class="formula">\[0.69\]</div>
+        <p>Upper Limit:</p>
+        <div class="formula">\[0.81\]</div>
+        <hr>
+        <h3>Final Confidence Interval</h3>
+        <div class="center">(0.69, 0.81)</div>
+        <p>या percentage में:</p>
+        <div class="center">(69%,81%)</div>
+        <hr>
+        <h2>Interpretation</h2>
+        <p><b>Statistical Version</b></p>
+        <p class="para">We are 95% confident that the population proportion lies between 69% and 81%.</p>
+        <hr>
+        <p><b>Business Version</b></p>
+        <p class="para">Sample data के आधार पर अनुमान है कि population में satisfied customers का percentage लगभग 69% से
+            81% के बीच है।</p>
+        <hr>
+        <h3>🔥 Relation Between Confidence Interval and Hypothesis Testing</h3>
+        <p>बहुत लोग इन्हें दो अलग-अलग topics समझते हैं।</p>
+        <p>असल में:</p>
+        <p class="para"><b>Confidence Interval और Hypothesis Testing एक ही data को देखने के दो तरीके हैं।</b></p>
+        <hr>
+        <h3>Example</h3>
+        <p>मान लो एक company दावा करती है:</p>
+        <div class="formula">\[H_0 : \mu = 70\]</div>
+        <div class="formula">\[H_0 : \mu \neq 70\]</div>
+        <p>(Two-Tailed Test)</p>
+        <p>और sample data से हमें 95% Confidence Interval मिला:</p>
+        <div class="center">(66.08, 73.92)</div>
+        <hr>
+        <h3>Question</h3>
+        <p>क्या 70 इस interval के अंदर है?</p>
+        <p>हाँ।</p>
+        <div class="center">66.08 < 70 < 73.92</div>
+                <hr>
+                <h3>Conclusion</h3>
+                <p>95% CI में 70 मौजूद है।</p>
+                <p>इसलिए:</p>
+                <p>✅ \(H_0\)Reject नहीं होगा।</p>
+                <hr>
+                <h3>दूसरा Case</h3>
+                <p>मान लो CI आया:</p>
+                <div class="center">72, 78</div>
+                <p>अब देखो:</p>
+                <div class="center">70</div>
+                <p>इस interval के अंदर नहीं है।</p>
+                <div class="center">70 < 72 </div>
+                        <hr>
+                        <h3>Conclusion</h3>
+                        <p>95% CI में 70 नहीं है।</p>
+                        <p>इसलिए:</p>
+                        <p>✅ \(H_0\)Reject होगा।</p>
+                        <hr>
 
-
-
-    </div>
+                </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
