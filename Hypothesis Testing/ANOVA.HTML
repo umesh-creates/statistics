@@ -110,8 +110,8 @@ B vs C</p>
 <ol>
     <li>Group Mean</li>
     <li>Grand mean</li>
-    <li>Between Group variance (SSB)</li>
-    <li>Within Group variance (SSW)</li>
+    <li>Between Group variance (SSB - sum of Square between)</li>
+    <li>Within Group variance (SSW - sum of Square within)</li>
     <li>F statistic</li>
     <li>Critical Value</li>
     <li>P-Value</li>
@@ -121,6 +121,202 @@ B vs C</p>
 <div class="formula">\[\chi^2 = \sum \frac{(O - E)^2}{E}\]</div>
 <p>वैसे ही ANOVA पूरा इस idea के आसपास घूमता है:</p>
 <div class="formula">\[F = \frac{Between\ Group\ variance}{Within\ Group\ variance}\]</div>
+<hr>
+<h2>One-Way ANOVA — Complete Numerical Example</h2>
+<hr>
+<h3>Situation</h3>
+<p>एक company ने 3 training programs की effectiveness compare की।</p>
+<p>Training के बाद test scores:</p>
+<div class="table-div">
+    <table class="table">
+    <thead>
+        <tr>
+            <th>Program A</th>
+            <th>Program B</th>
+            <th>Program C</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>70</td>
+            <td>80</td>
+            <td>90</td>
+        </tr>
+        <tr>
+            <td>75</td>
+            <td>85</td>
+            <td>95</td>
+        </tr>
+        <tr>
+            <td>80</td>
+            <td>90</td>
+            <td>100</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+<h3>Step 1: Hypotheses</h3>
+<h4>Null Hypothesis</h4>
+<div class="formula">\[H_0 : \mu_1 = \mu_2 \mu_3\]</div>
+<hr>
+<h4>Alternative Hypothesis</h4>
+<div class="formula">\[H_1\]</div>
+<p>कम से कम एक mean अलग है।</p>
+<hr>
+<h3>Step 2: Group Means</h3>
+<p><b>Program A</b></p>
+<div class="formula">\[\bar{X}_A = \frac{70 \times 75 \times 80}{3}\]</div>
+<div class="formula">\[\boxed{\bar{X} = 75}\]</div>
+<hr>
+<p><b>Program B</b></p>
+<div class="formula">\[\bar{X}_B = \frac{80 \times 85 \times 90}{3}\]</div>
+<div class="formula">\[\boxed{\bar{X}_B = 85}\]</div>
+<hr>
+<p><b>Program C</b></p>
+<div class="formula">\[\bar{X}_C = \frac{90 \times 95 \times 100}{3}\]</div>
+<div class="formula">\[\boxed{\bar{X}_C = 95}\]</div>
+<hr>
+<h3>Step 3: Grand Mean</h3>
+<p>Grand Mean = सभी observations का mean</p>
+<div class="formula">\[GM = \frac{70+75+80+80+85+90+90+95+100}{9}\]</div>
+<div class="formula">\[GM = \frac{765}{9} = 85\]</div>
+<p>✅ Grand Mean = 85</p>
+<hr>
+<h3>Step 4: Between Group Variation (SSB)</h3>
+<p>Sum of Square between</p>
+<p>यह measure करता है:</p>
+<p class="para">Group Means Grand Mean से कितनी दूर हैं।</p>
+<p>Formula:</p>
+<div class="formula">\[SSB = \sum n_i(\bar{X}_i - GM)^2\]</div>
+<hr>
+<p><b>Program A</b></p>
+<div class="formula">\[SSB = 3(75 - 85)^2\]</div>
+<div class="formula">\[\boxed{SSB = 300}\]</div>
+<hr>
+<p><b>Program B</b></p>
+<div class="formula">\[SSB = 3(85 - 85)^2\]</div>
+<div class="formula">\[\boxed{SSB = 0}\]</div>
+<hr>
+<p><b>Program C</b></p>
+<div class="formula">\[SSB = 3(95 - 85)^2\]</div>
+<div class="formula">\[\boxed{SSB = 300}\]</div>
+<hr>
+<p><b>Total:</b></p>
+<div class="formula">\[SSB = 300 + 0 + 300\]</div>
+<div class="formula">\[\boxed{SSB = 600}\]</div>
+<p>✅ SSB = 600</p>
+<hr>
+<h3>Step 5: Within Group Variation (SSW)</h3>
+<p>sum of Square within</p>
+<p>यह measure करता है:</p>
+<p class="para">Group के अंदर observations mean से कितनी दूर हैं।</p>
+<p>Formula:</p>
+<div class="formula">\[SSW = \sum (X - \bar{X}_i)^2\]</div>
+<hr>
+<p><b>Program A</b></p>
+<p>Mean = 75</p>
+<div class="formula">\[SSW = (70 - 75)^2 + (75 - 75)^2 + (80 - 75)^2\]</div>
+<div class="formula">\[SSW = 25 + 0 + 25\]</div>
+<div class="formula">\[\boxed{SSW = 50}\]</div>
+<hr>
+<p><b>Program B</b></p>
+<p>Mean = 85</p>
+<div class="formula">\[SSW = (80 - 85)^2 + (85 - 85)^2 + (90 - 85)^2\]</div>
+<div class="formula">\[SSW = 25 + 0 + 25\]</div>
+<div class="formula">\[\boxed{SSW = 50}\]</div>
+<hr>
+<p><b>Program C</b></p>
+<p>Mean = 95</p>
+<div class="formula">\[SSW = (90 - 95)^2 + (95 - 95)^2 + (100 - 95)^2\]</div>
+<div class="formula">\[SSW = 25 + 0 + 25\]</div>
+<div class="formula">\[\boxed{SSW = 50}\]</div>
+<hr>
+<p><b>Total :</b></p>
+<div class="formula">\[SSW = 150\]</div>
+<p>✅ SSW = 150</p>
+<hr>
+<h3>Step 6: Degrees of Freedom</h3>
+<p><b>Between Groups</b></p>
+<div class="formula">\[df_B = k - 1\]</div>
+<div class="formula">\[df_B = 3 - 1\]</div>
+<div class="formula">\[\boxed{df_B = 2}\]</div>
+<hr>
+<p><b>Within Groups</b></p>
+<div class="formula">\[df_W = N - K\]</div>
+<div class="formula">\[df_W = 9 - 3\]</div>
+<div class="formula">\[\boxed{df_W = 6}\]</div>
+<hr>
+<h3>Step 7: Mean Squares</h3>
+<p><b>MSB</b></p>
+<p>Mean Square Between</p>
+<div class="formula">\[MSB = \frac{SSB}{df_B}\]</div>
+<div class="formula">\[MSB = \frac{600}{2}\]</div>
+<div class="formula">\[\boxed{MSB = 300}\]</div>
+<hr>
+<p><b>MSW</b></p>
+<p>Mean Square Within</p>
+<div class="formula">\[MSB = \frac{SSW}{df_W}\]</div>
+<div class="formula">\[MSW = \frac{150}{6}\]</div>
+<div class="formula">\[\boxed{MSB = 25}\]</div>
+<hr>
+<h3>Step 8: F Statistic</h3>
+<div class="formula">\[F = \frac{Between\ Group\ variance}{Within\ Group\ variance}\]</div>
+<div class="formula">\[F = \frac{300}{25}\]</div>
+<div class="formula">\[\boxed{F = 12}\]</div>
+<p>✅ F = 12</p>
+<hr>
+<h3>Step 9: Critical Value Decision</h3>
+<p>Depends on:</p>
+<ul>
+    <li>\(\alpha\)</li>
+    <li>\(df_B\)</li>
+    <li>\(df_W\)</li>
+</ul>
+<hr>
+<p>for :</p>
+<div class="formula">\[\alpha = 0.05\]</div>
+<div class="formula">\[df_B = 2\]</div>
+<div class="formula">\[df_W = 6\]</div>
+<p>Critical Value \(\approx\)</p>
+<div class="formula">\[5.14\]</div>
+<hr>
+<p>Compare:</p>
+<div class="formula">\[12>5.14\]</div>
+<p>✅ Reject \(H_0\)</p>
+<hr>
+<h3>Step 10: p-value Decision</h3>
+<p>Depends on:</p>
+<ul>
+    <li>\(F\ static\)</li>
+    <li>\(df_B\)</li>
+    <li>\(df_W\)</li>
+</ul>
+<p>for :</p>
+<div class="formula">\[F = 12\]</div>
+<div class="formula">\[df_B = 2\]</div>
+<div class="formula">\[df_w = 6\]</div>
+<p>P-Value \(\approx\)</p>
+<div class="formula">\[0/008\]</div>
+<hr>
+<p>Compare:</p>
+<div class="formula">\[0.008 < 0.05\]</div>
+<p>✅ Reject \(H_0\)</p>
+<hr>
+<h3>Final Conclusion</h3>
+<p>Since</p>
+<div class="formula">\[F=12>5.14\]</div>
+<p>and</p>
+<div class="formula">\[p < 0.05\]</div>
+<p>we reject \(H_0\)</p>
+<p>Therefore:</p>
+<p class="para">There is sufficient evidence to conclude that at least one training program has a different mean score.</p>
+<hr>
+<p>🎯 ANOVA में याद रखने वाली सबसे बड़ी बात:</p>
+<ul>
+    <li><b>SSB बड़ा</b> ⇒ Groups के means दूर-दूर हैं।</li>
+    <li><b>SSW बड़ा</b> ⇒ Groups के अंदर बहुत variation है।</li>
+    <li><b>F बड़ा</b> ⇒ Means अलग होने का evidence मजबूत है।</li>
+</ul>
 <hr>
 
     </div>
