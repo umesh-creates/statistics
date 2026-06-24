@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="statistics/styles/style_formate.css">
+    <title>Business Statistics | Cohen's d (Effect Size)</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Cohen's d (Effect Size) — Complete Example</h1>
+        <hr>
+        <h4>Situation</h4>
+        <h4>एक company दो training programs compare कर रही है।</h4>
+        <div class="table-div">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Program A</th>
+                        <th>Program B</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Mean Score = 80</td>
+                        <td>Mean Score = 90</td>
+                    </tr>
+                    <tr>
+                        <td>SD = 20</td>
+                        <td>SD = 20</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p>मान लो t-test पहले ही बता चुका है:</p>
+        <div class="center">p < 0.05</div>
+                <p>अर्थात statistically significant difference है।</p>
+                <p>अब सवाल:</p>
+                <p class="para">Difference कितना बड़ा है?</p>
+                <hr>
+                <h3>Step 1: Formula</h3>
+                <p>Formula :</p>
+                <div class="formula">\[d = \frac{\bar{X}_1 - \bar{X}_2}{Pooled SD}\]</div>
+                <hr>
+                <h3>Step 2: Values</h3>
+                <div class="formula">\[\bar{X} = 80\]</div>
+                <div class="formula">\[\bar{X} = 90\]</div>
+                <div class="formula">\[Pooled SD = \sqrt{\frac{s_1^2 + s_2^2}{2}}\]</div>
+                <div class="formula">\[Pooled SD = \sqrt{\frac{20^2 + 20^2}{2}}\]</div>
+                <div class="formula">\[Pooled SD = \sqrt{\frac{400 + 400}{2}}\]</div>
+                <div class="formula">\[Pooled SD = \sqrt{\frac{800}{2}} = \sqrt{400} = 20\]</div>
+                <div class="center">Pooled SD = 20</div>
+                <hr>
+                <h3>Step 3: Calculation</h3>
+                <div class="formula">\[d = \frac{80 - 90}{20}\]</div>
+                <div class="formula">\[d = \frac{-10}{20} = -0.5\]</div>
+                <hr>
+                <p>आमतौर पर magnitude देखते हैं:</p>
+                <div class="formula">\[|d| = 0.5\]</div>
+                <hr>
+                <p>Rule of Thumb:</p>
+                <div class="table-div">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Cohen's d</th>
+                                <th>Meaning</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>0.2</td>
+                                <td>Small</td>
+                            </tr>
+                            <tr>
+                                <td>0.5</td>
+                                <td>Medium</td>
+                            </tr>
+                            <tr>
+                                <td>0.8+</td>
+                                <td>Large</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p>हमारे case में:</p>
+                <div class="center">d = 0.5</div>
+                <hr>
+                <p>Conclusion:</p>
+                <p>✅ Medium Effect</p>
+                <hr>
+                <h3>Final Report Style</h3>
+                <p>t-test ने बताया:</p>
+                <div class="center">p < 0.05</div>
+                        <hr>
+                        <p>Cohen's d ने बताया:</p>
+                        <div class="center">d = 0.5</div>
+                        <hr>
+                        <p>Final conclusion:</p>
+                        <p class="para">Programs statistically different हैं और difference का size medium है।</p>
+                        <hr>
+                        <h3>Notes Summary</h3>
+                        <p><b>p-value</b></p>
+                        <p>बताती है:</p>
+                        <p class="para">Difference exist करता है या नहीं।</p>
+                        <hr>
+                        <p><b>Confidence Interval</b></p>
+                        <p>बताता है:</p>
+                        <p class="para">Parameter किस range में हो सकता है।</p>
+                        <hr>
+                        <p><b>Effect Size</b></p>
+                        <p>बताता है:</p>
+                        <p class="para">Difference कितना बड़ा है।</p>
+                        <hr>
+                </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+
+</html>
