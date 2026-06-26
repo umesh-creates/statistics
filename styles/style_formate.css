@@ -89,6 +89,8 @@ pre {
 @media (min-width: 500px) {
     .grid {
         display: flex;
+        width: 100%;
+        justify-content: space-evenly;
     }
 
     .grid-1 {

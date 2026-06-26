@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="/statistics/styles/style_formate.css">
+    <title>Business Statistics | Dispersion (Measures of Variation) | Quartile Deviation (Q.D)</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Quartile Deviation (Q.D)</h1>
+        <hr>
+        <h2>1. Range</h2>
+        <hr>
+        <h4>Meaning</h4>
+        <ul>
+            <li>Data की सबसे बड़ी और सबसे छोटी value के बीच का अंतर।</li>
+        </ul>
+        <h4>Need</h4>
+        <ul>
+            <li>Data का सबसे basic spread जानने के लिए।</li>
+        </ul>
+        <h4>Use Cases</h4>
+        <ul>
+            <li>Quick variability check</li>
+            <li>Quality control</li>
+            <li>Outliers का प्रारंभिक अंदाज़ा</li>
+        </ul>
+        <h4>Quick Intuition</h4>
+        <p class="para">"Data कितना फैला है (min से max तक)?"</p>
+        <hr>
+        <h4>Formula :</h4>
+        <div class="formula">\[Range = L - S\]</div>
+        <p class="para">L = Largest Value, <br> S = Samalles Value.</p>
+        <hr>
+        <h2>2. Coefficient of Range</h2>
+        <hr>
+        <h4>Meaning</h4>
+        <ul>
+            <li>Range का relative (unit-free) measure।</li>
+        </ul>
+        <h4>Need</h4>
+        <ul>
+            <li>अलग-अलग units या datasets की Range compare करने के लिए।</li>
+        </ul>
+        <h4>Use Cases</h4>
+        <ul>
+            <li>Different datasets की variability compare करना।</li>
+        </ul>
+        <h4>Quick Intuition</h4>
+        <p class="para">"Range को comparison के लायक बनाता है।"</p>
+        <hr>
+        <h4>Formula :</h4>
+        <div class="formula">\[Co-efficient\ of\ Range = \frac{L - S}{L + S}\]</div>
+        <hr>
+        <h4>Question</h4>
+        <p>Find the range of weights of 7 students form the following.</p>
+        <p>27, 30, 35, 36, 38, 40, 43</p>
+        <div class="formula">\[Range = L - S\]</div>
+        <div class="formula">\[Range = 43 - 27\]</div>
+        <div class="formula">\[\boxed{Range = 16}\]</div>
+        <hr>
+        <div class="formula">\[Co-efficient\ of\ Range = \frac{L - S}{L + S}\]</div>
+        <div class="formula">\[Co-efficient\ of\ Range = \frac{43 - 27}{43 + 27} = \frac{16}{70}\]</div>
+        <div class="formula">\[\boxed{Co-efficient\ of\ Range = 0.23}\]</div>
+        <hr>
+        <h2>3. Interquartile Range (IQR)</h2>
+        <hr>
+        <h4>Meaning</h4>
+        <ul>
+            <li>\(Q_3\) और \(Q_1\)के बीच का spread।</li>
+            <li>बीच के 50% data का फैलाव।</li>
+        </ul>
+        <h4>Need</h4>
+        <ul>
+            <li>Outliers के प्रभाव से बचकर spread मापने के लिए।</li>
+        </ul>
+        <h4>Use Cases</h4>
+        <ul>
+            <li>Box Plot</li>
+            <li>Outlier Detection</li>
+            <li>Skewed data analysis</li>
+        </ul>
+        <h4>Quick Intuition</h4>
+        <p class="para">"Middle 50% data कितना फैला है?"</p>
+        <hr>
+        <h4>Formula :</h4>
+        <div class="formula">\[Inter\ Quartile\ range = Q_3 - Q_1\]</div>
+        <hr>
+        <h2>4. Quartile Deviation (Semi-IQR)</h2>
+        <hr>
+        <h4>Meaning</h4>
+        <ul>
+            <li>Interquartile Range का आधा।</li>
+        </ul>
+        <h4>Need</h4>
+        <ul>
+            <li>Middle 50% data की average spread जानने के लिए।</li>
+        </ul>
+        <h4>Use Cases</h4>
+        <ul>
+            <li>Skewed distributions</li>
+            <li>Outlier-resistant variability measure</li>
+        </ul>
+        <h4>Quick Intuition</h4>
+        <hr>
+        <p class="para">"Middle 50% data का average spread।"</p>
+        <hr>
+        <h4>Formula :</h4>
+        <div class="formula">\[Quartile\ Deviation = \frac{Q_3 - Q_1}{2}\]</div>
+        <hr>
+        <h2>5. Coefficient of Quartile Deviation</h2>
+        <h4>Meaning</h4>
+        <ul>
+            <li>Quartile Deviation का relative measure।</li>
+        </ul>
+        <h4>Need</h4>
+        <ul>
+            <li>अलग-अलग datasets की Quartile Deviation compare करने के लिए।</li>
+        </ul>
+        <h4>Use Cases</h4>
+        <ul>
+            <li>Relative variability comparison</li>
+            <li>Economics & Business datasets</li>
+        </ul>
+        <h4>Quick Intuition</h4>
+        <p class="para">"Quartile Deviation को comparison के लायक बनाता है।"</p>
+        <hr>
+        <h4>Formula :</h4>
+        <div class="formula">\[Coefficient\ of\ Quartile\ Deviation = \frac{Q_3 - Q_1}{Q_3 + Q_1}\]</div>
+        <hr>
+        <h3>A. Quartile deviation - Individual Series</h3>
+        <hr>
+        <h4>Example</h4>
+        <div class="table-div">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Roll No.</th>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>Marks</th>
+                        <td>20</td>
+                        <td>28</td>
+                        <td>40</td>
+                        <td>30</td>
+                        <td>50</td>
+                        <td>60</td>
+                        <td>52</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="table-div">
+            <table class="table table-bordered">
+                <tr>
+                    <th>Marks Ascending order</th>
+                    <td>20</td>
+                    <td>28</td>
+                    <td>30</td>
+                    <td>40</td>
+                    <td>50</td>
+                    <td>52</td>
+                    <td>60</td>
+                </tr>
+            </table>
+        </div>
+        <div class="formula">\[Q_1 = Size\ of\ \left( \frac{N+1}{4} \right)^{th} item\]</div>
+        <div class="formula">\[Q_1 = Size\ of\ \left( \frac{7+1}{4} \right)^{th} item\]</div>
+        <div class="formula">\[Q_1 = Size\ of\ \left( \frac{8}{4} \right)^{th} item\]</div>
+        <div class="formula">\[Q_1 = Size\ of\ \left( 2 \right)^{th} item\]</div>
+        <div class="formula">\[\boxed{Q_1 = 28}\]</div>
+        <hr>
+        <div class="formula">\[Q_3 = Size\ of\ \left( 3\ \frac{N+1}{4} \right)^{th} item\]</div>
+        <div class="formula">\[Q_3 = Size\ of\ \left( 3\ \frac{7+1}{4} \right)^{th} item\]</div>
+        <div class="formula">\[Q_3 = Size\ of\ \left( 3\ \frac{8}{4} \right)^{th} item\]</div>
+        <div class="formula">\[Q_3 = Size\ of\ \left( 3\ \times 2 \right)^{th} item\]</div>
+        <div class="formula">\[Q_3 = Size\ of\ \left(6 \right)^{th} item\]</div>
+        <div class="formula">\[\boxed{Q_3 = 52}\]</div>
+        <hr>
+        <div class="formula">\[Quartile\ Deviation = \frac{Q_3 - Q_1}{2}\]</div>
+        <div class="formula">\[Quartile\ Deviation = \frac{52 - 28}{2}\]</div>
+        <div class="formula">\[Quartile\ Deviation = \frac{24}{2}\]</div>
+        <div class="formula">\[\boxed{Quartile\ Deviation = 12}\]</div>
+        <hr>
+        <div class="formula">\[Coefficient\ of\ Q.D = \frac{Q_3 - Q_1}{Q_3 + Q_1}\]</div>
+        <div class="formula">\[Coefficient\ of\ Q.D = \frac{52 - 28}{52 + 28}\]</div>
+        <div class="formula">\[Coefficient\ of\ Q.D = \frac{24}{80}\]</div>
+        <div class="formula">\[\boxed{Coefficient\ of\ Q.D = 0.3}\]</div>
+        <hr>
+        <h3>B. Quartile deviation - Discrete Series</h3>
+        <hr>
+        <div class="table-div">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Age in years</th>
+                        <td>20</td>
+                        <td>30</td>
+                        <td>40</td>
+                        <td>50</td>
+                        <td>60</td>
+                        <td>70</td>
+                        <td>80</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>No. of members</th>
+                        <td>3</td>
+                        <td>61</td>
+                        <td>132</td>
+                        <td>153</td>
+                        <td>140</td>
+                        <td>51</td>
+                        <td>3</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <h4>Calculation of Q.D</h4>
+        <div class="table-div">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>X</th>
+                        <th>F</th>
+                        <th>c.f.</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>20</td>
+                        <td>3</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>30</td>
+                        <td>61</td>
+                        <td>64</td>
+                    </tr>
+                    <tr>
+                        <td class="yellow">40</td>
+                        <td>132</td>
+                        <td class="yellow">196</td>
+                    </tr>
+                    <tr>
+                        <td>50</td>
+                        <td>153</td>
+                        <td>349</td>
+                    </tr>
+                    <tr>
+                        <td class="green">60</td>
+                        <td>140</td>
+                        <td class="green">489</td>
+                    </tr>
+                    <tr>
+                        <td>70</td>
+                        <td>51</td>
+                        <td>540</td>
+                    </tr>
+                    <tr>
+                        <td>80</td>
+                        <td>3</td>
+                        <td>543</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="formula">\[Q_1 = Value\ of \left(\frac{N+1}{4} \right)^{th} \ item\]</div>
+        <div class="formula">\[Q_1 = Value\ of \left(\frac{543+1}{4} \right)^{th} \ item\]</div>
+        <div class="formula">\[Q_1 = 136^{th} \ item = 40\ years\]</div>
+        <hr>
+        <div class="formula">\[Q_3 = Value\ of \left(3 \frac{N+1}{4} \right)^{th} \ item\]</div>
+        <div class="formula">\[Q_3 = Value\ of \left(3 \frac{543+1}{4} \right)^{th} \ item\]</div>
+        <div class="formula">\[Q_3 = 408^{th} \ item = 60\ years\]</div>
+        <hr>
+        <div class="formula">\[Q.D = \frac{Q_3 - Q_1}{2}\]</div>
+        <div class="formula">\[Q.D = \frac{60 - 40}{2}\]</div>
+        <div class="formula">\[\boxed{Q.D = 10\ years}\]</div>
+        <hr>
+        <div class="formula">\[Coefficient\ of\ Q.D = \frac{Q_3 - Q_1}{Q_3 + Q_1}\]</div>
+        <div class="formula">\[Coefficient\ of\ Q.D = \frac{60 - 40}{60 + 40}\]</div>
+        <div class="formula">\[\boxed{Coefficient\ of\ Q.D = 0.2}\]</div>
+        <hr>
+        <h3>C. Quartile Deviation - Continuous Series</h3>
+        <hr>
+        <div class="table-div">
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <th>Wages (Rs.)</th>
+                        <td>30 - 32</td>
+                        <td>32 - 34</td>
+                        <td>34 - 36</td>
+                        <td>36 - 38</td>
+                        <td>38 - 40</td>
+                        <td>40 - 42</td>
+                        <td>42 - 44</td>
+                    </tr>
+                    <tr>
+                        <th>Labourers</th>
+                        <td>12</td>
+                        <td>18</td>
+                        <td>16</td>
+                        <td>14</td>
+                        <td>12</td>
+                        <td>8</td>
+                        <td>6</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="table-div">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Wages (x)</th>
+                        <th>Labourers (f)</th>
+                        <th>c.f.</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>30 – 32</td>
+                        <td>12</td>
+                        <td>12</td>
+                    </tr>
+                    <tr>
+                        <td class="yellow">32 – 34</td>
+                        <td>18</td>
+                        <td class="yellow">30</td>
+                    </tr>
+                    <tr>
+                        <td>34 – 36</td>
+                        <td>16</td>
+                        <td>46</td>
+                    </tr>
+                    <tr>
+                        <td>36 – 38</td>
+                        <td>14</td>
+                        <td>60</td>
+                    </tr>
+                    <tr>
+                        <td class="green">38 – 40</td>
+                        <td>12</td>
+                        <td class="green">72</td>
+                    </tr>
+                    <tr>
+                        <td>40 – 42</td>
+                        <td>8</td>
+                        <td>80</td>
+                    </tr>
+                    <tr>
+                        <td>42 – 44</td>
+                        <td>6</td>
+                        <td>86</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="formula">\[Q_1 = size\ of \left( \frac{N}{4} \right)^{th} \ item\]</div>
+        <div class="formula">\[Q_1 = size\ of \left( \frac{86}{4} \right)^{th} \ item\]</div>
+        <div class="formula">\[Q_1 = size\ of \left( 21.5 \right)^{th} \ item\]</div>
+        <div class="formula">\[\boxed{Q_1 = interval\ 32-34\ 🟨}\]</div>
+        <hr>
+        <div class="formula">\[Q_1 = L + \frac{\frac{N}{4} - cf}{f} \times i\]</div>
+        <div class="formula">\[Q_1 = 32 + \frac{21.5 - 12}{18} \times 2\]</div>
+        <div class="formula">\[\boxed{Q_1 = 33.06}\]</div>
+        <hr>
+        <div class="formula">\[Q_3 = size\ of \left(3 \frac{N}{4} \right)^{th} \ item\]</div>
+        <div class="formula">\[Q_3 = size\ of \left(3 \frac{86}{4} \right)^{th} \ item\]</div>
+        <div class="formula">\[Q_3 = size\ of \left(3 \times 21.5 \right)^{th} \ item\]</div>
+        <div class="formula">\[Q_3 = size\ of \left(64\ .5 \right)^{th} \ item\]</div>
+        <div class="formula">\[\boxed{Q_3 = interval\ 38-40\ 🟩}\]</div>
+        <hr>
+        <div class="formula">\[Q_3 = L + \frac{3\frac{N}{4} - cf}{f} \times i\]</div>
+        <div class="formula">\[Q_3 = 38 + \frac{64\ .5 - 60}{12} \times 2\]</div>
+        <div class="formula">\[\boxed{Q_3 = 38.75}\]</div>
+        <hr>
+        <div class="formula">\[Q.D. = \frac{Q_3 - Q_1}{2}\]</div>
+        <div class="formula">\[Q.D. = \frac{38.75 - 33.06}{2}\]</div>
+        <div class="formula">\[\boxed{Q.D. = 2\ .85}\]</div>
+        <hr>
+        <div class="formula">\[Coefficient\ of\ Q.D = \frac{Q_3 -Q_1}{Q_3 + Q_1}\]</div>
+        <div class="formula">\[Coefficient\ of\ Q.D = \frac{38.75 -33.06}{38.75+ 33.06}\]</div>
+        <div class="formula">\[\boxed{Coefficient\ of\ Q.D = 0.08}\]</div>
+        <hr>
+
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+
+</html>

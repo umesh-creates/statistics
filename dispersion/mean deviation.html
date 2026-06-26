@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="/statistics/styles/style_formate.css">
+    <title>Business Statistics | Dispersion (Measures of Variation) | Mean Deviation (Average Deviation)</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Mean Deviation (Average Deviation) - MD</h1>
+        <hr>
+        <h4>Meaning</h4>
+        <ul>
+            <li>Data की सभी values अपने Mean, Median या Mode से औसतन (average) कितनी दूर हैं, इसका measure।</li>
+            <li>इसमें deviations का absolute value (| |) लिया जाता है, इसलिए + और – एक-दूसरे को cancel नहीं करते।</li>
+        </ul>
+        <h4>Need</h4>
+        <ul>
+            <li>केवल center (Mean/Median) जानना काफी नहीं होता।</li>
+            <li>यह जानना भी जरूरी है कि data उस center से औसतन कितना दूर है।</li>
+        </ul>
+        <h4>Use Cases</h4>
+        <ul>
+            <li>Data की average variability मापना।</li>
+            <li>दो datasets की consistency compare करना।</li>
+            <li>Business, Economics और Statistics में spread का सरल measure।</li>
+            <li>Standard Deviation से पहले dispersion का basic concept समझने के लिए।</li>
+        </ul>
+        <h4>Quick Intuition</h4>
+        <p class="para">"Data की values अपने center से औसतन कितनी दूर हैं?"</p>
+        <hr>
+        <h4>Important 📝</h4>
+        <p class="para">|D| = Absolute Deviation = \(|X - \bar{X}|\) <br> Result - <b>only Positive Value like (+4)</b>
+        </p>
+        <p class="para">d = Deviation = \(X - \bar{X}\) <br> Result - <b>both Negative & Positive Value</b></p>
+        <hr>
+        <h3>A. Mean Deviation - Individual Series</h3>
+        <hr>
+        <p>Mean deviation <b>from Mean & Median</b></p>
+        <div class="table-div">
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <td>100</td>
+                        <td>150</td>
+                        <td>200</td>
+                        <td>250</td>
+                        <td>360</td>
+                        <td>490</td>
+                        <td>500</td>
+                        <td>600</td>
+                        <td>671</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <h4>Calculation</h4>
+        <div class="table-div">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>X</th>
+                        <th>\(|D| = X - \bar{X}\)<br>\(X - 369\)</th>
+                        <th>\(|D| = X - \text{Median}\)<br>\(X - 360\)</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>100</td>
+                        <td>269</td>
+                        <td>260</td>
+                    </tr>
+                    <tr>
+                        <td>150</td>
+                        <td>219</td>
+                        <td>210</td>
+                    </tr>
+                    <tr>
+                        <td>200</td>
+                        <td>169</td>
+                        <td>160</td>
+                    </tr>
+                    <tr>
+                        <td>250</td>
+                        <td>119</td>
+                        <td>110</td>
+                    </tr>
+                    <tr>
+                        <td>360</td>
+                        <td>9</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>490</td>
+                        <td>121</td>
+                        <td>130</td>
+                    </tr>
+                    <tr>
+                        <td>500</td>
+                        <td>131</td>
+                        <td>140</td>
+                    </tr>
+                    <tr>
+                        <td>600</td>
+                        <td>231</td>
+                        <td>240</td>
+                    </tr>
+                    <tr>
+                        <td>671</td>
+                        <td>302</td>
+                        <td>311</td>
+                    </tr>
+                </tbody>
+
+                <thead>
+                    <tr>
+                        <th>\(\sum X = 3321\)</th>
+                        <th>\(\sum |D| = 1570\)</th>
+                        <th>\(\sum |D| = 1561\)</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <div class="grid formula">
+            <div class="grid-item grid-1">
+                <div class="formula">\( \bar{X} = 369\)</div>
+            </div>
+            <div class="grid-item">
+                <div class="formula">\(Median = 360\)</div>
+            </div>
+        </div>
+        <hr>
+        <div class="grid formula">
+            <div class="grid-item grid-1">
+                <div class="formula">\[MD\ from\ mean = \frac{\sum |D|}{N}\]</div>
+                <div class="formula">\[MD\ from\ mean = \frac{1570}{9}\]</div>
+                <div class="formula">\[\boxed{MD\ from\ mean = 174.44}\]</div>
+            </div>
+            <hr>
+            <div class="grid-item">
+                <div class="formula">\[MD\ from\ median = \frac{\sum |D|}{N}\]</div>
+                <div class="formula">\[MD\ from\ median = \frac{1561}{9}\]</div>
+                <div class="formula">\[\boxed{MD\ from\ median = 173.44}\]</div>
+            </div>
+        </div>
+        <hr>
+        <div class="grid formula">
+            <div class="grid-item grid-1">
+                <div class="formula">\[Coefficient\ of\ MD = \frac{MD}{\bar{X}}\]</div>
+                <div class="formula">\[Coefficient\ of\ MD = \frac{174.44}{369}\]</div>
+                <div class="formula">\[\boxed{Coefficient\ of\ MD = 0.47}\]</div>
+            </div>
+            <hr>
+            <div class="grid-item">
+                <div class="formula">\[Coefficient\ of\ MD = \frac{MD}{Median}\]</div>
+                <div class="formula">\[Coefficient\ of\ MD = \frac{173.44}{360}\]</div>
+                <div class="formula">\[\boxed{Coefficient\ of\ MD = 0.48}\]</div>
+            </div>
+        </div>
+        <hr>
+        <h3>B. Mean Deviation - Discrete Series</h3>
+        <hr>
+        <div class="table-div">
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <th>X</th>
+                        <td>2</td>
+                        <td>4</td>
+                        <td>6</td>
+                        <td>8</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <th>F</th>
+                        <td>1</td>
+                        <td>4</td>
+                        <td>6</td>
+                        <td>4</td>
+                        <td>1</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="table-div">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>x</th>
+                        <th>F</th>
+                        <th>fx</th>
+                        <th>\(|D| = x - \bar{X}\)</th>
+                        <th>\(f|D|\)</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>4</td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>16</td>
+                        <td>2</td>
+                        <td>8</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>6</td>
+                        <td>36</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>4</td>
+                        <td>32</td>
+                        <td>2</td>
+                        <td>8</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>1</td>
+                        <td>10</td>
+                        <td>4</td>
+                        <td>4</td>
+                    </tr>
+                </tbody>
+
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>\(N=\sum f=16\)</th>
+                        <th>\(\sum fx=96\)</th>
+                        <th></th>
+                        <th>\(\sum f|D|=24\)</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <hr>
+        <div class="formula">\[Mean\ \bar{X} = 6\]</div>
+        <hr>
+        <div class="grid formula">
+            <div class="grid-item grid-1">
+                <div class="formula">\[MD\ from\ mean = \frac{\sum f |D|}{N}\]</div>
+                <div class="formula">\[MD\ from\ mean = \frac{24}{16}\]</div>
+                <div class="formula">\[\boxed{MD\ from\ mean = 1.5}\]</div>
+            </div>
+            <hr>
+            <div class="grid-item">
+                <div class="formula">\[Coefficient\ of\ MD = \frac{MD}{\bar{X}}\]</div>
+                <div class="formula">\[Coefficient\ of\ MD = \frac{1.5}{6}\]</div>
+                <div class="formula">\[\boxed{Coefficient\ of\ MD = 0.25}\]</div>
+            </div>
+        </div>
+        <hr>
+        <h3>C. Mean Deviation - Continuous Series</h3>
+        <hr>
+        <div class="table-div">
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <th>Class interval</th>
+                        <td>2 - 4</td>
+                        <td>4 - 6</td>
+                        <td>6 - 8</td>
+                        <td>8 - 10</td>
+                    </tr>
+                    <tr>
+                        <th>Frequency</th>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>2</td>
+                        <td>1</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="table-div">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>x</th>
+                        <th>M</th>
+                        <th>f</th>
+                        <th>Fm</th>
+                        <th>\(|D| = m - \bar{X}\)</th>
+                        <th>\(f|D|\)</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>2 - 4</td>
+                        <td>\(\frac{2+4}{2}=3\)</td>
+                        <td>3</td>
+                        <td>9</td>
+                        <td>2.2</td>
+                        <td>6.6</td>
+                    </tr>
+                    <tr>
+                        <td>4 - 6</td>
+                        <td>\(\frac{4+6}{2}=5\)</td>
+                        <td>4</td>
+                        <td>20</td>
+                        <td>0.2</td>
+                        <td>0.8</td>
+                    </tr>
+                    <tr>
+                        <td>6 - 8</td>
+                        <td>\(\frac{6+8}{2}=7\)</td>
+                        <td>2</td>
+                        <td>14</td>
+                        <td>1.8</td>
+                        <td>3.6</td>
+                    </tr>
+                    <tr>
+                        <td>8 - 10</td>
+                        <td>\(\frac{8+10}{2}=9\)</td>
+                        <td>1</td>
+                        <td>9</td>
+                        <td>3.8</td>
+                        <td>3.8</td>
+                    </tr>
+                </tbody>
+
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th>\(N=\sum f=10\)</th>
+                        <th>\(\sum fm=52\)</th>
+                        <th></th>
+                        <th>\(\sum f|D|=14\ .8\)</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <div class="formula">\[Mean\ \bar{X} = 5\ .2\]</div>
+        <hr>
+        <div class="grid formula">
+            <div class="grid-item grid-1">
+                <div class="formula">\[MD\ from\ Mean = \frac{\sum f |D|}{N}\]</div>
+                <div class="formula">\[MD\ from\ Mean = \frac{14\ .8}{10}\]</div>
+                <div class="formula">\[\boxed{MD\ from\ Mean = 1.48}\]</div>
+            </div>
+            <hr>
+            <div class="grid-item">
+                <div class="formula">\[Coefficient\ of\ MD = \frac{MD}{\bar{X}}\]</div>
+                <div class="formula">\[Coefficient\ of\ MD = \frac{1.48}{5\ .2}\]</div>
+                <div class="formula">\[\boxed{Coefficient\ of\ MD = 0.29}\]</div>
+            </div>
+        </div>
+        <hr>
+
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+
+</html>

@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="/statistics/styles/style_formate.css">
+    <title>Business Statistics | Dispersion (Measures of Variation) | Standard Deviation (SD)</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Standard Deviation (SD)</h1>
+        <hr>
+        <h4>Meaning</h4>
+        <ul>
+            <li>Data की values Mean से औसतन कितनी दूर हैं, इसका सबसे महत्वपूर्ण और सबसे अधिक उपयोग होने वाला measure।
+            </li>
+            <li>यह data की variability (spread) को सटीक रूप से मापता है।</li>
+        </ul>
+        <hr>
+        <h4>Need</h4>
+        <ul>
+            <li>Mean Deviation हर deviation को समान importance देता है।</li>
+            <li>बड़े deviations (outliers) का प्रभाव सही तरीके से मापने के लिए Standard Deviation बनाया गया।</li>
+        </ul>
+        <hr>
+        <h4>Use Cases</h4>
+        <ul>
+            <li>Data की consistency और variability मापना।</li>
+            <li>Z-Score, Normal Distribution, Hypothesis Testing का आधार।</li>
+            <li>Machine Learning में Feature Scaling (Standardization)।</li>
+            <li>Regression, PCA, Clustering और Anomaly Detection।</li>
+            <li>Finance में Risk (volatility) मापना।</li>
+            <li>Economics और Business में performance variability compare करना।</li>
+        </ul>
+        <hr>
+        <h4>Quick Intuition</h4>
+        <p class="para"><b>"Data Mean के आसपास कितना फैला हुआ है, इसका सबसे भरोसेमंद measure Standard Deviation है।"
+                ⭐</b></p>
+        <p class="para">Note: अगर पूरे Dispersion chapter में केवल एक concept सबसे ज़्यादा important है, तो वह Standard
+            Deviation है। Data Analysis, Data Science, ML, AI, Economics और Finance में इसका उपयोग सबसे अधिक होता है।
+        </p>
+        <hr>
+        <h3>A. Standard Deviation - Individual Observation</h3>
+        <div class="table-div">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Values (X)</th>
+                        <th>\(X^2\)</th>
+                        <th>\(X-\bar{X}\)<br>\((X-15)\)</th>
+                        <th>\((X-\bar{X})^2\)</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>14</td>
+                        <td>196</td>
+                        <td>-1</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>22</td>
+                        <td>484</td>
+                        <td>7</td>
+                        <td>49</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>81</td>
+                        <td>-6</td>
+                        <td>36</td>
+                    </tr>
+                    <tr>
+                        <td>15</td>
+                        <td>225</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>20</td>
+                        <td>400</td>
+                        <td>5</td>
+                        <td>25</td>
+                    </tr>
+                    <tr>
+                        <td>17</td>
+                        <td>289</td>
+                        <td>2</td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>144</td>
+                        <td>-3</td>
+                        <td>9</td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>121</td>
+                        <td>-4</td>
+                        <td>16</td>
+                    </tr>
+                </tbody>
+
+                <thead>
+                    <tr>
+                        <th>\(\sum X = 120\)</th>
+                        <th>\(\sum X^2 = 1940\)</th>
+                        <th></th>
+                        <th>\(\sum (X-\bar{X})^2 = 140\)</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <div class="formula">\[\bar{X} = 15\]</div>
+        <h4>Formula :</h4>
+        <div class="formula">\[\sigma = \sqrt{\frac{\sum x^2}{N}}\]</div>
+        <div class="center">or</div>
+        <div class="formula">\[\sigma = \sqrt{\frac{\sum d^2}{N}}\]</div>
+        <div class="formula">\[\sigma = \sqrt{\frac{140}{8}}\]</div>
+        <div class="formula">\[\boxed{\sigma = 4\ .18}\]</div>
+        <hr>
+        <h3>Standard Deviation - Discrete Series : Actual Mean Method</h3>
+        <hr>
+        <div class="table-div">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>x</th>
+                        <th>F</th>
+                        <th>Fx</th>
+                        <th>\(d=x-\bar{X}\)<br>\(x-30.8\)</th>
+                        <th>\(d^2\)</th>
+                        <th>\(fd^2\)</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>10</td>
+                        <td>8</td>
+                        <td>80</td>
+                        <td>-20.8</td>
+                        <td>432.64</td>
+                        <td>3461.12</td>
+                    </tr>
+                    <tr>
+                        <td>20</td>
+                        <td>12</td>
+                        <td>240</td>
+                        <td>-10.8</td>
+                        <td>116.64</td>
+                        <td>1399.68</td>
+                    </tr>
+                    <tr>
+                        <td>30</td>
+                        <td>20</td>
+                        <td>600</td>
+                        <td>-0.8</td>
+                        <td>0.64</td>
+                        <td>12.80</td>
+                    </tr>
+                    <tr>
+                        <td>40</td>
+                        <td>10</td>
+                        <td>400</td>
+                        <td>9.2</td>
+                        <td>84.64</td>
+                        <td>846.40</td>
+                    </tr>
+                    <tr>
+                        <td>50</td>
+                        <td>7</td>
+                        <td>350</td>
+                        <td>19.2</td>
+                        <td>368.64</td>
+                        <td>2580.48</td>
+                    </tr>
+                    <tr>
+                        <td>60</td>
+                        <td>3</td>
+                        <td>180</td>
+                        <td>29.2</td>
+                        <td>852.64</td>
+                        <td>2557.92</td>
+                    </tr>
+                </tbody>
+
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>\(N=\sum f=60\)</th>
+                        <th>\(\sum fx=1850\)</th>
+                        <th></th>
+                        <th></th>
+                        <th>\(\sum fd^2=10858.40\)</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <div class="formula">\[\bar{X} = 30.8\]</div>
+        <h4>Formula :</h4>
+        <div class="formula">\[\sigma = \sqrt{\frac{\sum f d^2}{N}}\]</div>
+        <div class="formula">\[\sigma = \sqrt{\frac{10858.40}{60}}\]</div>
+        <div class="formula">\[\boxed{\sigma = 13.45}\]</div>
+        <hr>
+        <h3>Standard Deviation - Continuous Series</h3>
+        <hr>
+        <div class="table-div">
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <th>Class</th>
+                        <td>0 - 10</td>
+                        <td>10 - 20</td>
+                        <td>20 - 30</td>
+                        <td>30 - 40</td>
+                        <td>40 - 50</td>
+                    </tr>
+                    <tr>
+                        <th>Frequency</th>
+                        <td>5</td>
+                        <td>8</td>
+                        <td>15</td>
+                        <td>16</td>
+                        <td>6</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="table-div">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>x</th>
+                        <th>M</th>
+                        <th>F</th>
+                        <th>\(m-\bar{X}\)<br>\((m-27)\)</th>
+                        <th>\((m-\bar{X})^2\)</th>
+                        <th>\(f(m-\bar{X})^2\)</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>0 - 10</td>
+                        <td>\(\dfrac{0+10}{2}=5\)</td>
+                        <td>5</td>
+                        <td>-22</td>
+                        <td>484</td>
+                        <td>2420</td>
+                    </tr>
+
+                    <tr>
+                        <td>10 - 20</td>
+                        <td>\(\dfrac{10+20}{2}=15\)</td>
+                        <td>8</td>
+                        <td>-12</td>
+                        <td>144</td>
+                        <td>1152</td>
+                    </tr>
+
+                    <tr>
+                        <td>20 - 30</td>
+                        <td>\(\dfrac{20+30}{2}=25\)</td>
+                        <td>15</td>
+                        <td>-2</td>
+                        <td>4</td>
+                        <td>60</td>
+                    </tr>
+
+                    <tr>
+                        <td>30 - 40</td>
+                        <td>\(\dfrac{30+40}{2}=35\)</td>
+                        <td>16</td>
+                        <td>8</td>
+                        <td>64</td>
+                        <td>1024</td>
+                    </tr>
+
+                    <tr>
+                        <td>40 - 50</td>
+                        <td>\(\dfrac{40+50}{2}=45\)</td>
+                        <td>6</td>
+                        <td>18</td>
+                        <td>324</td>
+                        <td>1944</td>
+                    </tr>
+                </tbody>
+
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th>\(N=\sum f=50\)</th>
+                        <th></th>
+                        <th></th>
+                        <th>\(\sum f(m-\bar{X})^2=6600\)</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <div class="formula">\[\bar{X} = 27\]</div>
+        <h4>Formula</h4>
+        <div class="formula">\[\sigma = \sqrt{\frac{\sum f (m - \bar{X})^2}{N}}\]</div>
+        <div class="formula">\[\sigma = \sqrt{\frac{6600}{50}}\]</div>
+        <div class="formula">\[\boxed{\sigma = 11.49}\]</div>
+        <hr>
+        <h3>Coefficient of Variation (CV)</h3>
+        <hr>
+        <h4>Meaning</h4>
+        <ul>
+            <li>Standard Deviation का relative (percentage) measure।</li>
+            <li>बताता है कि SD, Mean का कितने % है।</li>
+        </ul>
+        <h4>Need</h4>
+        <ul>
+            <li>Different means वाले datasets की fair comparison करने के लिए।</li>
+        </ul>
+        <h4>Use Cases</h4>
+        <ul>
+            <li>Consistency compare करना।</li>
+            <li>Risk analysis।</li>
+            <li>Business & Economics में performance comparison।</li>
+            <li>Finance में investment comparison।</li>
+        </ul>
+        <h4>Quick Intuition</h4>
+        <ul>
+            <li>"Standard Deviation को Mean के हिसाब से normalize करके compare करना ही CV है।"</li>
+        </ul>
+        <hr>
+        <div class="formula">\[Variance = \sigma^2 ; \sigma = \sqrt{Variance}\]</div>
+        <div class="formula">\[Co-efficient\ of\ Standard\ deviation = \frac{\sigma}{\bar{X}}\]</div>
+        <div class="formula">\[Co-efficient\ of\ Variance\ (C.V.) = \frac{\sigma}{\bar{X}} \times 100\]</div>
+
+        <hr>
+        <p>The following are the runs scored by two batsmen A and B in ten innings:</p>
+        <div class="table-div">
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <th>A</th>
+                        <td>101</td>
+                        <td>27</td>
+                        <td>0</td>
+                        <td>36</td>
+                        <td>82</td>
+                        <td>45</td>
+                        <td>7</td>
+                        <td>13</td>
+                        <td>65</td>
+                        <td>14</td>
+                    </tr>
+                    <tr>
+                        <th>B</th>
+                        <td>97</td>
+                        <td>12</td>
+                        <td>40</td>
+                        <td>96</td>
+                        <td>13</td>
+                        <td>8</td>
+                        <td>85</td>
+                        <td>8</td>
+                        <td>56</td>
+                        <td>15</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p>Who is the more consistent batsman?</p>
+        <div class="table-div">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th colspan="3">Batsman A</th>
+                        <th colspan="3">Batsman B</th>
+                    </tr>
+                    <tr>
+                        <th>Runs Scored (X)</th>
+                        <th>\(dx=X-\bar{X}\)</th>
+                        <th>\(dx^2\)</th>
+                        <th>Runs Scored (Y)</th>
+                        <th>\(dy=Y-\bar{Y}\)</th>
+                        <th>\(dy^2\)</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>101</td>
+                        <td>62</td>
+                        <td>3844</td>
+                        <td>97</td>
+                        <td>54</td>
+                        <td>2916</td>
+                    </tr>
+                    <tr>
+                        <td>27</td>
+                        <td>-12</td>
+                        <td>144</td>
+                        <td>12</td>
+                        <td>-31</td>
+                        <td>961</td>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td>-39</td>
+                        <td>1521</td>
+                        <td>40</td>
+                        <td>-3</td>
+                        <td>9</td>
+                    </tr>
+                    <tr>
+                        <td>36</td>
+                        <td>-3</td>
+                        <td>9</td>
+                        <td>96</td>
+                        <td>53</td>
+                        <td>2809</td>
+                    </tr>
+                    <tr>
+                        <td>82</td>
+                        <td>43</td>
+                        <td>1849</td>
+                        <td>13</td>
+                        <td>-30</td>
+                        <td>900</td>
+                    </tr>
+                    <tr>
+                        <td>45</td>
+                        <td>6</td>
+                        <td>36</td>
+                        <td>8</td>
+                        <td>-35</td>
+                        <td>1225</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>-32</td>
+                        <td>1024</td>
+                        <td>85</td>
+                        <td>42</td>
+                        <td>1764</td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>-26</td>
+                        <td>676</td>
+                        <td>8</td>
+                        <td>-35</td>
+                        <td>1225</td>
+                    </tr>
+                    <tr>
+                        <td>65</td>
+                        <td>26</td>
+                        <td>676</td>
+                        <td>56</td>
+                        <td>13</td>
+                        <td>169</td>
+                    </tr>
+                    <tr>
+                        <td>14</td>
+                        <td>-25</td>
+                        <td>625</td>
+                        <td>15</td>
+                        <td>-28</td>
+                        <td>784</td>
+                    </tr>
+                </tbody>
+
+                <thead>
+                    <tr>
+                        <th>\(\sum X=390\)</th>
+                        <th></th>
+                        <th>\(\sum dx^2=10404\)</th>
+                        <th>\(\sum Y=430\)</th>
+                        <th></th>
+                        <th>\(\sum dy^2=12762\)</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <div class="grid">
+            <div class="grid-item grid-1">
+                <h4>Batman A</h4>
+                <div class="formula">\[\bar{X} = 39\]</div>
+                <div class="formula">\[\sigma_x = \sqrt{\frac{\sum dx^2}{N}}\]</div>
+                <div class="formula">\[\sigma_x = \sqrt{\frac{10404}{10}}\]</div>
+                <div class="formula">\[\boxed{\sigma_x = 32.26}\]</div>
+                <hr>
+                <div class="formula">\[C.V = \frac{\sigma}{\bar{X}} \times 100\]</div>
+                <div class="formula">\[C.V = \frac{32.26}{39} \times 100\]</div>
+                <div class="formula">\[\boxed{C.V = 82\ .72\%}\]</div>
+
+            </div>
+            <hr>
+            <div class="grid-item">
+                <h4>Batman B</h4>
+                <div class="formula">\[\bar{Y} = 43\]</div>
+                <div class="formula">\[\sigma_y = \sqrt{\frac{\sum dy^2}{N}}\]</div>
+                <div class="formula">\[\sigma_y = \sqrt{\frac{12762}{10}}\]</div>
+                <div class="formula">\[\boxed{\sigma_y = 35\ . 72}\]</div>
+                <hr>
+                <div class="formula">\[C.V = \frac{\sigma}{\bar{X}} \times 100\]</div>
+                <div class="formula">\[C.V = \frac{35\ . 72}{43} \times 100\]</div>
+                <div class="formula">\[\boxed{C.V = 83\ .07\%}\]</div>
+            </div>
+        </div>
+        <hr>
+        <p>Batsman A is more consistent in his batting, because the co-efficient of variation of runs is less for him.
+        </p>
+        <hr>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+
+</html>
