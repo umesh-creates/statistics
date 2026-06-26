@@ -53,28 +53,71 @@ pre {
     font-size: 20px !important;
     font-weight: bold;
 }
-.table{
+
+.table {
     text-align: center;
 }
-.table-div{
+
+.table-div {
     overflow: auto;
 }
+
+/* Chrome, Edge, Safari */
+.table-div::-webkit-scrollbar {
+    width: 3px;
+}
+
+.table-div::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.table-div::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.08);
+    border-radius: 999px;
+}
+
+.table-div::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.25);
+}
+
+/* Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.15) transparent;
+}
+
 @media (min-width: 500px) {
-    .grid{
+    .grid {
         display: flex;
     }
-    .grid-1{
+
+    .grid-1 {
         border-right: 1px solid black;
     }
-    .grid-item{
-        padding: 7px;        
+
+    .grid-item {
+        padding: 7px;
     }
 }
-.para{
+
+.para {
     border-left: 5px solid rgb(193, 193, 193);
     border-radius: 4px;
     padding: 4px 4px 4px 12px;
 }
-p{
+
+p {
     font-size: 17px;
+}
+
+.yellow {
+    background-color: yellow !important;
+}
+
+.green {
+    background-color: rgb(157, 255, 0) !important;
+}
+
+.blue {
+    background-color: rgb(100, 190, 255) !important;
 }

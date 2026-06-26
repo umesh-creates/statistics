@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="/statistics/styles/style_formate.css">
+    <title>Business Statistics | Measure of Central Tendency | Harmonic Mean</title>
+</head>
+
+<body>
+    <div class="container">
+<h1>Harmonic Mean (HM)</h1>
+<hr>
+<h4>Meaning</h4>
+<ul>
+    <li>Reciprocals (उल्टे मानों) का average।</li>
+    <li>Rates, speed, ratio वाले data के लिए सबसे उपयुक्त average।</li>
+</ul>
+<h4>Need</h4>
+<ul>
+    <li>Mean कई बार rates का सही average नहीं देता।</li>
+    <li>Different speeds/rates का actual average निकालने के लिए।</li>
+</ul>
+<h4>Use Cases</h4>
+<ul>
+    <li>Average speed</li>
+    <li>Cost per unit</li>
+    <li>Price-Earnings (P/E) Ratio</li>
+    <li>Financial analysis</li>
+    <li>Data Science में rates/ratios का averaging</li>
+</ul>
+<h4>Quick Intuition</h4>
+<p class="para">"जब data rate (per unit) में हो, तब Harmonic Mean use करो।"</p>
+<hr>
+<h3>A. Individual Series</h3>
+<div class="table-div">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Family</th>
+                <th>Income (x)</th>
+                <th>Reciprocals (1/X)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>85</td>
+                <td>1/85 = 0.0118</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>70</td>
+                <td>1/70 = 0.0143</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>10</td>
+                <td>1/10 = 0.1000</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>75</td>
+                <td>1/75 = 0.0133</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>500</td>
+                <td>1/500 = 0.0020</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>8</td>
+                <td>1/8 = 0.1250</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>42</td>
+                <td>1/42 = 0.0232</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>250</td>
+                <td>1/250 = 0.0040</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>40</td>
+                <td>1/40 = 0.0250</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>36</td>
+                <td>1/36 = 0.0278</td>
+            </tr>
+        </tbody>
+        <thead>
+            <tr>
+                <th>N = 10</th>
+                <th></th>
+                <th>&sum; 1/X = 0.3464</th>
+            </tr>
+        </thead>
+    </table>
+</div>
+<div class="formula">\[HM = \frac{n}{\sum \frac{1}{X}}\]</div>
+<div class="formula">\[HM = \frac{10}{0.3464}\]</div>
+<div class="formula">\[\boxed{HM = 28.87\  Rs}\]</div>
+<hr>
+<h3>B. Discrete Series</h3>
+<div class="table-div">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Size of Items (x)</th>
+                <th>Frequency (f)</th>
+                <th>Reciprocal (1/X)</th>
+                <th>f (1/X)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>6</td>
+                <td>4</td>
+                <td>1/6 = 0.1667</td>
+                <td>4(1/6) = 0.6668</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>6</td>
+                <td>1/7 = 0.1429</td>
+                <td>6(1/7) = 0.8574</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>9</td>
+                <td>1/8 = 0.1250</td>
+                <td>9(1/8) = 1.1250</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>5</td>
+                <td>1/9 = 0.1111</td>
+                <td>5(1/9) = 0.5555</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>2</td>
+                <td>1/10 = 0.1000</td>
+                <td>2(1/10) = 0.2000</td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>8</td>
+                <td>1/11 = 0.0909</td>
+                <td>8(1/11) = 0.7272</td>
+            </tr>
+        </tbody>
+        <thead>
+            <tr>
+                <th></th>
+                <th>N = &sum; f = 34</th>
+                <th></th>
+                <th>&sum; f(1/X) = 4.1319</th>
+            </tr>
+        </thead>
+    </table>
+</div>
+<div class="formula">\[HM = \frac{N}{\sum \frac{f}{X}}\]</div>
+<div class="center">or</div>
+<div class="formula">\[HM = \frac{N}{\sum f(\frac{1}{X})}\]</div>
+<div class="formula">\[= \frac{34}{4.1319}\]</div>
+<div class="formula">\[\boxed{HM = 8.23}\]</div>
+<hr>
+<h3>C. Continuous Series</h3>
+<div class="table-div">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Size (X)</th>
+                <th>Frequency (f)</th>
+                <th>Mid Value (m)</th>
+                <th>1/m</th>
+                <th>f(1/m)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>0-10</td>
+                <td>5</td>
+                <td>\(\frac{0+10}{2} = 5\)</td>
+                <td>1/5 = 0.2000</td>
+                <td>5(1/5) = 1.0000</td>
+            </tr>
+            <tr>
+                <td>10-20</td>
+                <td>8</td>
+                <td>15</td>
+                <td>1/15 = 0.0667</td>
+                <td>8(1/15) = 0.5336</td>
+            </tr>
+            <tr>
+                <td>20-30</td>
+                <td>12</td>
+                <td>25</td>
+                <td>1/25 = 0.0400</td>
+                <td>12(1/25) = 0.4800</td>
+            </tr>
+            <tr>
+                <td>30-40</td>
+                <td>6</td>
+                <td>35</td>
+                <td>1/35 = 0.0286</td>
+                <td>6(1/35) = 0.1716</td>
+            </tr>
+            <tr>
+                <td>40-50</td>
+                <td>4</td>
+                <td>45</td>
+                <td>1/45 = 0.0222</td>
+                <td>4(1/45) = 0.0888</td>
+            </tr>
+        </tbody>
+        <thead>
+            <tr>
+                <th></th>
+                <th>N = &sum; f = 35</th>
+                <th></th>
+                <th>&sum; f (1/m) = 2.274</th>
+            </tr>
+        </thead>
+    </table>
+</div>
+<div class="formula">\[HM = \frac{N}{\sum \frac{f}{m}}\]</div>
+<div class="center">or</div>
+<div class="formula">\[HM = \frac{N}{\sum f (\frac{1}{m})}\]</div>
+<div class="formula">\[= \frac{35}{2.274}\]</div>
+<div class="formula">\[\boxed{HM = 15.39}\]</div>
+<hr>
+
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+
+</html>
